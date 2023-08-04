@@ -14,7 +14,7 @@ export default function ProTip() {
   return (
     <Typography sx={{ mt: 6, mb: 3 }} color="text.secondary">
       <LightBulbIcon sx={{ mr: 1, verticalAlign: 'middle' }} />
-      Por favor filtre y selecciones los estudios que quiere cotizar
+      Por favor busque y seleccione los estudios que quiere cotizar
     </Typography>
   );
 }

@@ -1,6 +1,8 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import {DataGrid, GridColDef, GridToolbar} from '@mui/x-data-grid';
+import {useState} from "react";
+import TotalQuote from "./TotalQuote";
 
 interface LabItem {
     id: string,
@@ -49,39 +51,43 @@ const rows: LabItem[] = [
 ];
 
 export default function LabTable() {
+    const [total, setTotal] = useState(0);
     return (
-        <Box sx={{ height: 400, width: '100%' }}>
-            <DataGrid
-                rows={rows}
-                onRowSelectionModelChange={(ids) => {
-                    const selectedIDs = new Set(ids);
-                    const selectedRowData: LabItem[] = rows.filter((labItem) =>
-                        selectedIDs.has(labItem.id)
-                );
-                    let total = 0;
-                    selectedRowData.forEach(labItem => {
-                        total += labItem.price;
-                    });
-                    console.log(`Precio Total: ${total}`);
-                }}
-                columns={columns}
-                initialState={{
-                    pagination: {
-                        paginationModel: {
-                            pageSize: 5,
+        <div>
+            <Box sx={{ height: 400, width: '100%' }}>
+                <DataGrid
+                    rows={rows}
+                    onRowSelectionModelChange={(ids) => {
+                        const selectedIDs = new Set(ids);
+                        const selectedRowData: LabItem[] = rows.filter((labItem) =>
+                            selectedIDs.has(labItem.id)
+                        );
+                        let totalQuote = 0;
+                        selectedRowData.forEach(labItem => {
+                            totalQuote += labItem.price;
+                        });
+                        setTotal(totalQuote);
+                    }}
+                    columns={columns}
+                    initialState={{
+                        pagination: {
+                            paginationModel: {
+                                pageSize: 5,
+                            },
                         },
-                    },
-                }}
-                pageSizeOptions={[5]}
-                checkboxSelection
-                slots={{ toolbar: GridToolbar }}
-                slotProps={{
-                    toolbar: {
-                        showQuickFilter: true,
-                        quickFilterProps: { debounceMs: 500 },
-                    },
-                }}
-            />
-        </Box>
+                    }}
+                    pageSizeOptions={[5]}
+                    checkboxSelection
+                    slots={{ toolbar: GridToolbar }}
+                    slotProps={{
+                        toolbar: {
+                            showQuickFilter: true,
+                            quickFilterProps: { debounceMs: 500 },
+                        },
+                    }}
+                />
+            </Box>
+            <TotalQuote totalQuote={total}/>
+        </div>
     );
 }

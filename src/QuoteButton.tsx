@@ -4,8 +4,10 @@ import {RequestQuote} from "@mui/icons-material";
 
 export default function QuoteButton() {
   return (
-      <Button variant="contained" endIcon={<RequestQuote />}>
-          Cotizar
-      </Button>
+      <div>
+          <Button variant="contained" endIcon={<RequestQuote />}>
+              Cotizar
+          </Button>
+      </div>
   );
 }
