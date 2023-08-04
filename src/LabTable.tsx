@@ -48,11 +48,6 @@ const rows: LabItem[] = [
 
 ];
 
-const onRowsSelectionHandler = (ids) => {
-    const selectedRowsData = ids.map((id) => rows.find((row) => row.id === id));
-    console.log(selectedRowsData);
-};
-
 export default function LabTable() {
     return (
         <Box sx={{ height: 400, width: '100%' }}>

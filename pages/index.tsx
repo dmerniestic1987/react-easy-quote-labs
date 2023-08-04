@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import ProTip from '../src/ProTip';
 import Copyright from '../src/Copyright';
 import LabTable from "../src/LabTable";
+import QuoteButton from "../src/QuoteButton";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
 
         <ProTip />
         <LabTable />
+        <QuoteButton />
         <Copyright />
       </Box>
     </Container>
