@@ -20,14 +20,14 @@ const columns: GridColDef[] = [
     {
         field: 'name',
         headerName: 'Estudio de Laboratorio',
-        width: 300,
+        width: 350,
         editable: false,
     },
     {
         field: 'price',
         headerName: 'Precio',
         type: 'number',
-        width: 110,
+        width: 150,
         editable: false,
     },
 ];
