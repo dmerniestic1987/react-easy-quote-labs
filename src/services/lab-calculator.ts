@@ -18,7 +18,7 @@ BigNumber.config({
 });
 
 export interface LabItem {
-    id: string,
+    id: number,
     code: string,
     name: string,
     price: number,
@@ -48,7 +48,7 @@ export default class LabCalculator {
         return new BigNumber(totalQuote);
     }
 
-    static getCurrentLabItems() {
+    static getCurrentLabItems(): LabItem[] {
         return LabCalculator.labItems;
     }
 }

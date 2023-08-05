@@ -44,7 +44,7 @@ export default function LabTable() {
                         );
                         const largeNumber = LabCalculator.getTotalAmount(selectedRowData);
 
-                        setTotal(largeNumber.toFixed(0));
+                        setTotal(largeNumber.toFormat(0));
                     }}
                     columns={columns}
                     initialState={{
