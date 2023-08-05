@@ -51,6 +51,8 @@ const rows: LabItem[] = [
 ];
 
 export default function LabTable() {
+    const pageSize = 5;
+    const debounceInMillis = 500;
     const [total, setTotal] = useState(0);
     return (
         <div>
@@ -72,17 +74,17 @@ export default function LabTable() {
                     initialState={{
                         pagination: {
                             paginationModel: {
-                                pageSize: 5,
+                                pageSize,
                             },
                         },
                     }}
-                    pageSizeOptions={[5]}
+                    pageSizeOptions={[pageSize]}
                     checkboxSelection
                     slots={{ toolbar: GridToolbar }}
                     slotProps={{
                         toolbar: {
                             showQuickFilter: true,
-                            quickFilterProps: { debounceMs: 500 },
+                            quickFilterProps: { debounceMs: debounceInMillis },
                         },
                     }}
                 />
