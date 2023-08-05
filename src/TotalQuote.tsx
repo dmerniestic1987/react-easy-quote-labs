@@ -5,8 +5,8 @@ import Box from "@mui/material/Box";
 
 export default function TotalQuote({ totalQuote }) {
   return (
-      <Paper elevation={3}>
-          <Box alignItems="center">
+      <Paper elevation={3} >
+          <Box>
               <Typography variant="h4" component="h1" gutterBottom>Total: {totalQuote}</Typography>
           </Box>
       </Paper>
