@@ -14,7 +14,7 @@ export default function ProTip() {
   return (
     <Typography sx={{ mt: 6, mb: 3 }} color="text.secondary">
       <LightBulbIcon sx={{ mr: 1, verticalAlign: 'middle' }} />
-      Por favor busque y seleccione los estudios que quiere cotizar
+      Por favor busque y seleccione los estudios que quiere cotizar. El total esta redondeado sin centavos
     </Typography>
   );
 }

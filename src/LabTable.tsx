@@ -3,6 +3,24 @@ import Box from '@mui/material/Box';
 import {DataGrid, GridColDef, GridToolbar} from '@mui/x-data-grid';
 import {useState} from "react";
 import TotalQuote from "./TotalQuote";
+import BigNumber from "bignumber.js";
+
+const fmt = {
+    prefix: '',
+    decimalSeparator: ',',
+    groupSeparator: '.',
+    groupSize: 3,
+    secondaryGroupSize: 0,
+    fractionGroupSeparator: ' ',
+    fractionGroupSize: 0,
+    suffix: ''
+}
+
+BigNumber.config({
+    DECIMAL_PLACES: 2,
+    ROUNDING_MODE: BigNumber.ROUND_HALF_UP,
+    FORMAT: fmt
+});
 
 interface LabItem {
     id: string,
@@ -53,7 +71,7 @@ const rows: LabItem[] = [
 export default function LabTable() {
     const pageSize = 5;
     const debounceInMillis = 500;
-    const [total, setTotal] = useState(0);
+    const [total, setTotal] = useState("0");
     return (
         <div>
             <Box sx={{ height: 400, width: '100%' }}>
@@ -68,7 +86,9 @@ export default function LabTable() {
                         selectedRowData.forEach(labItem => {
                             totalQuote += labItem.price;
                         });
-                        setTotal(totalQuote);
+                        const largeNumber = new BigNumber(totalQuote).toFormat(0);
+
+                        setTotal(largeNumber.toString());
                     }}
                     columns={columns}
                     initialState={{
