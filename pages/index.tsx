@@ -3,7 +3,6 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import ProTip from '../src/ProTip';
-import Copyright from '../src/Copyright';
 import LabTable from "../src/LabTable";
 import QuoteButton from "../src/QuoteButton";
 
@@ -19,14 +18,11 @@ export default function Home() {
           alignItems: 'center',
         }}
       >
-        <Typography variant="h4" component="h1" gutterBottom>
-          Centro Médico Vida y Fortaleza - Cotizaciones de Laboratorios
-        </Typography>
-
+        <Typography variant="h4" component="h1" gutterBottom>Centro Médico Vida y Fortaleza</Typography>
+        <h2>Cotizaciones de Laboratorios</h2>
         <ProTip />
         <LabTable />
         <QuoteButton />
-        <Copyright />
       </Box>
     </Container>
   );

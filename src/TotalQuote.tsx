@@ -1,14 +1,14 @@
 import * as React from 'react';
-import Button from "@mui/material/Button";
-import {RequestQuote} from "@mui/icons-material";
 import {Paper} from "@mui/material";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
 
 export default function TotalQuote({ totalQuote }) {
   return (
       <Paper elevation={3}>
-          <div>
-            <h1>Total: {totalQuote}</h1>
-          </div>
+          <Box alignItems="center">
+              <Typography variant="h4" component="h1" gutterBottom>Total: {totalQuote}</Typography>
+          </Box>
       </Paper>
   );
 }
