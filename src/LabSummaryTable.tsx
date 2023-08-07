@@ -32,6 +32,7 @@ export default function LabSummaryTable() {
                     ))}
                 </TableBody>
             </Table>
+            <h2>Total: ${LabCalculator.getTotalAmount(LabCalculator.getSelectedItems()).toFormat(0)}</h2>
         </TableContainer>
     );
 }
