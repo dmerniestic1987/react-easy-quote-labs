@@ -1,5 +1,5 @@
 import {Box, Paper, TextField} from "@mui/material";
-import LagSummaryTable from "../src/LagSummaryTable";
+import LabSummaryTable from "../src/LabSummaryTable";
 
 export default function Summary() {
     return (
@@ -12,7 +12,7 @@ export default function Summary() {
                            required={true}
                            fullWidth
                            />
-                <LagSummaryTable />
+                <LabSummaryTable />
             </Box>
         </Paper>
     );
