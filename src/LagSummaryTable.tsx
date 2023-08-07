@@ -6,23 +6,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import {LabItem} from "./services/lab-calculator";
-
-function createData(
-    id: number,
-    code: string,
-    name: string,
-    price: number
-): LabItem {
-    return {id, code, name, price};
-
-}
-
-const rows = [
-    createData(1, 'OCP', 'Orina Completa', 200),
-    createData(2, 'VDRL', 'Análisis de ETS', 2100),
-
-];
+import LabCalculator, {LabItem} from "./services/lab-calculator";
 
 export default function LagSummaryTable() {
     return (
@@ -35,7 +19,7 @@ export default function LagSummaryTable() {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {rows.map((row) => (
+                    {LabCalculator.getSelectedItems().map((row: LabItem) => (
                         <TableRow
                             key={row.code}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}

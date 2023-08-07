@@ -43,7 +43,7 @@ export default function LabTable() {
                             selectedIDs.has(labItem.id)
                         );
                         const largeNumber = LabCalculator.getTotalAmount(selectedRowData);
-
+                        LabCalculator.setSelectedLabItems(selectedRowData);
                         setTotal(largeNumber.toFormat(0));
                     }}
                     columns={columns}

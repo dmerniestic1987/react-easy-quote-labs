@@ -25,6 +25,7 @@ export interface LabItem {
 }
 
 export default class LabCalculator {
+    private static selectedLabItems: LabItem[];
     private static labItems: LabItem[] = [
         { id: 1, code: 'HPR', name: '17-HIDROXI PROGESTERONA', price: 2623.11 } as LabItem,
         { id: 2, code: 'NU5', name: '5-NUCLEOTIDASA', price: 1772.42 } as LabItem,
@@ -50,5 +51,13 @@ export default class LabCalculator {
 
     static getCurrentLabItems(): LabItem[] {
         return LabCalculator.labItems;
+    }
+
+    static setSelectedLabItems(labItems: LabItem[]): void {
+        LabCalculator.selectedLabItems = labItems;
+    }
+
+    static getSelectedItems(): LabItem[] {
+        return LabCalculator.selectedLabItems || [];
     }
 }
