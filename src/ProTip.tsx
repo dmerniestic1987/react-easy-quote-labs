@@ -12,9 +12,9 @@ function LightBulbIcon(props: SvgIconProps) {
 
 export default function ProTip() {
   return (
-    <Typography sx={{ mt: 6, mb: 3 }} color="text.secondary">
+    <Typography sx={{ mt: 2, mb: 3 }} color="text.secondary">
       <LightBulbIcon sx={{ mr: 1, verticalAlign: 'middle' }} />
-      Por favor busque y seleccione los estudios que quiere cotizar. El total esta redondeado sin centavos
+      Por favor busque y seleccione los estudios que quiere cotizar. El total está redondeado sin centavos
     </Typography>
   );
 }
