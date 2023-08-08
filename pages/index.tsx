@@ -11,14 +11,14 @@ export default function Home() {
     <Container maxWidth="lg">
       <Box
         sx={{
-          my: 4,
+          my: 2,
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
         }}
       >
-        <Typography variant="h4" component="h1" gutterBottom>Centro Médico Vida y Fortaleza</Typography>
+        <Typography variant="h4" component="h1">Centro Médico Vida y Fortaleza</Typography>
         <h2>Cotizaciones de Laboratorios</h2>
         <ProTip />
         <LabTable />
