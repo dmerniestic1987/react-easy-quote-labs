@@ -37,7 +37,7 @@ export default class LabCalculator {
             name: item.name,
             code: item.code,
             price: itemBn.toNumber(),
-        }
+        } as LabItem;
     });
 
     static getTotalAmount(selectedRowData: LabItem[]): BigNumber {
