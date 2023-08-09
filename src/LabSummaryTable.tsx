@@ -7,8 +7,12 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import LabCalculator, {LabItem} from "./services/lab-calculator";
+import MathUtils from "./services/math-utils";
+import BigNumber from "bignumber.js";
 
 export default function LabSummaryTable() {
+    const total = LabCalculator.getTotalAmount(LabCalculator.getSelectedItems());
+    const suggestedTotal = new BigNumber(MathUtils.roundToNearestHundred(total.toNumber()));
     return (
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -32,7 +36,8 @@ export default function LabSummaryTable() {
                     ))}
                 </TableBody>
             </Table>
-            <h2>Total: ${LabCalculator.getTotalAmount(LabCalculator.getSelectedItems()).toFormat(0)}</h2>
+            <h2>Total: ${total.toFormat(0)}</h2>
+            <h2>Precio Sugerido: ${suggestedTotal.toFormat(0)}</h2>
         </TableContainer>
     );
 }

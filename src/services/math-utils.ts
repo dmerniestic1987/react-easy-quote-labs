@@ -1,10 +1,12 @@
+import BigNumber from "bignumber.js";
+
 export default class MathUtils {
-    static roundToNearestHundred(value: number): number {
+    static roundToNearestHundred(value: number): BigNumber {
         const remainder = value % 100;
         if (remainder === 0) {
-            return value;
+            return new BigNumber(value);
         }
         const nextMultipleOf100 = value + (100 - remainder);
-        return nextMultipleOf100;
+        return new BigNumber(nextMultipleOf100);
     }
 }
