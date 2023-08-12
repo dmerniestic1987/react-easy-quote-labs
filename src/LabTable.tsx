@@ -6,7 +6,7 @@ import TotalQuote from "./TotalQuote";
 import LabCalculator, {LabItem} from "./services/lab-calculator";
 
 const columns: GridColDef[] = [
-    { field: 'id', headerName: 'ID', width: 90 },
+    { field: 'id', headerName: 'ID', width: 90, hideable: true },
     {
         field: 'code',
         headerName: 'Abreviatura',

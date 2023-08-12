@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import ProTip from '../src/ProTip';
 import LabTable from "../src/LabTable";
 import QuoteButton from "../src/QuoteButton";
+import Grid from "@mui/system/Unstable_Grid";
 
 export default function Home() {
   return (
@@ -21,9 +22,16 @@ export default function Home() {
         <Typography variant="h4" component="h1">Centro Médico Vida y Fortaleza</Typography>
         <h2>Cotizaciones de Laboratorios</h2>
         <ProTip />
-        <LabTable />
-        <QuoteButton />
       </Box>
+      <Grid container spacing={2}>
+          <Grid xs={2}>
+              <h1>Otro</h1>
+          </Grid>
+          <Grid xs={10}>
+              <LabTable />
+          </Grid>
+      </Grid>
+      <QuoteButton />
     </Container>
   );
 }
