@@ -6,10 +6,11 @@ import ProTip from '../src/ProTip';
 import LabTable from "../src/LabTable";
 import QuoteButton from "../src/QuoteButton";
 import Grid from "@mui/system/Unstable_Grid";
+import VirtualSummary from "../src/VirtualSummary";
 
 export default function Home() {
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="xl">
       <Box
         sx={{
           my: 2,
@@ -24,10 +25,10 @@ export default function Home() {
         <ProTip />
       </Box>
       <Grid container spacing={2}>
-          <Grid xs={2}>
-              <h1>Otro</h1>
+          <Grid xs={4}>
+              <VirtualSummary />
           </Grid>
-          <Grid xs={10}>
+          <Grid xs={8}>
               <LabTable />
           </Grid>
       </Grid>

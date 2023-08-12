@@ -23,7 +23,7 @@ const columns: GridColDef[] = [
         field: 'price',
         headerName: 'Precio',
         type: 'number',
-        width: 150,
+        width: 90,
         editable: false,
     },
 ];
