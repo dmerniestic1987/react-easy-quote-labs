@@ -28,7 +28,7 @@ const columns: GridColDef[] = [
     },
 ];
 
-export default function LabTable() {
+export default function LabTable({setSelectedLabItems}) {
     const pageSize = 5;
     const debounceInMillis = 500;
     const [total, setTotal] = useState("0");
@@ -43,7 +43,8 @@ export default function LabTable() {
                             selectedIDs.has(labItem.id)
                         );
                         const largeNumber = LabCalculator.getTotalAmount(selectedRowData);
-                        LabCalculator.setSelectedLabItems(selectedRowData);
+                        //LabCalculator.setSelectedLabItems(selectedRowData);
+                        setSelectedLabItems(selectedRowData);
                         setTotal(largeNumber.toFormat(0));
                     }}
                     columns={columns}

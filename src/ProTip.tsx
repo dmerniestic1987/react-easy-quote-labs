@@ -1,6 +1,7 @@
 import * as React from 'react';
 import SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';
 import Typography from '@mui/material/Typography';
+import {Alert} from "@mui/material";
 
 function LightBulbIcon(props: SvgIconProps) {
   return (
@@ -12,9 +13,8 @@ function LightBulbIcon(props: SvgIconProps) {
 
 export default function ProTip() {
   return (
-    <Typography sx={{ mt: 2, mb: 3 }} color="text.secondary">
-      <LightBulbIcon sx={{ mr: 1, verticalAlign: 'middle' }} />
-      Por favor busque y seleccione los estudios que quiere cotizar. El total está redondeado sin centavos
-    </Typography>
+    <Alert severity="info">
+        Por favor busque y seleccione los estudios que quiere cotizar. El total está redondeado sin centavos
+    </Alert>
   );
 }
