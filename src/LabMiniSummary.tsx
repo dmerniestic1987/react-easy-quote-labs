@@ -8,7 +8,7 @@ import TableBody from '@mui/material/TableBody';
 import { TableVirtuoso } from 'react-virtuoso';
 import DeleteIcon from '@mui/icons-material/Delete';
 import BigNumber from 'bignumber.js';
-import LabCalculator from './services/lab-calculator';
+import LabCalculator, {LabItem} from './services/lab-calculator';
 import TotalQuote from './TotalQuote';
 import MathUtils from './services/math-utils';
 
@@ -23,7 +23,7 @@ const TableComponents = {
   TableBody: React.forwardRef((props, ref) => <TableBody {...props} ref={ref} />),
 };
 
-export default function LabMiniSummary({ selectedLabItems }: any) {
+export default function LabMiniSummary({ selectedLabItems }: { selectedLabItems: LabItem[] }) {
   const total = LabCalculator.getTotalAmount(selectedLabItems);
   const suggestedTotal = new BigNumber(MathUtils.roundToNearestHundred(total.toNumber()));
   return (
@@ -58,6 +58,7 @@ export default function LabMiniSummary({ selectedLabItems }: any) {
                         <IconButton
                             onClick={() => {
                               console.log('Selected');
+                                selectedLabItem
                             }}
                         >
                             <DeleteIcon />
