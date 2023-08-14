@@ -10,7 +10,7 @@ import BigNumber from 'bignumber.js';
 import LabCalculator, { LabItem } from './services/lab-calculator';
 import MathUtils from './services/math-utils';
 
-export default function LabSummaryTable({ selectedLabItems }: any) {
+export default function LabSummaryTable({ selectedLabItems }: { selectedLabItems: LabItem[] }) {
   const total = LabCalculator.getTotalAmount(selectedLabItems);
   const suggestedTotal = new BigNumber(MathUtils.roundToNearestHundred(total.toNumber()));
   return (
