@@ -57,8 +57,7 @@ export default function LabMiniSummary({ selectedLabItems }: { selectedLabItems:
                     <TableCell style={{ width: 90, background: 'white' }}>
                         <IconButton
                             onClick={() => {
-                              console.log('Selected');
-                                selectedLabItem
+                              alert('Funcionalidad pendiente de desarrollo');
                             }}
                         >
                             <DeleteIcon />
