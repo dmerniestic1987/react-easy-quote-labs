@@ -8,7 +8,7 @@ export default function TotalQuote(props: any) {
       <Paper elevation={3} >
           <Box>
               <Typography variant="h5" component="h1" gutterBottom align="center">
-                  Total de los estudios: $ {props.totalQuote}
+                  {props.description}: $ {props.totalQuote}
               </Typography>
           </Box>
       </Paper>

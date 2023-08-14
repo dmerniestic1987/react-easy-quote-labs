@@ -7,6 +7,8 @@ import { TableVirtuoso } from 'react-virtuoso';
 import DeleteIcon from '@mui/icons-material/Delete';
 import LabCalculator, {LabItem} from "./services/lab-calculator";
 import TotalQuote from "./TotalQuote";
+import BigNumber from "bignumber.js";
+import MathUtils from "./services/math-utils";
 
 const TableComponents = {
     Scroller: React.forwardRef((props, ref) => <TableContainer component={Paper} {...props} ref={ref} />),
@@ -18,6 +20,7 @@ const TableComponents = {
 
 export default function LabMiniSummary({selectedLabItems}) {
     const total = LabCalculator.getTotalAmount(selectedLabItems);
+    const suggestedTotal = new BigNumber(MathUtils.roundToNearestHundred(total.toNumber()));
     return (
     <>
         <TableVirtuoso
@@ -57,7 +60,7 @@ export default function LabMiniSummary({selectedLabItems}) {
                 </>
             )}
         />
-        <TotalQuote totalQuote={total.toFormat(0)}/>
+        <TotalQuote description={"Total Sugerido"} totalQuote={suggestedTotal.toFormat(0)}/>
     </>
     )
 }
