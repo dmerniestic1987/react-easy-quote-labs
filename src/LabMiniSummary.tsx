@@ -5,7 +5,7 @@ import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import { TableVirtuoso } from 'react-virtuoso';
 import DeleteIcon from '@mui/icons-material/Delete';
-import LabCalculator, {LabItem} from "./services/lab-calculator";
+import LabCalculator from "./services/lab-calculator";
 import TotalQuote from "./TotalQuote";
 import BigNumber from "bignumber.js";
 import MathUtils from "./services/math-utils";
