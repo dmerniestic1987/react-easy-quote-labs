@@ -31,7 +31,7 @@ const columns: GridColDef[] = [
 export default function LabTable({setSelectedLabItems}) {
     const pageSize = 5;
     const debounceInMillis = 500;
-    const [total, setTotal] = useState("0");
+
     return (
         <div>
             <Box sx={{ height: 400, width: '100%' }}>
@@ -42,10 +42,7 @@ export default function LabTable({setSelectedLabItems}) {
                         const selectedRowData: LabItem[] = LabCalculator.getCurrentLabItems().filter(labItem =>
                             selectedIDs.has(labItem.id)
                         );
-                        const largeNumber = LabCalculator.getTotalAmount(selectedRowData);
-                        //LabCalculator.setSelectedLabItems(selectedRowData);
                         setSelectedLabItems(selectedRowData);
-                        setTotal(largeNumber.toFormat(0));
                     }}
                     columns={columns}
                     initialState={{
@@ -66,7 +63,6 @@ export default function LabTable({setSelectedLabItems}) {
                     }}
                 />
             </Box>
-            <TotalQuote totalQuote={total}/>
         </div>
     );
 }
