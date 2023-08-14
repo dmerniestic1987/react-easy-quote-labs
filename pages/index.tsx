@@ -3,7 +3,6 @@ import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import ProTip from '../src/ProTip';
 import LabTable from "../src/LabTable";
-import QuoteButton from "../src/QuoteButton";
 import Grid from "@mui/system/Unstable_Grid";
 import LabMiniSummary from "../src/LabMiniSummary";
 import {LabItem} from "../src/services/lab-calculator";
@@ -34,7 +33,6 @@ export default function Home() {
               <LabMiniSummary selectedLabItems = {selectedLabs} />
           </Grid>
       </Grid>
-      <QuoteButton />
     </Container>
   );
 }

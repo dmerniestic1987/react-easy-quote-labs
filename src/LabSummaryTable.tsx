@@ -10,8 +10,8 @@ import LabCalculator, {LabItem} from "./services/lab-calculator";
 import MathUtils from "./services/math-utils";
 import BigNumber from "bignumber.js";
 
-export default function LabSummaryTable() {
-    const total = LabCalculator.getTotalAmount(LabCalculator.getSelectedItems());
+export default function LabSummaryTable({selectedLabItems}) {
+    const total = LabCalculator.getTotalAmount(selectedLabItems);
     const suggestedTotal = new BigNumber(MathUtils.roundToNearestHundred(total.toNumber()));
     return (
         <TableContainer component={Paper}>
