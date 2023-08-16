@@ -10,6 +10,16 @@ import {useState} from "react";
 
 export default function Home() {
   const [selectedLabs, setSelectedLabs] = useState([] as LabItem[]);
+  const deleteSelectedLabItem = (
+      itemToDelete: LabItem,
+      labItems: LabItem[] = selectedLabs,
+      setSelectedLabsState: Function = setSelectedLabs
+  ) => {
+    const selectedItemsAfterDelete: LabItem[] = labItems.filter(labItems => {
+        return labItems.id !== itemToDelete.id;
+    });
+    setSelectedLabsState(selectedItemsAfterDelete);
+  };
   return (
     <Container maxWidth="xl">
       <Box
@@ -30,7 +40,7 @@ export default function Home() {
               <LabTable setSelectedLabItems={setSelectedLabs}/>
           </Grid>
           <Grid xs={4}>
-              <LabMiniSummary selectedLabItems = {selectedLabs} />
+              <LabMiniSummary selectedLabItems = {selectedLabs} deleteSelectedLabItem={deleteSelectedLabItem}/>
           </Grid>
       </Grid>
     </Container>

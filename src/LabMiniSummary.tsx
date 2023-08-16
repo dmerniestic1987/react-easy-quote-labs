@@ -11,6 +11,7 @@ import BigNumber from 'bignumber.js';
 import LabCalculator, {LabItem} from './services/lab-calculator';
 import TotalQuote from './TotalQuote';
 import MathUtils from './services/math-utils';
+import DeleteLabIconButton from "./DeleteLabIconButton";
 
 
 const TableComponents = {
@@ -23,7 +24,10 @@ const TableComponents = {
   TableBody: React.forwardRef((props, ref) => <TableBody {...props} ref={ref} />),
 };
 
-export default function LabMiniSummary({ selectedLabItems }: { selectedLabItems: LabItem[] }) {
+
+export default function LabMiniSummary(
+    { selectedLabItems, deleteSelectedLabItem }: { selectedLabItems: LabItem[], deleteSelectedLabItem: Function },
+) {
   const total = LabCalculator.getTotalAmount(selectedLabItems);
   const suggestedTotal = new BigNumber(MathUtils.roundToNearestHundred(total.toNumber()));
   return (
@@ -55,13 +59,7 @@ export default function LabMiniSummary({ selectedLabItems }: { selectedLabItems:
                         {selectedLabItem.name}
                     </TableCell>
                     <TableCell style={{ width: 90, background: 'white' }}>
-                        <IconButton
-                            onClick={() => {
-                              alert('Funcionalidad pendiente de desarrollo');
-                            }}
-                        >
-                            <DeleteIcon />
-                        </IconButton>
+                        <DeleteLabIconButton labItem={selectedLabItem} deleteSelectedLabItem={deleteSelectedLabItem}/>
                     </TableCell>
               </>
             )}
