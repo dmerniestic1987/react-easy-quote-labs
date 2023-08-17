@@ -26,7 +26,7 @@ interface LabMiniSummaryInputParams {
     deleteSelectedRowSelectionModel: Function,
 }
 
-export default function LabMiniSummary(
+export default function LabMiniSummaryDesktop(
   { selectedLabItems, deleteSelectedLabItem, deleteSelectedRowSelectionModel }: LabMiniSummaryInputParams,
 ) {
   return (
