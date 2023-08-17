@@ -1,10 +1,8 @@
 import * as React from 'react';
 import Container from '@mui/material/Container';
-import Box from '@mui/material/Box';
-import ProTip from '../src/ProTip';
-import LabTable from "../src/LabTable";
+import LabTableDesktop from "../src/LabTableDesktop";
 import Grid from "@mui/system/Unstable_Grid";
-import LabMiniSummary from "../src/LabMiniSummary";
+import LabMiniSummaryDesktop from "../src/LabMiniSummaryDesktop";
 import LabCalculator, {LabItem} from "../src/services/lab-calculator";
 import {useState} from "react";
 import {GridRowSelectionModel} from "@mui/x-data-grid";
@@ -46,20 +44,18 @@ export default function Home() {
           my: 2,
       }}>
           <Grid xs={7}>
-              <LabTable
+              <LabTableDesktop
                   rowSelectionModel={rowSelectionModel}
                   setSelectedLabItems={setSelectedLabs}
                   setRowSelectionModel={setRowSelectionModel}/>
           </Grid>
           <Grid xs={4}>
-              <LabMiniSummary selectedLabItems = {selectedLabs}
-                              deleteSelectedLabItem={deleteSelectedLabItem}
-                              deleteSelectedRowSelectionModel={deleteSelectedRowSelectionModel}/>
+              <LabMiniSummaryDesktop selectedLabItems = {selectedLabs}
+                                     deleteSelectedLabItem={deleteSelectedLabItem}
+                                     deleteSelectedRowSelectionModel={deleteSelectedRowSelectionModel}/>
           </Grid>
           <TotalQuote xs={11} description={'Total Sugerido'} totalQuote={suggestedTotal.toFormat(0)}/>
       </Grid>
-
-
     </Container>
   );
 }

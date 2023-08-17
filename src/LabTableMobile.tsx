@@ -1,34 +1,26 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import {
-    DataGrid,
-    GridColDef, GridRowSelectionModel, GridToolbar,
-    GridToolbarColumnsButton,
-    GridToolbarContainer,
-    GridToolbarDensitySelector,
-    GridToolbarExport,
+  DataGrid,
+  GridColDef, GridRowSelectionModel, GridToolbar,
+  GridToolbarColumnsButton,
+  GridToolbarContainer,
+  GridToolbarDensitySelector,
+  GridToolbarExport,
 } from '@mui/x-data-grid';
 import LabCalculator, { LabItem } from './services/lab-calculator';
 
 const columns: GridColDef[] = [
-  { field: 'id', headerName: 'ID', width: 90 },
   {
     field: 'code',
     headerName: 'Abreviatura',
-    width: 150,
+    width: 100,
     editable: false,
   },
   {
     field: 'name',
     headerName: 'Estudio de Laboratorio',
-    width: 350,
-    editable: false,
-  },
-  {
-    field: 'price',
-    headerName: 'Precio',
-    type: 'number',
-    width: 90,
+    width: 300,
     editable: false,
   },
 ];
@@ -37,9 +29,9 @@ interface LabTableInputParams {
     rowSelectionModel: GridRowSelectionModel,
     setSelectedLabItems: Function,
     setRowSelectionModel: Function
-};
-export default function LabTable(
-    { rowSelectionModel, setSelectedLabItems, setRowSelectionModel }: LabTableInputParams,
+}
+export default function LabTableMobile(
+  { rowSelectionModel, setSelectedLabItems, setRowSelectionModel }: LabTableInputParams,
 ) {
   const pageSize = 5;
   const debounceInMillis = 500;
@@ -47,6 +39,8 @@ export default function LabTable(
         <div>
             <Box sx={{ height: 400, width: '100%' }}>
                 <DataGrid
+                    density="compact"
+                    autoHeight
                     rows={LabCalculator.getCurrentLabItems()}
                     onRowSelectionModelChange={(ids) => {
                       const selectedIDs = new Set(ids);
