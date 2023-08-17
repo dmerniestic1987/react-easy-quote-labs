@@ -1,8 +1,11 @@
 import * as React from 'react';
-import LabQuote from '../src/LabQuote';
+import { useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/system';
+import LabQuoteMobile from '../src/LabQuoteMobile';
+import LabQuoteDesktop from '../src/LabQuoteDesktop';
 
 export default function Home() {
-  return (
-    <LabQuote />
-  );
+  const theme = useTheme();
+  const isSmScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  return isSmScreen ? <LabQuoteMobile /> : < LabQuoteDesktop/>;
 }

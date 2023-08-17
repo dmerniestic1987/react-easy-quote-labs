@@ -32,7 +32,7 @@ export default function LabMiniSummaryMobile(
   return (
     <>
         <TableVirtuoso
-            style={{ height: 400 }}
+            style={{ height: 200, width: '100%' }}
             data={selectedLabItems || []}
             // @ts-ignore
             components={TableComponents}

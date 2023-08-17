@@ -11,14 +11,14 @@ export default function LabHeader({ title, subTitle } : LabInterfaceInputParam) 
   return (
         <Box
             sx={{
-              my: 2,
+              my: 1,
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
               alignItems: 'center',
             }}
         >
-            <h1>{title}</h1>
+            <h2>{title}</h2>
             <h2>{subTitle}</h2>
             <ProTip />
         </Box>

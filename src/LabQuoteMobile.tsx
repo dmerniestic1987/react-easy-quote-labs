@@ -10,8 +10,10 @@ import TotalQuote from "../src/TotalQuote";
 import BigNumber from "bignumber.js";
 import MathUtils from "../src/services/math-utils";
 import LabHeader from "../src/LabHeader";
+import LabTableMobile from "./LabTableMobile";
+import LabMiniSummaryMobile from "./LabMiniSummaryMobile";
 
-export default function LabQuote() {
+export default function LabQuoteMobile() {
   const [rowSelectionModel, setRowSelectionModel] = useState<GridRowSelectionModel>([]);
   const [selectedLabs, setSelectedLabs] = useState([] as LabItem[]);
   const total = LabCalculator.getTotalAmount(selectedLabs);
@@ -38,24 +40,15 @@ export default function LabQuote() {
   return (
     <Container maxWidth="xl">
       <LabHeader title={'Centro Médico Vida y Fortaleza'} subTitle={'Cotizaciones de Laboratorios'} />
-      <Grid container spacing={2} sx={{
-          justifyContent: 'center',
-          alignItems: 'center',
-          my: 2,
-      }}>
-          <Grid xs={7}>
-              <LabTableDesktop
-                  rowSelectionModel={rowSelectionModel}
-                  setSelectedLabItems={setSelectedLabs}
-                  setRowSelectionModel={setRowSelectionModel}/>
-          </Grid>
-          <Grid xs={4}>
-              <LabMiniSummaryDesktop selectedLabItems = {selectedLabs}
-                                     deleteSelectedLabItem={deleteSelectedLabItem}
-                                     deleteSelectedRowSelectionModel={deleteSelectedRowSelectionModel}/>
-          </Grid>
-          <TotalQuote xs={11} description={'Total Sugerido'} totalQuote={suggestedTotal.toFormat(0)}/>
-      </Grid>
+      <LabTableMobile
+            rowSelectionModel={rowSelectionModel}
+            setSelectedLabItems={setSelectedLabs}
+            setRowSelectionModel={setRowSelectionModel}/>
+      <LabMiniSummaryMobile selectedLabItems = {selectedLabs}
+                              deleteSelectedLabItem={deleteSelectedLabItem}
+                              deleteSelectedRowSelectionModel={deleteSelectedRowSelectionModel}/>
+      <TotalQuote description={'Total Sugerido'} totalQuote={suggestedTotal.toFormat(0)}/>
+
     </Container>
   );
 }
