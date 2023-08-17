@@ -8,10 +8,10 @@ import TableBody from '@mui/material/TableBody';
 import { TableVirtuoso } from 'react-virtuoso';
 import DeleteIcon from '@mui/icons-material/Delete';
 import BigNumber from 'bignumber.js';
-import LabCalculator, {LabItem} from './services/lab-calculator';
+import LabCalculator, { LabItem } from './services/lab-calculator';
 import TotalQuote from './TotalQuote';
 import MathUtils from './services/math-utils';
-import DeleteLabIconButton from "./DeleteLabIconButton";
+import DeleteLabIconButton from './DeleteLabIconButton';
 
 
 const TableComponents = {
@@ -26,10 +26,8 @@ const TableComponents = {
 
 
 export default function LabMiniSummary(
-    { selectedLabItems, deleteSelectedLabItem, deleteSelectedRowSelectionModel }: { selectedLabItems: LabItem[], deleteSelectedLabItem: Function, deleteSelectedRowSelectionModel: Function },
+  { selectedLabItems, deleteSelectedLabItem, deleteSelectedRowSelectionModel }: { selectedLabItems: LabItem[], deleteSelectedLabItem: Function, deleteSelectedRowSelectionModel: Function },
 ) {
-  const total = LabCalculator.getTotalAmount(selectedLabItems);
-  const suggestedTotal = new BigNumber(MathUtils.roundToNearestHundred(total.toNumber()));
   return (
     <>
         <TableVirtuoso
@@ -67,7 +65,7 @@ export default function LabMiniSummary(
               </>
             )}
         />
-        <TotalQuote description={'Total Sugerido'} totalQuote={suggestedTotal.toFormat(0)}/>
+
     </>
   );
 }

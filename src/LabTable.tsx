@@ -2,7 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import {
     DataGrid,
-    GridColDef, GridRowSelectionModel,
+    GridColDef, GridRowSelectionModel, GridToolbar,
     GridToolbarColumnsButton,
     GridToolbarContainer,
     GridToolbarDensitySelector,
@@ -32,16 +32,6 @@ const columns: GridColDef[] = [
     editable: false,
   },
 ];
-
-function CustomToolbar() {
-    return (
-        <GridToolbarContainer>
-            <GridToolbarColumnsButton />
-            <GridToolbarExport />
-            <GridToolbarDensitySelector />
-        </GridToolbarContainer>
-    );
-}
 
 interface LabTableInputParams {
     rowSelectionModel: GridRowSelectionModel,
@@ -75,7 +65,7 @@ export default function LabTable(
                     }}
                     pageSizeOptions={[pageSize]}
                     checkboxSelection
-                    slots={{ toolbar: CustomToolbar }}
+                    slots={{ toolbar: GridToolbar }}
                     slotProps={{
                       toolbar: {
                         showQuickFilter: true,
