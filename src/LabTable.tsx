@@ -3,10 +3,10 @@ import Box from '@mui/material/Box';
 import {
     DataGrid,
     GridColDef,
-    GridToolbar,
     GridToolbarColumnsButton,
-    GridToolbarContainer, GridToolbarDensitySelector, GridToolbarExport,
-    useGridApiContext
+    GridToolbarContainer,
+    GridToolbarDensitySelector,
+    GridToolbarExport,
 } from '@mui/x-data-grid';
 import LabCalculator, { LabItem } from './services/lab-calculator';
 
