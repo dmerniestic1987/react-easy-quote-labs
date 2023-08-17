@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Alert, Paper } from '@mui/material';
+import { Alert } from '@mui/material';
 import Typography from '@mui/material/Typography';
 
 export default function TotalQuote(props: any) {

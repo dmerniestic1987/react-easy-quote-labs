@@ -6,11 +6,7 @@ import TableContainer from '@mui/material/TableContainer';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import { TableVirtuoso } from 'react-virtuoso';
-import DeleteIcon from '@mui/icons-material/Delete';
-import BigNumber from 'bignumber.js';
-import LabCalculator, { LabItem } from './services/lab-calculator';
-import TotalQuote from './TotalQuote';
-import MathUtils from './services/math-utils';
+import { LabItem } from './services/lab-calculator';
 import DeleteLabIconButton from './DeleteLabIconButton';
 
 
@@ -24,9 +20,14 @@ const TableComponents = {
   TableBody: React.forwardRef((props, ref) => <TableBody {...props} ref={ref} />),
 };
 
+interface LabMiniSummaryInputParams {
+    selectedLabItems: LabItem[],
+    deleteSelectedLabItem: Function,
+    deleteSelectedRowSelectionModel: Function,
+}
 
 export default function LabMiniSummary(
-  { selectedLabItems, deleteSelectedLabItem, deleteSelectedRowSelectionModel }: { selectedLabItems: LabItem[], deleteSelectedLabItem: Function, deleteSelectedRowSelectionModel: Function },
+  { selectedLabItems, deleteSelectedLabItem, deleteSelectedRowSelectionModel }: LabMiniSummaryInputParams,
 ) {
   return (
     <>
