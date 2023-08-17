@@ -1,6 +1,13 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import { DataGrid, GridColDef, GridToolbar } from '@mui/x-data-grid';
+import {
+    DataGrid,
+    GridColDef,
+    GridToolbar,
+    GridToolbarColumnsButton,
+    GridToolbarContainer, GridToolbarDensitySelector, GridToolbarExport,
+    useGridApiContext
+} from '@mui/x-data-grid';
 import LabCalculator, { LabItem } from './services/lab-calculator';
 
 const columns: GridColDef[] = [
@@ -26,10 +33,19 @@ const columns: GridColDef[] = [
   },
 ];
 
+function CustomToolbar() {
+    return (
+        <GridToolbarContainer>
+            <GridToolbarColumnsButton />
+            <GridToolbarExport />
+            <GridToolbarDensitySelector />
+        </GridToolbarContainer>
+    );
+}
+
 export default function LabTable({ setSelectedLabItems }: any) {
   const pageSize = 5;
   const debounceInMillis = 500;
-
   return (
         <div>
             <Box sx={{ height: 400, width: '100%' }}>
@@ -50,7 +66,7 @@ export default function LabTable({ setSelectedLabItems }: any) {
                     }}
                     pageSizeOptions={[pageSize]}
                     checkboxSelection
-                    slots={{ toolbar: GridToolbar }}
+                    slots={{ toolbar: CustomToolbar }}
                     slotProps={{
                       toolbar: {
                         showQuickFilter: true,
