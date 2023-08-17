@@ -1,6 +1,13 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import { DataGrid, GridColDef, GridToolbar } from '@mui/x-data-grid';
+import {
+    DataGrid,
+    GridColDef, GridRowSelectionModel, GridToolbar,
+    GridToolbarColumnsButton,
+    GridToolbarContainer,
+    GridToolbarDensitySelector,
+    GridToolbarExport,
+} from '@mui/x-data-grid';
 import LabCalculator, { LabItem } from './services/lab-calculator';
 
 const columns: GridColDef[] = [
@@ -26,10 +33,16 @@ const columns: GridColDef[] = [
   },
 ];
 
-export default function LabTable({ setSelectedLabItems }: any) {
+interface LabTableInputParams {
+    rowSelectionModel: GridRowSelectionModel,
+    setSelectedLabItems: Function,
+    setRowSelectionModel: Function
+};
+export default function LabTable(
+    { rowSelectionModel, setSelectedLabItems, setRowSelectionModel }: LabTableInputParams,
+) {
   const pageSize = 5;
   const debounceInMillis = 500;
-
   return (
         <div>
             <Box sx={{ height: 400, width: '100%' }}>
@@ -39,8 +52,10 @@ export default function LabTable({ setSelectedLabItems }: any) {
                       const selectedIDs = new Set(ids);
                       const selectedRowData: LabItem[] = LabCalculator.getCurrentLabItems().filter(labItem => selectedIDs.has(labItem.id));
                       setSelectedLabItems(selectedRowData);
+                      setRowSelectionModel(ids);
                     }}
                     columns={columns}
+                    rowSelectionModel={rowSelectionModel}
                     initialState={{
                       pagination: {
                         paginationModel: {

@@ -6,11 +6,8 @@ import TableContainer from '@mui/material/TableContainer';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import { TableVirtuoso } from 'react-virtuoso';
-import DeleteIcon from '@mui/icons-material/Delete';
-import BigNumber from 'bignumber.js';
-import LabCalculator, {LabItem} from './services/lab-calculator';
-import TotalQuote from './TotalQuote';
-import MathUtils from './services/math-utils';
+import { LabItem } from './services/lab-calculator';
+import DeleteLabIconButton from './DeleteLabIconButton';
 
 
 const TableComponents = {
@@ -23,9 +20,15 @@ const TableComponents = {
   TableBody: React.forwardRef((props, ref) => <TableBody {...props} ref={ref} />),
 };
 
-export default function LabMiniSummary({ selectedLabItems }: { selectedLabItems: LabItem[] }) {
-  const total = LabCalculator.getTotalAmount(selectedLabItems);
-  const suggestedTotal = new BigNumber(MathUtils.roundToNearestHundred(total.toNumber()));
+interface LabMiniSummaryInputParams {
+    selectedLabItems: LabItem[],
+    deleteSelectedLabItem: Function,
+    deleteSelectedRowSelectionModel: Function,
+}
+
+export default function LabMiniSummary(
+  { selectedLabItems, deleteSelectedLabItem, deleteSelectedRowSelectionModel }: LabMiniSummaryInputParams,
+) {
   return (
     <>
         <TableVirtuoso
@@ -55,18 +58,15 @@ export default function LabMiniSummary({ selectedLabItems }: { selectedLabItems:
                         {selectedLabItem.name}
                     </TableCell>
                     <TableCell style={{ width: 90, background: 'white' }}>
-                        <IconButton
-                            onClick={() => {
-                              alert('Funcionalidad pendiente de desarrollo');
-                            }}
-                        >
-                            <DeleteIcon />
-                        </IconButton>
+                        <DeleteLabIconButton
+                            labItem={selectedLabItem}
+                            deleteSelectedLabItem={deleteSelectedLabItem}
+                            deleteSelectedRowSelectionModel={deleteSelectedRowSelectionModel}/>
                     </TableCell>
               </>
             )}
         />
-        <TotalQuote description={'Total Sugerido'} totalQuote={suggestedTotal.toFormat(0)}/>
+
     </>
   );
 }
