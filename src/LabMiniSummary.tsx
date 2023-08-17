@@ -26,7 +26,7 @@ const TableComponents = {
 
 
 export default function LabMiniSummary(
-    { selectedLabItems, deleteSelectedLabItem }: { selectedLabItems: LabItem[], deleteSelectedLabItem: Function },
+    { selectedLabItems, deleteSelectedLabItem, deleteSelectedRowSelectionModel }: { selectedLabItems: LabItem[], deleteSelectedLabItem: Function, deleteSelectedRowSelectionModel: Function },
 ) {
   const total = LabCalculator.getTotalAmount(selectedLabItems);
   const suggestedTotal = new BigNumber(MathUtils.roundToNearestHundred(total.toNumber()));
@@ -59,7 +59,10 @@ export default function LabMiniSummary(
                         {selectedLabItem.name}
                     </TableCell>
                     <TableCell style={{ width: 90, background: 'white' }}>
-                        <DeleteLabIconButton labItem={selectedLabItem} deleteSelectedLabItem={deleteSelectedLabItem}/>
+                        <DeleteLabIconButton
+                            labItem={selectedLabItem}
+                            deleteSelectedLabItem={deleteSelectedLabItem}
+                            deleteSelectedRowSelectionModel={deleteSelectedRowSelectionModel}/>
                     </TableCell>
               </>
             )}

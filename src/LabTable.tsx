@@ -2,7 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import {
     DataGrid,
-    GridColDef,
+    GridColDef, GridRowSelectionModel,
     GridToolbarColumnsButton,
     GridToolbarContainer,
     GridToolbarDensitySelector,
@@ -43,7 +43,14 @@ function CustomToolbar() {
     );
 }
 
-export default function LabTable({ setSelectedLabItems }: any) {
+interface LabTableInputParams {
+    rowSelectionModel: GridRowSelectionModel,
+    setSelectedLabItems: Function,
+    setRowSelectionModel: Function
+};
+export default function LabTable(
+    { rowSelectionModel, setSelectedLabItems, setRowSelectionModel }: LabTableInputParams,
+) {
   const pageSize = 5;
   const debounceInMillis = 500;
   return (
@@ -55,8 +62,10 @@ export default function LabTable({ setSelectedLabItems }: any) {
                       const selectedIDs = new Set(ids);
                       const selectedRowData: LabItem[] = LabCalculator.getCurrentLabItems().filter(labItem => selectedIDs.has(labItem.id));
                       setSelectedLabItems(selectedRowData);
+                      setRowSelectionModel(ids);
                     }}
                     columns={columns}
+                    rowSelectionModel={rowSelectionModel}
                     initialState={{
                       pagination: {
                         paginationModel: {
