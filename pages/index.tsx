@@ -7,13 +7,25 @@ import Grid from "@mui/system/Unstable_Grid";
 import LabMiniSummary from "../src/LabMiniSummary";
 import {LabItem} from "../src/services/lab-calculator";
 import {useState} from "react";
+import {GridRowSelectionModel} from "@mui/x-data-grid";
 
 export default function Home() {
+  const [rowSelectionModel, setRowSelectionModel] = useState<GridRowSelectionModel>([]);
   const [selectedLabs, setSelectedLabs] = useState([] as LabItem[]);
+
+  const deleteSelectedRowSelectionModel = (
+      itemToDelete: LabItem,
+      selectedRowItems: GridRowSelectionModel = rowSelectionModel,
+      setRowSelectionModelState: Function = setRowSelectionModel
+  ) => {
+      const filtered = selectedRowItems.filter(selectedRowItem => { return Number(selectedRowItem) !== itemToDelete.id });
+      setRowSelectionModelState(filtered);
+  };
+
   const deleteSelectedLabItem = (
       itemToDelete: LabItem,
       labItems: LabItem[] = selectedLabs,
-      setSelectedLabsState: Function = setSelectedLabs
+      setSelectedLabsState: Function = setSelectedLabs,
   ) => {
     const selectedItemsAfterDelete: LabItem[] = labItems.filter(labItems => {
         return labItems.id !== itemToDelete.id;
@@ -37,10 +49,15 @@ export default function Home() {
       </Box>
       <Grid container spacing={2}>
           <Grid xs={7}>
-              <LabTable setSelectedLabItems={setSelectedLabs}/>
+              <LabTable
+                  rowSelectionModel={rowSelectionModel}
+                  setSelectedLabItems={setSelectedLabs}
+                  setRowSelectionModel={setRowSelectionModel}/>
           </Grid>
           <Grid xs={4}>
-              <LabMiniSummary selectedLabItems = {selectedLabs} deleteSelectedLabItem={deleteSelectedLabItem}/>
+              <LabMiniSummary selectedLabItems = {selectedLabs}
+                              deleteSelectedLabItem={deleteSelectedLabItem}
+                              deleteSelectedRowSelectionModel={deleteSelectedRowSelectionModel}/>
           </Grid>
       </Grid>
     </Container>
