@@ -20,7 +20,7 @@ const theme = createTheme({
     error: {
       main: red.A400,
     },
-    mode: 'dark',
+    mode: 'light',
   },
   typography: {
     fontFamily: roboto.style.fontFamily,
