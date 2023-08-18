@@ -3,25 +3,20 @@ import Box from '@mui/material/Box';
 import {
   DataGrid,
   GridColDef, GridRowSelectionModel, GridToolbar,
-  GridToolbarColumnsButton,
-  GridToolbarContainer,
-  GridToolbarDensitySelector,
-  GridToolbarExport,
 } from '@mui/x-data-grid';
 import LabCalculator, { LabItem } from './services/lab-calculator';
 
 const columns: GridColDef[] = [
-  { field: 'id', headerName: 'ID', width: 90 },
   {
     field: 'code',
     headerName: 'Abreviatura',
-    width: 150,
+    width: 130,
     editable: false,
   },
   {
     field: 'name',
     headerName: 'Estudio de Laboratorio',
-    width: 350,
+    width: 390,
     editable: false,
   },
   {

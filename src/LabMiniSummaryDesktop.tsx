@@ -1,5 +1,5 @@
 import {
-  IconButton, Paper, TableCell, TableHead, TableRow,
+  Paper, TableCell, TableHead, TableRow,
 } from '@mui/material';
 import React from 'react';
 import TableContainer from '@mui/material/TableContainer';
@@ -38,26 +38,26 @@ export default function LabMiniSummaryDesktop(
             components={TableComponents}
             fixedHeaderContent={() => (
                 <TableRow>
-                    <TableCell style={{ width: 90, background: 'white' }}>
+                    <TableCell style={{ width: 90 }}>
                         Abreviatura
                     </TableCell>
-                    <TableCell style={{ background: 'white' }}>
+                    <TableCell>
                         Estudio de Laboratorio
                     </TableCell>
-                    <TableCell style={{ width: 90, background: 'white' }}>
+                    <TableCell style={{ width: 90 }}>
                         Eliminar
                     </TableCell>
                 </TableRow>
             )}
             itemContent={(index, selectedLabItem) => (
               <>
-                    <TableCell style={{ width: 90, background: 'white' }}>
+                    <TableCell style={{ width: 90 }}>
                         {selectedLabItem.code}
                     </TableCell>
-                    <TableCell style={{ background: 'white' }}>
+                    <TableCell>
                         {selectedLabItem.name}
                     </TableCell>
-                    <TableCell style={{ width: 90, background: 'white' }}>
+                    <TableCell style={{ width: 90 }}>
                         <DeleteLabIconButton
                             labItem={selectedLabItem}
                             deleteSelectedLabItem={deleteSelectedLabItem}
