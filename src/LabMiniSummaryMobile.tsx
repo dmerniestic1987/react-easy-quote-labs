@@ -38,26 +38,26 @@ export default function LabMiniSummaryMobile(
             components={TableComponents}
             fixedHeaderContent={() => (
                 <TableRow>
-                    <TableCell style={{ width: 70, background: 'white' }}>
+                    <TableCell style={{ width: 70 }}>
                         Abreviatura
                     </TableCell>
-                    <TableCell style={{ background: 'white' }}>
+                    <TableCell>
                         Estudio de Laboratorio
                     </TableCell>
-                    <TableCell style={{ width: 70, background: 'white' }}>
+                    <TableCell style={{ width: 70 }}>
                         Eliminar
                     </TableCell>
                 </TableRow>
             )}
             itemContent={(index, selectedLabItem) => (
               <>
-                    <TableCell style={{ width: 90, background: 'white' }}>
+                    <TableCell style={{ width: 70 }}>
                         {selectedLabItem.code}
                     </TableCell>
-                    <TableCell style={{ background: 'white' }}>
+                    <TableCell>
                         {selectedLabItem.name}
                     </TableCell>
-                    <TableCell style={{ width: 90, background: 'white' }}>
+                    <TableCell style={{ width: 70 }}>
                         <DeleteLabIconButton
                             labItem={selectedLabItem}
                             deleteSelectedLabItem={deleteSelectedLabItem}
