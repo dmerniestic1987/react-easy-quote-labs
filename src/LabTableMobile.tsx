@@ -2,11 +2,9 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import {
   DataGrid,
-  GridColDef, GridRowSelectionModel, GridToolbar,
-  GridToolbarColumnsButton,
-  GridToolbarContainer,
-  GridToolbarDensitySelector,
-  GridToolbarExport,
+  GridColDef,
+  GridRowSelectionModel,
+  GridToolbar,
 } from '@mui/x-data-grid';
 import LabCalculator, { LabItem } from './services/lab-calculator';
 

@@ -1,5 +1,5 @@
 import {
-  IconButton, Paper, TableCell, TableHead, TableRow,
+  Paper, TableCell, TableHead, TableRow,
 } from '@mui/material';
 import React from 'react';
 import TableContainer from '@mui/material/TableContainer';
