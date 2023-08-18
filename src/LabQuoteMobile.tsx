@@ -1,8 +1,5 @@
 import * as React from 'react';
 import Container from '@mui/material/Container';
-import LabTableDesktop from "../src/LabTableDesktop";
-import Grid from "@mui/system/Unstable_Grid";
-import LabMiniSummaryDesktop from "../src/LabMiniSummaryDesktop";
 import LabCalculator, {LabItem} from "../src/services/lab-calculator";
 import {useState} from "react";
 import {GridRowSelectionModel} from "@mui/x-data-grid";
