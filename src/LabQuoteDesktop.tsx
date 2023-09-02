@@ -37,7 +37,7 @@ export default function LabQuoteDesktop() {
   };
   return (
     <Container maxWidth="xl">
-      <LabHeader title={'Centro Médico Vida y Fortaleza'} subTitle={'Cotizaciones de Laboratorios'} />
+      <LabHeader title={'Centro Médico Vida y Fortaleza'} subTitle={'Cotizaciones de Laboratorios Septiembre 2023'} />
       <Grid container spacing={2} sx={{
           justifyContent: 'center',
           alignItems: 'center',
