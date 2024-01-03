@@ -1,0 +1,2570 @@
+[
+  {
+    "code": "HPR",
+    "name": "17-HIDROXI PROGESTERONA",
+    "suggested_price_from_lab": 3481,
+    "price": "$4.525"
+  },
+  {
+    "code": "NU5",
+    "name": "5-NUCLEOTIDASA",
+    "suggested_price_from_lab": 2352,
+    "price": "$3.057"
+  },
+  {
+    "code": "BHB",
+    "name": "ACIDO BETA HIDROXI BUTIRICO",
+    "suggested_price_from_lab": 10495,
+    "price": "$13.644"
+  },
+  {
+    "code": "ABI",
+    "name": "ACIDOS BILIARES",
+    "suggested_price_from_lab": 5314,
+    "price": "$6.908"
+  },
+  {
+    "code": "Ac graso",
+    "name": "ACIDOS GRASOS SAT.DE CADENA LARGA",
+    "suggested_price_from_lab": 67813,
+    "price": "$88.156"
+  },
+  {
+    "code": "ACYL",
+    "name": "ACIL CARNITINA",
+    "suggested_price_from_lab": 67813,
+    "price": "$88.156"
+  },
+  {
+    "code": "ACTH",
+    "name": "ACTH CORTICOTROFINA",
+    "suggested_price_from_lab": 1688,
+    "price": "$2.194"
+  },
+  {
+    "code": "AGUA-B",
+    "name": "AGUA ANALISIS BATERIOLOGICO",
+    "suggested_price_from_lab": 14503,
+    "price": "$18.854"
+  },
+  {
+    "code": "AGUA-F",
+    "name": "AGUA ANALISIS FISICO QUIMICO",
+    "suggested_price_from_lab": 48202,
+    "price": "$62.663"
+  },
+  {
+    "code": "ALB",
+    "name": "ALBUMINA",
+    "suggested_price_from_lab": 1187,
+    "price": "$1.543"
+  },
+  {
+    "code": "ALC O",
+    "name": "ALCOHOL EN ORINA",
+    "suggested_price_from_lab": 1412,
+    "price": "$1.835"
+  },
+  {
+    "code": "ALC S",
+    "name": "ALCOHOL EN SUERO",
+    "suggested_price_from_lab": 1733,
+    "price": "$2.253"
+  },
+  {
+    "code": "ALD",
+    "name": "ALDOLASA",
+    "suggested_price_from_lab": 1242,
+    "price": "$1.615"
+  },
+  {
+    "code": "ALR",
+    "name": "ALDOSTERONA PLASMATICA",
+    "suggested_price_from_lab": 6642,
+    "price": "$8.635"
+  },
+  {
+    "code": "ALO",
+    "name": "ALDOSTERONA en orina  (RIA)",
+    "suggested_price_from_lab": 6642,
+    "price": "$8.635"
+  },
+  {
+    "code": "AFP",
+    "name": "ALFA FETO PROTEINA",
+    "suggested_price_from_lab": 484,
+    "price": "$629"
+  },
+  {
+    "code": "ALP",
+    "name": "ALPRAZOLAN",
+    "suggested_price_from_lab": 6333,
+    "price": "$8.233"
+  },
+  {
+    "code": "AL",
+    "name": "ALUMINIO",
+    "suggested_price_from_lab": 6816,
+    "price": "$8.861"
+  },
+  {
+    "code": "AMS",
+    "name": "AMILASEMIA",
+    "suggested_price_from_lab": 387,
+    "price": "$503"
+  },
+  {
+    "code": "AMU",
+    "name": "AMILASURIA",
+    "suggested_price_from_lab": 387,
+    "price": "$503"
+  },
+  {
+    "code": "AMIO",
+    "name": "AMINOACIDOS URINARIO",
+    "suggested_price_from_lab": 58369,
+    "price": "$75.880"
+  },
+  {
+    "code": "AN4",
+    "name": "ANDROSTENODIONA (delta 4)",
+    "suggested_price_from_lab": 1161,
+    "price": "$1.509"
+  },
+  {
+    "code": "DPG A",
+    "name": "ANTIC ANTI GLIADINA DEAMINADA IgA",
+    "suggested_price_from_lab": 2787,
+    "price": "$3.623"
+  },
+  {
+    "code": "AT3F",
+    "name": "ANTIC ANTI TROMBINA III FUNCIONAL",
+    "suggested_price_from_lab": 3343,
+    "price": "$4.346"
+  },
+  {
+    "code": "COVGAM",
+    "name": "ANTIC COV IGG+IGM",
+    "suggested_price_from_lab": 9340,
+    "price": "$12.142"
+  },
+  {
+    "code": "COVM",
+    "name": "ANTIC COV IGM",
+    "suggested_price_from_lab": 5378,
+    "price": "$6.992"
+  },
+  {
+    "code": "BRUCE Tt",
+    "name": "ANTIC. ANTI BRUCELOSIS TOTALES",
+    "suggested_price_from_lab": 4675,
+    "price": "$6.077"
+  },
+  {
+    "code": "DPG G",
+    "name": "ANTIC. ANTI GLIADINA DEAMINADA IgG",
+    "suggested_price_from_lab": 4172,
+    "price": "$5.424"
+  },
+  {
+    "code": "CCP",
+    "name": "ANTIC. ANTI PEPTIDO CITRULINADO CICLICO IgG (Anti",
+    "suggested_price_from_lab": 6881,
+    "price": "$8.946"
+  },
+  {
+    "code": "AATGS",
+    "name": "ANTIC. ANTI TIROGLOBULINA SENSIBLE",
+    "suggested_price_from_lab": 2188,
+    "price": "$2.844"
+  },
+  {
+    "code": "AATGU",
+    "name": "ANTIC. ANTI TIROGLOBULINA ULTRASENSIBLE",
+    "suggested_price_from_lab": 2188,
+    "price": "$2.844"
+  },
+  {
+    "code": "AAF",
+    "name": "ANTIC.ANTI ACIDO FOSFATIDICO IgG",
+    "suggested_price_from_lab": 2922,
+    "price": "$3.799"
+  },
+  {
+    "code": "AAM",
+    "name": "ANTIC.ANTI ACIDO FOSFATIDICO IgM",
+    "suggested_price_from_lab": 2876,
+    "price": "$3.739"
+  },
+  {
+    "code": "ACTINA",
+    "name": "ANTIC.ANTI ACTINA",
+    "suggested_price_from_lab": 7493,
+    "price": "$9.741"
+  },
+  {
+    "code": "ANCA",
+    "name": "ANTIC.ANTI ANCA (ANTI-GRANULOCITOS)",
+    "suggested_price_from_lab": 6744,
+    "price": "$8.767"
+  },
+  {
+    "code": "B2G G",
+    "name": "ANTIC.ANTI BETA 2 GLICOPROTEINA IgG",
+    "suggested_price_from_lab": 3102,
+    "price": "$4.033"
+  },
+  {
+    "code": "BSG M",
+    "name": "ANTIC.ANTI BETA 2 GLICOPROTEINA IgM",
+    "suggested_price_from_lab": 3102,
+    "price": "$4.033"
+  },
+  {
+    "code": "CARA",
+    "name": "ANTIC.ANTI CARDIOLIPINAS IgA",
+    "suggested_price_from_lab": 7715,
+    "price": "$10.030"
+  },
+  {
+    "code": "CAR",
+    "name": "ANTIC.ANTI CARDIOLIPINAS IgG",
+    "suggested_price_from_lab": 2267,
+    "price": "$2.947"
+  },
+  {
+    "code": "CAM",
+    "name": "ANTIC.ANTI CARDIOLIPINAS IgM",
+    "suggested_price_from_lab": 2267,
+    "price": "$2.947"
+  },
+  {
+    "code": "CENB",
+    "name": "ANTIC.ANTI CENTROMERO B",
+    "suggested_price_from_lab": 686,
+    "price": "$892"
+  },
+  {
+    "code": "DND",
+    "name": "ANTIC.ANTI DNA - IFI-",
+    "suggested_price_from_lab": 2436,
+    "price": "$3.167"
+  },
+  {
+    "code": "END",
+    "name": "ANTIC.ANTI ENDOMISIO IgA",
+    "suggested_price_from_lab": 4184,
+    "price": "$5.439"
+  },
+  {
+    "code": "ENG",
+    "name": "ANTIC.ANTI ENDOMISIO IgG",
+    "suggested_price_from_lab": 4184,
+    "price": "$5.439"
+  },
+  {
+    "code": "AFI",
+    "name": "ANTIC.ANTI FACTOR INTRINSECO",
+    "suggested_price_from_lab": 6679,
+    "price": "$8.682"
+  },
+  {
+    "code": "AFM",
+    "name": "ANTIC.ANTI FOSFATIDIL SERINA IgM",
+    "suggested_price_from_lab": 9318,
+    "price": "$12.113"
+  },
+  {
+    "code": "AAFOL G",
+    "name": "ANTIC.ANTI FOSFOLIPIDOS IgG",
+    "suggested_price_from_lab": 3701,
+    "price": "$4.811"
+  },
+  {
+    "code": "AAFOL M",
+    "name": "ANTIC.ANTI FOSFOLIPIDOS IgM",
+    "suggested_price_from_lab": 3701,
+    "price": "$4.811"
+  },
+  {
+    "code": "GAA",
+    "name": "ANTIC.ANTI GLIADINA IgA",
+    "suggested_price_from_lab": 1610,
+    "price": "$2.093"
+  },
+  {
+    "code": "GAG",
+    "name": "ANTIC.ANTI GLIADINA IgG",
+    "suggested_price_from_lab": 1694,
+    "price": "$2.203"
+  },
+  {
+    "code": "AAG",
+    "name": "ANTIC.ANTI GLOMERULAR.I.F.I",
+    "suggested_price_from_lab": 4941,
+    "price": "$6.423"
+  },
+  {
+    "code": "AAH",
+    "name": "ANTIC.ANTI HISTONA",
+    "suggested_price_from_lab": 5588,
+    "price": "$7.265"
+  },
+  {
+    "code": "AAI",
+    "name": "ANTIC.ANTI INSULINA",
+    "suggested_price_from_lab": 6768,
+    "price": "$8.798"
+  },
+  {
+    "code": "AIL",
+    "name": "ANTIC.ANTI ISLOTE DE LANGERHENS",
+    "suggested_price_from_lab": 6299,
+    "price": "$8.189"
+  },
+  {
+    "code": "AJO",
+    "name": "ANTIC.ANTI JO1",
+    "suggested_price_from_lab": 3795,
+    "price": "$4.933"
+  },
+  {
+    "code": "MII",
+    "name": "ANTIC.ANTI MITOCONDRIAL IFI",
+    "suggested_price_from_lab": 993,
+    "price": "$1.291"
+  },
+  {
+    "code": "MII M2",
+    "name": "ANTIC.ANTI MITOCONDRIAL M2",
+    "suggested_price_from_lab": 5842,
+    "price": "$7.595"
+  },
+  {
+    "code": "AME",
+    "name": "ANTIC.ANTI MUSCULO ESTRIADO",
+    "suggested_price_from_lab": 1013,
+    "price": "$1.317"
+  },
+  {
+    "code": "MLI",
+    "name": "ANTIC.ANTI MUSCULO LISO I.F",
+    "suggested_price_from_lab": 996,
+    "price": "$1.295"
+  },
+  {
+    "code": "FAN",
+    "name": "ANTIC.ANTI NUCLEARES IFI",
+    "suggested_price_from_lab": 761,
+    "price": "$989"
+  },
+  {
+    "code": "AARPQ",
+    "name": "ANTIC.ANTI PLAQUETAS",
+    "suggested_price_from_lab": 63317,
+    "price": "$82.312"
+  },
+  {
+    "code": "AP3",
+    "name": "ANTIC.ANTI PROTEINASE 3",
+    "suggested_price_from_lab": 5233,
+    "price": "$6.803"
+  },
+  {
+    "code": "ACRA",
+    "name": "ANTIC.ANTI RECEP.ACETILCOLINA",
+    "suggested_price_from_lab": 10347,
+    "price": "$13.451"
+  },
+  {
+    "code": "TRAB",
+    "name": "ANTIC.ANTI RECEPTOR DE TSH estimulador",
+    "suggested_price_from_lab": 4334,
+    "price": "$5.634"
+  },
+  {
+    "code": "AA RET",
+    "name": "ANTIC.ANTI RETICULINA",
+    "suggested_price_from_lab": 4941,
+    "price": "$6.423"
+  },
+  {
+    "code": "RNP",
+    "name": "ANTIC.ANTI RNP",
+    "suggested_price_from_lab": 2719,
+    "price": "$3.535"
+  },
+  {
+    "code": "ARO",
+    "name": "ANTIC.ANTI SSA (o ANTI RO)",
+    "suggested_price_from_lab": 2494,
+    "price": "$3.243"
+  },
+  {
+    "code": "Ala",
+    "name": "ANTIC.ANTI SSB (o ANTI La)",
+    "suggested_price_from_lab": 2514,
+    "price": "$3.268"
+  },
+  {
+    "code": "SCL",
+    "name": "ANTIC.ANTI Scl 70",
+    "suggested_price_from_lab": 2494,
+    "price": "$3.243"
+  },
+  {
+    "code": "ASM",
+    "name": "ANTIC.ANTI Sm (Smith)",
+    "suggested_price_from_lab": 2494,
+    "price": "$3.243"
+  },
+  {
+    "code": "AATG",
+    "name": "ANTIC.ANTI TIROGLOBULINA",
+    "suggested_price_from_lab": 1484,
+    "price": "$1.929"
+  },
+  {
+    "code": "TPO",
+    "name": "ANTIC.ANTI TIROPEROXIDASA",
+    "suggested_price_from_lab": 827,
+    "price": "$1.075"
+  },
+  {
+    "code": "ATG A",
+    "name": "ANTIC.ANTI TRANSGLUTAMINASA IgA",
+    "suggested_price_from_lab": 2478,
+    "price": "$3.222"
+  },
+  {
+    "code": "ATG G",
+    "name": "ANTIC.ANTI TRANSGLUTAMINASA IgG",
+    "suggested_price_from_lab": 4654,
+    "price": "$6.050"
+  },
+  {
+    "code": "COV G",
+    "name": "ANTICUERPOS IgG COVID 19 NUCLEOCAPSIDE",
+    "suggested_price_from_lab": 4641,
+    "price": "$6.033"
+  },
+  {
+    "code": "ASO",
+    "name": "ANTIESTREPTOLISINA \"O",
+    "suggested_price_from_lab": 723,
+    "price": "$940"
+  },
+  {
+    "code": "COV Ag",
+    "name": "ANTIGENO COVID 19",
+    "suggested_price_from_lab": 19337,
+    "price": "$25.138"
+  },
+  {
+    "code": "DEN Ag",
+    "name": "ANTIGENO DENGUE",
+    "suggested_price_from_lab": 13579,
+    "price": "$17.653"
+  },
+  {
+    "code": "PSA",
+    "name": "ANTIGENO PROSTATICO ESPECIFICO (PSA)",
+    "suggested_price_from_lab": 1047,
+    "price": "$1.362"
+  },
+  {
+    "code": "PSA-L",
+    "name": "ANTIGENO PROSTATICO ESPECIFICO (PSA) - Libre",
+    "suggested_price_from_lab": 1451,
+    "price": "$1.886"
+  },
+  {
+    "code": "ATRMF",
+    "name": "ANTITRIPSINA EN M. FECAL",
+    "suggested_price_from_lab": 4167,
+    "price": "$5.417"
+  },
+  {
+    "code": "ATR",
+    "name": "ANTITRIPSINA ID CUANTITATIVA",
+    "suggested_price_from_lab": 1204,
+    "price": "$1.565"
+  },
+  {
+    "code": "APO A",
+    "name": "APOLIPOPROTEINA \"A",
+    "suggested_price_from_lab": 566,
+    "price": "$735"
+  },
+  {
+    "code": "APO B",
+    "name": "APOLIPOPROTEINA \"B",
+    "suggested_price_from_lab": 566,
+    "price": "$735"
+  },
+  {
+    "code": "AS-CR-U",
+    "name": "ARSENICO / CREATININA en orina",
+    "suggested_price_from_lab": 6285,
+    "price": "$8.170"
+  },
+  {
+    "code": "ARL",
+    "name": "ARTRITIS REUMATOIDEA P DEL LATEX",
+    "suggested_price_from_lab": 410,
+    "price": "$533"
+  },
+  {
+    "code": "AAS",
+    "name": "ASCORBICO ACIDO",
+    "suggested_price_from_lab": 9301,
+    "price": "$12.091"
+  },
+  {
+    "code": "BAN-OLIG",
+    "name": "BANDAS OLIGOCLONALES en LCR",
+    "suggested_price_from_lab": 28914,
+    "price": "$37.588"
+  },
+  {
+    "code": "BARTO G",
+    "name": "BARTONELLA HENSELAE IgG",
+    "suggested_price_from_lab": 7735,
+    "price": "$10.055"
+  },
+  {
+    "code": "BARTO M",
+    "name": "BARTONELLA HENSELAE IgM",
+    "suggested_price_from_lab": 7735,
+    "price": "$10.055"
+  },
+  {
+    "code": "BEN",
+    "name": "BENZODIACEPINA",
+    "suggested_price_from_lab": 1516,
+    "price": "$1.970"
+  },
+  {
+    "code": "B2M",
+    "name": "BETA 2 MICROGLOBULINA",
+    "suggested_price_from_lab": 1034,
+    "price": "$1.344"
+  },
+  {
+    "code": "B2O",
+    "name": "BETA 2 MICROGLOBULINA en orina",
+    "suggested_price_from_lab": 1030,
+    "price": "$1.339"
+  },
+  {
+    "code": "BCROSS",
+    "name": "BETA CROSSLAPS",
+    "suggested_price_from_lab": 4107,
+    "price": "$5.339"
+  },
+  {
+    "code": "BRR",
+    "name": "BILIRRUBINEMIA TOT.DIR.INDIR.",
+    "suggested_price_from_lab": 110,
+    "price": "$143"
+  },
+  {
+    "code": "BPG",
+    "name": "BORDETELLA PERTUSSIS IgG",
+    "suggested_price_from_lab": 6277,
+    "price": "$8.160"
+  },
+  {
+    "code": "BPM",
+    "name": "BORDETELLA PERTUSSIS IgM",
+    "suggested_price_from_lab": 6277,
+    "price": "$8.160"
+  },
+  {
+    "code": "BRUCE G",
+    "name": "BRUCELLA ANTIC.ANTI  ELISA IgG",
+    "suggested_price_from_lab": 2214,
+    "price": "$2.878"
+  },
+  {
+    "code": "BRUCE M",
+    "name": "BRUCELLA ANTIC.ANTI  ELISA IgM",
+    "suggested_price_from_lab": 2214,
+    "price": "$2.878"
+  },
+  {
+    "code": "C125",
+    "name": "CA 125 (ovario)",
+    "suggested_price_from_lab": 810,
+    "price": "$1.053"
+  },
+  {
+    "code": "C15",
+    "name": "CA 15/3 (mama)",
+    "suggested_price_from_lab": 744,
+    "price": "$967"
+  },
+  {
+    "code": "C19",
+    "name": "CA 19/9 (Digest.Ginecolog.)",
+    "suggested_price_from_lab": 744,
+    "price": "$967"
+  },
+  {
+    "code": "C21",
+    "name": "CA 21-1",
+    "suggested_price_from_lab": 7027,
+    "price": "$9.135"
+  },
+  {
+    "code": "C72",
+    "name": "CA 72-4",
+    "suggested_price_from_lab": 4593,
+    "price": "$5.970"
+  },
+  {
+    "code": "CKO",
+    "name": "CADENAS LIVIANAS en orina",
+    "suggested_price_from_lab": 9458,
+    "price": "$12.296"
+  },
+  {
+    "code": "CLKL",
+    "name": "CADENAS LIVIANAS en suero cuali",
+    "suggested_price_from_lab": 11856,
+    "price": "$15.413"
+  },
+  {
+    "code": "CKL",
+    "name": "CADENAS LIVIANAS,KAPPA Y LAMBDA CUANTI",
+    "suggested_price_from_lab": 70931,
+    "price": "$92.210"
+  },
+  {
+    "code": "CADMIO",
+    "name": "CADMIO Determinac.de",
+    "suggested_price_from_lab": 6961,
+    "price": "$9.050"
+  },
+  {
+    "code": "CA-CR-OC",
+    "name": "CALCIO CREATININA EN ORINA OCACIONAL",
+    "suggested_price_from_lab": 604,
+    "price": "$786"
+  },
+  {
+    "code": "CAIL",
+    "name": "CALCIO IONICO L",
+    "suggested_price_from_lab": 563,
+    "price": "$731"
+  },
+  {
+    "code": "CAS",
+    "name": "CALCIO SERICO TOTAL",
+    "suggested_price_from_lab": 330,
+    "price": "$429"
+  },
+  {
+    "code": "CAU",
+    "name": "CALCIO en orina",
+    "suggested_price_from_lab": 330,
+    "price": "$429"
+  },
+  {
+    "code": "CAUE",
+    "name": "CALCIO en orina espontanea",
+    "suggested_price_from_lab": 331,
+    "price": "$430"
+  },
+  {
+    "code": "CAL",
+    "name": "CALCITONINA Plasmática",
+    "suggested_price_from_lab": 1670,
+    "price": "$2.170"
+  },
+  {
+    "code": "C BILIAR",
+    "name": "CALCULO BILIAR",
+    "suggested_price_from_lab": 7233,
+    "price": "$9.403"
+  },
+  {
+    "code": "CBZ",
+    "name": "CARBAMAZEPINA",
+    "suggested_price_from_lab": 1238,
+    "price": "$1.609"
+  },
+  {
+    "code": "BGT",
+    "name": "CARIOTIPO-BANDEO G-T",
+    "suggested_price_from_lab": 44246,
+    "price": "$57.519"
+  },
+  {
+    "code": "CRT",
+    "name": "CARNITINA LIBRE Y TOTAL",
+    "suggested_price_from_lab": 61498,
+    "price": "$79.947"
+  },
+  {
+    "code": "CATP",
+    "name": "CATECOLAMINAS PLASMATICAS",
+    "suggested_price_from_lab": 10128,
+    "price": "$13.166"
+  },
+  {
+    "code": "CATP",
+    "name": "CATECOLAMINAS TOTALES-Orina",
+    "suggested_price_from_lab": 11034,
+    "price": "$14.344"
+  },
+  {
+    "code": "CD16",
+    "name": "CD 16 SUBPOBLAC. LINFOCITARIA POR CF",
+    "suggested_price_from_lab": 6729,
+    "price": "$8.748"
+  },
+  {
+    "code": "CD19",
+    "name": "CD 19 SUBPOBLAC. LINFOCITARIA Citometria de fluj",
+    "suggested_price_from_lab": 8743,
+    "price": "$11.366"
+  },
+  {
+    "code": "CD20",
+    "name": "CD 20 SUBPOBLAC. LINFOCITARIA Citometria de fluj",
+    "suggested_price_from_lab": 6732,
+    "price": "$8.751"
+  },
+  {
+    "code": "CD3",
+    "name": "CD 3 SUBPOBLACION LINFOCITARIA POR CF",
+    "suggested_price_from_lab": 6732,
+    "price": "$8.751"
+  },
+  {
+    "code": "CD57",
+    "name": "CD 4 SUBPOBLAC. LINFOCITARIA Citometria de fluj",
+    "suggested_price_from_lab": 6732,
+    "price": "$8.751"
+  },
+  {
+    "code": "CD4",
+    "name": "CD 4 SUBPOBLACION LINFOCITARIA POR CF",
+    "suggested_price_from_lab": 6732,
+    "price": "$8.751"
+  },
+  {
+    "code": "CD56",
+    "name": "CD 56 SUBPOBLAC. LINFOCITARIA POR CF",
+    "suggested_price_from_lab": 5482,
+    "price": "$7.127"
+  },
+  {
+    "code": "CD8",
+    "name": "CD 8 SUBPOBLAC. LINFOCITARIA Citometria de fluj",
+    "suggested_price_from_lab": 5330,
+    "price": "$6.929"
+  },
+  {
+    "code": "CEA",
+    "name": "CEA ANTIG CARCINOEMBRIONARIO",
+    "suggested_price_from_lab": 894,
+    "price": "$1.162"
+  },
+  {
+    "code": "CHAT",
+    "name": "CHAGAS ANTIC. TOTALES",
+    "suggested_price_from_lab": 515,
+    "price": "$669"
+  },
+  {
+    "code": "CHI",
+    "name": "CHAGAS IFI IgG",
+    "suggested_price_from_lab": 1311,
+    "price": "$1.704"
+  },
+  {
+    "code": "CHM",
+    "name": "CHAGAS IFI IgM",
+    "suggested_price_from_lab": 1761,
+    "price": "$2.290"
+  },
+  {
+    "code": "CHH",
+    "name": "CHAGAS POR HEMAGLUTINACION IND HAI",
+    "suggested_price_from_lab": 1366,
+    "price": "$1.775"
+  },
+  {
+    "code": "CLNE G",
+    "name": "CHLAMYDIA PNEUMONIAE  IgG",
+    "suggested_price_from_lab": 3432,
+    "price": "$4.462"
+  },
+  {
+    "code": "CLNE M",
+    "name": "CHLAMYDIA PNEUMONIAE  IgM",
+    "suggested_price_from_lab": 3432,
+    "price": "$4.462"
+  },
+  {
+    "code": "CLPS G",
+    "name": "CHLAMYDIA PSITACCI  IgG",
+    "suggested_price_from_lab": 3691,
+    "price": "$4.798"
+  },
+  {
+    "code": "CLPS M",
+    "name": "CHLAMYDIA PSITACCI  IgM",
+    "suggested_price_from_lab": 4948,
+    "price": "$6.432"
+  },
+  {
+    "code": "CLTR A",
+    "name": "CHLAMYDIA TRACHOMATIS  IgA",
+    "suggested_price_from_lab": 7897,
+    "price": "$10.266"
+  },
+  {
+    "code": "CLTR G",
+    "name": "CHLAMYDIA TRACHOMATIS  IgG",
+    "suggested_price_from_lab": 3432,
+    "price": "$4.462"
+  },
+  {
+    "code": "CLTR M",
+    "name": "CHLAMYDIA TRACHOMATIS  IgM",
+    "suggested_price_from_lab": 3432,
+    "price": "$4.462"
+  },
+  {
+    "code": "CLTR Ag",
+    "name": "CHLAMYDIA TRACHOMATIS Antigeno",
+    "suggested_price_from_lab": 25191,
+    "price": "$32.749"
+  },
+  {
+    "code": "CCL",
+    "name": "CICLOSPORINA",
+    "suggested_price_from_lab": 9862,
+    "price": "$12.820"
+  },
+  {
+    "code": "CIS",
+    "name": "CISTINURIA",
+    "suggested_price_from_lab": 3560,
+    "price": "$4.629"
+  },
+  {
+    "code": "CMV G",
+    "name": "CITOMEGALOVIRUS ANTIC. IgG",
+    "suggested_price_from_lab": 1101,
+    "price": "$1.431"
+  },
+  {
+    "code": "CMV M",
+    "name": "CITOMEGALOVIRUS ANTIC. IgM",
+    "suggested_price_from_lab": 1101,
+    "price": "$1.431"
+  },
+  {
+    "code": "CMV A",
+    "name": "CITOMEGALOVIRUS ANTICUERPO ANTI",
+    "suggested_price_from_lab": 1656,
+    "price": "$2.152"
+  },
+  {
+    "code": "CMV PCR",
+    "name": "CITOMEGALOVIRUS-ADN",
+    "suggested_price_from_lab": 43508,
+    "price": "$56.561"
+  },
+  {
+    "code": "CIT",
+    "name": "CITRICO ACIDO Orina",
+    "suggested_price_from_lab": 1501,
+    "price": "$1.951"
+  },
+  {
+    "code": "CITRICO",
+    "name": "CITRICO ACIDO Suero",
+    "suggested_price_from_lab": 902,
+    "price": "$1.172"
+  },
+  {
+    "code": "ACS",
+    "name": "CITRICO ACIDO en plasma seminal",
+    "suggested_price_from_lab": 5618,
+    "price": "$7.304"
+  },
+  {
+    "code": "CBN",
+    "name": "CLOBAZAN",
+    "suggested_price_from_lab": 4762,
+    "price": "$6.190"
+  },
+  {
+    "code": "CNZ",
+    "name": "CLONAZEPAN",
+    "suggested_price_from_lab": 7396,
+    "price": "$9.615"
+  },
+  {
+    "code": "CLO",
+    "name": "CLORO PLASMATICO",
+    "suggested_price_from_lab": 283,
+    "price": "$368"
+  },
+  {
+    "code": "CLOS",
+    "name": "CLOSTRIDIUM DIFFICILE TOXINA A+B INVEST.DE",
+    "suggested_price_from_lab": 6809,
+    "price": "$8.852"
+  },
+  {
+    "code": "CLOZAP",
+    "name": "CLOZAPINA DETERMINACION DE",
+    "suggested_price_from_lab": 8779,
+    "price": "$11.413"
+  },
+  {
+    "code": "COA",
+    "name": "COAGULOGRAMA BASICO",
+    "suggested_price_from_lab": 917,
+    "price": "$1.192"
+  },
+  {
+    "code": "CU",
+    "name": "COBRE EN SANGRE",
+    "suggested_price_from_lab": 11936,
+    "price": "$15.517"
+  },
+  {
+    "code": "CU-A",
+    "name": "COBRE en agua",
+    "suggested_price_from_lab": 5692,
+    "price": "$7.400"
+  },
+  {
+    "code": "CU-U",
+    "name": "COBRE en orina",
+    "suggested_price_from_lab": 11933,
+    "price": "$15.513"
+  },
+  {
+    "code": "COCAINA",
+    "name": "COCAINA en orina",
+    "suggested_price_from_lab": 1685,
+    "price": "$2.190"
+  },
+  {
+    "code": "COFACTOR",
+    "name": "COFACTOR DE RISTOCETINA",
+    "suggested_price_from_lab": 9736,
+    "price": "$12.657"
+  },
+  {
+    "code": "HDL",
+    "name": "COLESTEROL HDL",
+    "suggested_price_from_lab": 277,
+    "price": "$360"
+  },
+  {
+    "code": "LDL",
+    "name": "COLESTEROL LDL",
+    "suggested_price_from_lab": 167,
+    "price": "$217"
+  },
+  {
+    "code": "COL",
+    "name": "COLESTEROL TOTAL",
+    "suggested_price_from_lab": 330,
+    "price": "$429"
+  },
+  {
+    "code": "VLD",
+    "name": "COLESTEROL VLDL",
+    "suggested_price_from_lab": 193,
+    "price": "$251"
+  },
+  {
+    "code": "COE",
+    "name": "COLINESTERASA ERITROCITARIA",
+    "suggested_price_from_lab": 1124,
+    "price": "$1.461"
+  },
+  {
+    "code": "C50",
+    "name": "COMPLEMENTO Actividad total (CH50)",
+    "suggested_price_from_lab": 1291,
+    "price": "$1.678"
+  },
+  {
+    "code": "C1T",
+    "name": "COMPLEMENTO C1 TOTAL (q+r+s)",
+    "suggested_price_from_lab": 5714,
+    "price": "$7.428"
+  },
+  {
+    "code": "C1Q",
+    "name": "COMPLEMENTO C1Q",
+    "suggested_price_from_lab": 9893,
+    "price": "$12.861"
+  },
+  {
+    "code": "C3",
+    "name": "COMPLEMENTO INMUNOQ. C3",
+    "suggested_price_from_lab": 594,
+    "price": "$772"
+  },
+  {
+    "code": "C4",
+    "name": "COMPLEMENTO INMUNOQ. C4",
+    "suggested_price_from_lab": 594,
+    "price": "$772"
+  },
+  {
+    "code": "CBI",
+    "name": "COOMBS AGLUTININAS ANTI Rh",
+    "suggested_price_from_lab": 604,
+    "price": "$786"
+  },
+  {
+    "code": "CBD",
+    "name": "COOMBS DIRECTA PRUEBA",
+    "suggested_price_from_lab": 508,
+    "price": "$660"
+  },
+  {
+    "code": "CMF",
+    "name": "COPROCULTIVO",
+    "suggested_price_from_lab": 991,
+    "price": "$1.288"
+  },
+  {
+    "code": "CPO",
+    "name": "COPROPORFIRINAS en orina",
+    "suggested_price_from_lab": 4568,
+    "price": "$5.939"
+  },
+  {
+    "code": "COR",
+    "name": "CORTISOL PLASMATICO",
+    "suggested_price_from_lab": 761,
+    "price": "$989"
+  },
+  {
+    "code": "COR-S",
+    "name": "CORTISOL SALIVAL",
+    "suggested_price_from_lab": 1119,
+    "price": "$1.455"
+  },
+  {
+    "code": "COR-U",
+    "name": "CORTISOL URINARIO",
+    "suggested_price_from_lab": 761,
+    "price": "$989"
+  },
+  {
+    "code": "COR-V",
+    "name": "CORTISOL VESPERTINO",
+    "suggested_price_from_lab": 759,
+    "price": "$987"
+  },
+  {
+    "code": "COX B G",
+    "name": "COXSACKIE B1-2-3-4-5-6 (IgG)",
+    "suggested_price_from_lab": 8653,
+    "price": "$11.249"
+  },
+  {
+    "code": "COX B M",
+    "name": "COXSACKIE B1-2-3-4-5-6 (M)",
+    "suggested_price_from_lab": 7251,
+    "price": "$9.427"
+  },
+  {
+    "code": "CKM",
+    "name": "CPK-MB",
+    "suggested_price_from_lab": 1056,
+    "price": "$1.373"
+  },
+  {
+    "code": "CDC",
+    "name": "CREATININA CLEARENCE O DEPURAC.",
+    "suggested_price_from_lab": 551,
+    "price": "$716"
+  },
+  {
+    "code": "AS-CR-U",
+    "name": "CREATININA en orina",
+    "suggested_price_from_lab": 277,
+    "price": "$360"
+  },
+  {
+    "code": "CRE",
+    "name": "CREATININA en sangre",
+    "suggested_price_from_lab": 277,
+    "price": "$360"
+  },
+  {
+    "code": "CPK",
+    "name": "CREATINQUINASA CPK",
+    "suggested_price_from_lab": 624,
+    "price": "$811"
+  },
+  {
+    "code": "CRG",
+    "name": "CRIOGLOBULINAS",
+    "suggested_price_from_lab": 1143,
+    "price": "$1.486"
+  },
+  {
+    "code": "CRO-U",
+    "name": "CROMO en Orina",
+    "suggested_price_from_lab": 8320,
+    "price": "$10.816"
+  },
+  {
+    "code": "CROMO",
+    "name": "CROMO en Sangre",
+    "suggested_price_from_lab": 8320,
+    "price": "$10.816"
+  },
+  {
+    "code": "CROSS",
+    "name": "CROSS MATCH MATRIMONIAL",
+    "suggested_price_from_lab": 88486,
+    "price": "$115.032"
+  },
+  {
+    "code": "CRYPTO",
+    "name": "CRYPTOCOCCUS NEOFORMANS",
+    "suggested_price_from_lab": 2840,
+    "price": "$3.692"
+  },
+  {
+    "code": "CALCSAL",
+    "name": "Calculo Salival",
+    "suggested_price_from_lab": 7232,
+    "price": "$9.402"
+  },
+  {
+    "code": "COV",
+    "name": "Coronavirus SARS CoV2 (ARN)",
+    "suggested_price_from_lab": 24270,
+    "price": "$31.552"
+  },
+  {
+    "code": "CRUE",
+    "name": "Creatinina en orina espontanea",
+    "suggested_price_from_lab": 276,
+    "price": "$358"
+  },
+  {
+    "code": "DHEAS",
+    "name": "DEHIDROEPIANDROSTERONA",
+    "suggested_price_from_lab": 5649,
+    "price": "$7.343"
+  },
+  {
+    "code": "ALA C",
+    "name": "DELTA AMINO-LEVULINICO ACIDO",
+    "suggested_price_from_lab": 3137,
+    "price": "$4.079"
+  },
+  {
+    "code": "DEN G",
+    "name": "DENGUE ANTICUERPO IgG",
+    "suggested_price_from_lab": 5148,
+    "price": "$6.693"
+  },
+  {
+    "code": "DEN M",
+    "name": "DENGUE ANTICUERPO IgM",
+    "suggested_price_from_lab": 6792,
+    "price": "$8.830"
+  },
+  {
+    "code": "DMD",
+    "name": "DIMERO \"D",
+    "suggested_price_from_lab": 6328,
+    "price": "$8.226"
+  },
+  {
+    "code": "DOP",
+    "name": "DOPAMINA PLASMATICA",
+    "suggested_price_from_lab": 6169,
+    "price": "$8.019"
+  },
+  {
+    "code": "DOO",
+    "name": "DOPAMINA TOTAL O LIBRE orina",
+    "suggested_price_from_lab": 3560,
+    "price": "$4.629"
+  },
+  {
+    "code": "ANG",
+    "name": "ENZIMA CONVERTIDORA DE ANGIOTENSINA (ECA)",
+    "suggested_price_from_lab": 8516,
+    "price": "$11.070"
+  },
+  {
+    "code": "EB VCA G",
+    "name": "EPSTEIN BARR Ac. VCA IgG CAPSIDE",
+    "suggested_price_from_lab": 1027,
+    "price": "$1.335"
+  },
+  {
+    "code": "EB VCA M",
+    "name": "EPSTEIN BARR Ac. VCA IgM CAPSIDE",
+    "suggested_price_from_lab": 1027,
+    "price": "$1.335"
+  },
+  {
+    "code": "EBNA G",
+    "name": "EPSTEIN BARR EARLY ANTIGEN Ac.IgG",
+    "suggested_price_from_lab": 4931,
+    "price": "$6.410"
+  },
+  {
+    "code": "EPY",
+    "name": "ERITROPOYETINA",
+    "suggested_price_from_lab": 2702,
+    "price": "$3.513"
+  },
+  {
+    "code": "ERI",
+    "name": "ERITROSEDIMENTACION",
+    "suggested_price_from_lab": 137,
+    "price": "$178"
+  },
+  {
+    "code": "ESPC",
+    "name": "ESPERMOCULTIVO",
+    "suggested_price_from_lab": 1431,
+    "price": "$1.860"
+  },
+  {
+    "code": "ESP",
+    "name": "ESPERMOGRAMA",
+    "suggested_price_from_lab": 1651,
+    "price": "$2.146"
+  },
+  {
+    "code": "E2",
+    "name": "ESTRADIOL PLASMASTICO",
+    "suggested_price_from_lab": 717,
+    "price": "$932"
+  },
+  {
+    "code": "ALC",
+    "name": "ETANOL TOXICO EN SANGRE",
+    "suggested_price_from_lab": 940,
+    "price": "$1.222"
+  },
+  {
+    "code": "DOMI",
+    "name": "EXTRACCION a DOMICILIO",
+    "suggested_price_from_lab": 2417,
+    "price": "$3.142"
+  },
+  {
+    "code": "ANAL-EX",
+    "name": "EXUDADO ANAL",
+    "suggested_price_from_lab": 1101,
+    "price": "$1.431"
+  },
+  {
+    "code": "ENF",
+    "name": "EXUDADO DE FAUCES",
+    "suggested_price_from_lab": 1001,
+    "price": "$1.301"
+  },
+  {
+    "code": "FC2",
+    "name": "FACTOR II de coagulacion",
+    "suggested_price_from_lab": 1506,
+    "price": "$1.958"
+  },
+  {
+    "code": "FC9",
+    "name": "FACTOR IX de coagulacion",
+    "suggested_price_from_lab": 2502,
+    "price": "$3.252"
+  },
+  {
+    "code": "FC5",
+    "name": "FACTOR V de coagulacion",
+    "suggested_price_from_lab": 2502,
+    "price": "$3.252"
+  },
+  {
+    "code": "FC7",
+    "name": "FACTOR VII de coagulacion",
+    "suggested_price_from_lab": 2502,
+    "price": "$3.252"
+  },
+  {
+    "code": "FC8",
+    "name": "FACTOR VIII de coagulacion",
+    "suggested_price_from_lab": 2502,
+    "price": "$3.252"
+  },
+  {
+    "code": "FC10",
+    "name": "FACTOR X de coagulacion",
+    "suggested_price_from_lab": 2502,
+    "price": "$3.252"
+  },
+  {
+    "code": "FC13",
+    "name": "FACTOR XIII DE COAGULACION",
+    "suggested_price_from_lab": 42759,
+    "price": "$55.587"
+  },
+  {
+    "code": "AFA",
+    "name": "FENIL ACETICO ACIDO",
+    "suggested_price_from_lab": 6937,
+    "price": "$9.018"
+  },
+  {
+    "code": "AFENO",
+    "name": "FENILGLIOXILICO ACIDO EN ORINA",
+    "suggested_price_from_lab": 4162,
+    "price": "$5.411"
+  },
+  {
+    "code": "FEB",
+    "name": "FENOBARBITAL",
+    "suggested_price_from_lab": 1204,
+    "price": "$1.565"
+  },
+  {
+    "code": "FER",
+    "name": "FERREMIA",
+    "suggested_price_from_lab": 410,
+    "price": "$533"
+  },
+  {
+    "code": "FET",
+    "name": "FERRITINA",
+    "suggested_price_from_lab": 1034,
+    "price": "$1.344"
+  },
+  {
+    "code": "FIB",
+    "name": "FIBRINOGENO EN SANGRE",
+    "suggested_price_from_lab": 321,
+    "price": "$418"
+  },
+  {
+    "code": "AFO",
+    "name": "FOLICO ACIDO",
+    "suggested_price_from_lab": 957,
+    "price": "$1.245"
+  },
+  {
+    "code": "AFO ERI",
+    "name": "FOLICO ACIDO ERITROCITARIO",
+    "suggested_price_from_lab": 1003,
+    "price": "$1.304"
+  },
+  {
+    "code": "AC FORM",
+    "name": "FORMICO ACIDO en ORINA",
+    "suggested_price_from_lab": 4339,
+    "price": "$5.640"
+  },
+  {
+    "code": "FAP",
+    "name": "FOSFATASA ACIDA PROSTATICA",
+    "suggested_price_from_lab": 357,
+    "price": "$464"
+  },
+  {
+    "code": "FAL",
+    "name": "FOSFATASA ALCALINA",
+    "suggested_price_from_lab": 264,
+    "price": "$343"
+  },
+  {
+    "code": "FAL-O",
+    "name": "FOSFATASA ALCALINA Osea",
+    "suggested_price_from_lab": 3275,
+    "price": "$4.258"
+  },
+  {
+    "code": "FOU",
+    "name": "FOSFATURIA",
+    "suggested_price_from_lab": 350,
+    "price": "$455"
+  },
+  {
+    "code": "FOS",
+    "name": "FOSFORO en sangre",
+    "suggested_price_from_lab": 350,
+    "price": "$455"
+  },
+  {
+    "code": "ALG",
+    "name": "FRUCTOSAMINA",
+    "suggested_price_from_lab": 517,
+    "price": "$672"
+  },
+  {
+    "code": "FSH",
+    "name": "FSH",
+    "suggested_price_from_lab": 660,
+    "price": "$859"
+  },
+  {
+    "code": "FTA",
+    "name": "FTA-ABS por IFI (ac. totales)",
+    "suggested_price_from_lab": 761,
+    "price": "$989"
+  },
+  {
+    "code": "GAs",
+    "name": "GASTRINA",
+    "suggested_price_from_lab": 1462,
+    "price": "$1.901"
+  },
+  {
+    "code": "GAS",
+    "name": "GASTRINA PLASMATICA-RIA",
+    "suggested_price_from_lab": 1059,
+    "price": "$1.376"
+  },
+  {
+    "code": "RGB",
+    "name": "GLOBULOS BLANCOS RECUENTO DE",
+    "suggested_price_from_lab": 220,
+    "price": "$286"
+  },
+  {
+    "code": "RGR",
+    "name": "GLOBULOS ROJOS RECUENTO DE",
+    "suggested_price_from_lab": 220,
+    "price": "$286"
+  },
+  {
+    "code": "GLU",
+    "name": "GLUCEMIA",
+    "suggested_price_from_lab": 220,
+    "price": "$286"
+  },
+  {
+    "code": "GPP",
+    "name": "GLUCEMIA POST PRANDIAL",
+    "suggested_price_from_lab": 517,
+    "price": "$672"
+  },
+  {
+    "code": "GGT",
+    "name": "GLUTAMIL TRANSPEPTIDASA GAMMA",
+    "suggested_price_from_lab": 364,
+    "price": "$473"
+  },
+  {
+    "code": "GON",
+    "name": "GONOCOCOS,Investigacion de",
+    "suggested_price_from_lab": 25242,
+    "price": "$32.815"
+  },
+  {
+    "code": "GRU",
+    "name": "GRUPO SANGUINEO",
+    "suggested_price_from_lab": 771,
+    "price": "$1.002"
+  },
+  {
+    "code": "HPY G",
+    "name": "HELICOBACTER PYLORI Elisa IgG",
+    "suggested_price_from_lab": 3510,
+    "price": "$4.563"
+  },
+  {
+    "code": "HPY M",
+    "name": "HELICOBACTER PYLORI Elisa IgM",
+    "suggested_price_from_lab": 4351,
+    "price": "$5.656"
+  },
+  {
+    "code": "CDS",
+    "name": "HEMOCULTIVO,AEROBIOS Y ANAEROB",
+    "suggested_price_from_lab": 15692,
+    "price": "$20.400"
+  },
+  {
+    "code": "HDH",
+    "name": "HEMOGLOBINA ELECTROFORESIS DE",
+    "suggested_price_from_lab": 3191,
+    "price": "$4.148"
+  },
+  {
+    "code": "HGY",
+    "name": "HEMOGLOBINA GLICOSILADA",
+    "suggested_price_from_lab": 827,
+    "price": "$1.075"
+  },
+  {
+    "code": "HEM",
+    "name": "HEMOGRAMA",
+    "suggested_price_from_lab": 314,
+    "price": "$408"
+  },
+  {
+    "code": "HAV ac G",
+    "name": "HEPAT. A  ANTIC.ANTI IgG",
+    "suggested_price_from_lab": 672,
+    "price": "$874"
+  },
+  {
+    "code": "HAV ac M",
+    "name": "HEPAT. A  ANTIC.ANTI IgM",
+    "suggested_price_from_lab": 926,
+    "price": "$1.203"
+  },
+  {
+    "code": "HAVAc-To",
+    "name": "HEPAT. A ANTICUERPOS TOTALES",
+    "suggested_price_from_lab": 911,
+    "price": "$1.184"
+  },
+  {
+    "code": "HBSAG",
+    "name": "HEPAT. B ANTIG. DE SUP (HBsAg)",
+    "suggested_price_from_lab": 1074,
+    "price": "$1.396"
+  },
+  {
+    "code": "HBC Ac G",
+    "name": "HEPAT. B Ag. CORE, Ac. IgG",
+    "suggested_price_from_lab": 1337,
+    "price": "$1.738"
+  },
+  {
+    "code": "HBC Ac M",
+    "name": "HEPAT. B Ag. CORE, Ac. IgM",
+    "suggested_price_from_lab": 1027,
+    "price": "$1.335"
+  },
+  {
+    "code": "HBS Ac",
+    "name": "HEPAT. B Ag. DE SUP  ANTIC.ANTI",
+    "suggested_price_from_lab": 754,
+    "price": "$980"
+  },
+  {
+    "code": "HB-CV",
+    "name": "HEPAT. B CARGA VIRAL",
+    "suggested_price_from_lab": 39750,
+    "price": "$51.675"
+  },
+  {
+    "code": "HCV G",
+    "name": "HEPAT. C ANTIC.ANTI IgG ELISA",
+    "suggested_price_from_lab": 919,
+    "price": "$1.194"
+  },
+  {
+    "code": "HBcAc-T",
+    "name": "HEPATITIS B - ANTIC ANTI CORE TOTAL",
+    "suggested_price_from_lab": 650,
+    "price": "$846"
+  },
+  {
+    "code": "HBCORE",
+    "name": "HEPATITIS B CORE IGG",
+    "suggested_price_from_lab": 1301,
+    "price": "$1.691"
+  },
+  {
+    "code": "HEP",
+    "name": "HEPATOGRAMA",
+    "suggested_price_from_lab": 584,
+    "price": "$759"
+  },
+  {
+    "code": "HV1 GE",
+    "name": "HERPES I ANTIC ANTI IGG ELISA",
+    "suggested_price_from_lab": 2183,
+    "price": "$2.837"
+  },
+  {
+    "code": "HV1 ME",
+    "name": "HERPES I ANTIC. ANTI IgM ELISA",
+    "suggested_price_from_lab": 2659,
+    "price": "$3.456"
+  },
+  {
+    "code": "HV1 G",
+    "name": "HERPES I ANTIC.ANTI IgG IFI",
+    "suggested_price_from_lab": 1268,
+    "price": "$1.648"
+  },
+  {
+    "code": "HV2 GE",
+    "name": "HERPES II ANTIC. ANTI IgG ELISA",
+    "suggested_price_from_lab": 2183,
+    "price": "$2.837"
+  },
+  {
+    "code": "HV2 ME",
+    "name": "HERPES II ANTIC. ANTI IgM ELISA",
+    "suggested_price_from_lab": 2659,
+    "price": "$3.456"
+  },
+  {
+    "code": "HV2 G",
+    "name": "HERPES II ANTIC.ANTI IgG IFI",
+    "suggested_price_from_lab": 2183,
+    "price": "$2.837"
+  },
+  {
+    "code": "AC HIP",
+    "name": "HIPURICO ACIDO",
+    "suggested_price_from_lab": 4387,
+    "price": "$5.703"
+  },
+  {
+    "code": "HIV CV",
+    "name": "HIV CARGA VIRAL",
+    "suggested_price_from_lab": 22749,
+    "price": "$29.574"
+  },
+  {
+    "code": "HIV",
+    "name": "HIV COMBO - Anticuerpos anti HIV + Antigeno P24",
+    "suggested_price_from_lab": 1101,
+    "price": "$1.431"
+  },
+  {
+    "code": "HMC",
+    "name": "HOMOCISTEINA en orina",
+    "suggested_price_from_lab": 2562,
+    "price": "$3.331"
+  },
+  {
+    "code": "HMS",
+    "name": "HOMOCISTEINA en sangre",
+    "suggested_price_from_lab": 2669,
+    "price": "$3.469"
+  },
+  {
+    "code": "AHO",
+    "name": "HOMOVANILICO ACIDO",
+    "suggested_price_from_lab": 6333,
+    "price": "$8.233"
+  },
+  {
+    "code": "AMH",
+    "name": "HORMONA ANTI MULLERIANA",
+    "suggested_price_from_lab": 9487,
+    "price": "$12.333"
+  },
+  {
+    "code": "ADH",
+    "name": "HORMONA ANTIDIURETICA",
+    "suggested_price_from_lab": 40228,
+    "price": "$52.297"
+  },
+  {
+    "code": "HUD",
+    "name": "HUDDLESSON REACCION DE",
+    "suggested_price_from_lab": 689,
+    "price": "$896"
+  },
+  {
+    "code": "IGA",
+    "name": "IGA cadena Alfa",
+    "suggested_price_from_lab": 417,
+    "price": "$542"
+  },
+  {
+    "code": "IGA NASA",
+    "name": "IGA en secrecion nasal",
+    "suggested_price_from_lab": 577,
+    "price": "$750"
+  },
+  {
+    "code": "IAS",
+    "name": "IGA secretoria",
+    "suggested_price_from_lab": 877,
+    "price": "$1.141"
+  },
+  {
+    "code": "IGE",
+    "name": "IGE",
+    "suggested_price_from_lab": 857,
+    "price": "$1.114"
+  },
+  {
+    "code": "R CAR V",
+    "name": "IGE ESPEC CARNE VACUNA",
+    "suggested_price_from_lab": 887,
+    "price": "$1.153"
+  },
+  {
+    "code": "R ABEJA",
+    "name": "IGE ESPECIFICA ABEJA",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "R ACARO",
+    "name": "IGE ESPECIFICA ACAROS",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "R A-SIRO",
+    "name": "IGE ESPECIFICA ACARUS SIRO",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "R AJI",
+    "name": "IGE ESPECIFICA AJI COLORADO",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "R ALAMO",
+    "name": "IGE ESPECIFICA ALAMO",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "R A LACT",
+    "name": "IGE ESPECIFICA ALFA-LACTOALBUMINA",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "R ALMEN",
+    "name": "IGE ESPECIFICA ALMENDRAS",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "R ALTER",
+    "name": "IGE ESPECIFICA ALTERNARIA",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "R AMARA",
+    "name": "IGE ESPECIFICA AMARANTUS",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "R AMBRO",
+    "name": "IGE ESPECIFICA AMBROSIA",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "R AMOXI",
+    "name": "IGE ESPECIFICA AMOXICILINA",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "R ARBOL",
+    "name": "IGE ESPECIFICA ARBOL",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "R ARBUST",
+    "name": "IGE ESPECIFICA ARBUSTO",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "R ARCE",
+    "name": "IGE ESPECIFICA ARCE",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "R ASP-NI",
+    "name": "IGE ESPECIFICA ARPERGILLUS NIGER",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "R ARTEMI",
+    "name": "IGE ESPECIFICA ARTEMISA",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "R ASPER",
+    "name": "IGE ESPECIFICA ASPERGILLUS",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "R ASP-FL",
+    "name": "IGE ESPECIFICA ASPERGILLUS FLAVUS",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "R ASP-FU",
+    "name": "IGE ESPECIFICA ASPERGILLUS FUMIGATUS",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "",
+    "name": "IGE ESPECIFICA ANANA",
+    "suggested_price_from_lab": 1700,
+    "price": "$2.210"
+  },
+  {
+    "code": "R AVENA",
+    "name": "IGE ESPECIFICA AVENA",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "R BANANA",
+    "name": "IGE ESPECIFICA BANANAS",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "R B LACT",
+    "name": "IGE ESPECIFICA BETA-LACTOGLOBULINA",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "R CACAO",
+    "name": "IGE ESPECIFICA CACAO",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "R CAMAR",
+    "name": "IGE ESPECIFICA CAMARON",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "R CANDI",
+    "name": "IGE ESPECIFICA CANDIDA ALBICANS",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "R CASEIN",
+    "name": "IGE ESPECIFICA CASEINA",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "R H-CLAR",
+    "name": "IGE ESPECIFICA CLARA DE HUEVO",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "R CAB-E",
+    "name": "IGE ESPECIFICA EPITELIO DE CABALLO",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "",
+    "name": "IGE ESPECIFICA FRUTILLAS",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "R LACTOA",
+    "name": "IGE ESPECIFICA LACTOALBUMINA",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "R LECHE",
+    "name": "IGE ESPECIFICA LECHE",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "",
+    "name": "IGE ESPECIFICA NUEZ",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "R OVO",
+    "name": "IGE ESPECIFICA OVOALBUMINA",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "R SOJA",
+    "name": "IGE ESPECIFICA SOJA",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "",
+    "name": "IGE ESPECIFICA TOMATE",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "",
+    "name": "IGE ESPECIFICOS OTROS",
+    "suggested_price_from_lab": 1700,
+    "price": "$2.210"
+  },
+  {
+    "code": "",
+    "name": "IGF-I   -  SOMATOMEDINA C",
+    "suggested_price_from_lab": 2847,
+    "price": "$3.702"
+  },
+  {
+    "code": "IGG",
+    "name": "IGG cadena GAMMA",
+    "suggested_price_from_lab": 430,
+    "price": "$559"
+  },
+  {
+    "code": "IGM",
+    "name": "IGM cadena MU",
+    "suggested_price_from_lab": 430,
+    "price": "$559"
+  },
+  {
+    "code": "INSUL",
+    "name": "INSULINA SERICA TOTAL",
+    "suggested_price_from_lab": 580,
+    "price": "$755"
+  },
+  {
+    "code": "ION",
+    "name": "IONOGRAMA PLASMATICO",
+    "suggested_price_from_lab": 307,
+    "price": "$399"
+  },
+  {
+    "code": "IOU",
+    "name": "IONOGRAMA URINARIO",
+    "suggested_price_from_lab": 367,
+    "price": "$477"
+  },
+  {
+    "code": "R PEN G",
+    "name": "IgE ESPECIFICA - PENICILINA G",
+    "suggested_price_from_lab": 1699,
+    "price": "$2.209"
+  },
+  {
+    "code": "COVEG",
+    "name": "IgG ANTI ESPIGA CUANTITATIVO (ABBOTT) SARS CoV-2 C",
+    "suggested_price_from_lab": 4641,
+    "price": "$6.033"
+  },
+  {
+    "code": "LDH",
+    "name": "LACTICO DEHIDROGENASA LDH",
+    "suggested_price_from_lab": 584,
+    "price": "$759"
+  },
+  {
+    "code": "LAM",
+    "name": "LAMOTRIGINA",
+    "suggested_price_from_lab": 5910,
+    "price": "$7.683"
+  },
+  {
+    "code": "",
+    "name": "LATEX ARTRITIS REUMATOIDEA CUANTITATIVO",
+    "suggested_price_from_lab": 410,
+    "price": "$533"
+  },
+  {
+    "code": "LMF",
+    "name": "LEUCOCITOS EN MATERIA FECAL",
+    "suggested_price_from_lab": 881,
+    "price": "$1.145"
+  },
+  {
+    "code": "LH",
+    "name": "LH HORMONA LUTEOTROFICA",
+    "suggested_price_from_lab": 634,
+    "price": "$824"
+  },
+  {
+    "code": "LIP",
+    "name": "LIPEMIA O LIPIDOS TOTALES EN SAN",
+    "suggested_price_from_lab": 424,
+    "price": "$551"
+  },
+  {
+    "code": "LIG",
+    "name": "LIPIDOGRAMA ELECTROFORETICO",
+    "suggested_price_from_lab": 550,
+    "price": "$715"
+  },
+  {
+    "code": "LPA",
+    "name": "LIPOPROTEINA A",
+    "suggested_price_from_lab": 2079,
+    "price": "$2.702"
+  },
+  {
+    "code": "LIT",
+    "name": "LITIO PLASMATICO",
+    "suggested_price_from_lab": 961,
+    "price": "$1.249"
+  },
+  {
+    "code": "ILU",
+    "name": "LUPICO ANTICOAGULANTE O INHIBIDOR",
+    "suggested_price_from_lab": 5898,
+    "price": "$7.667"
+  },
+  {
+    "code": "MGU",
+    "name": "MAGNESIO en orina",
+    "suggested_price_from_lab": 387,
+    "price": "$503"
+  },
+  {
+    "code": "MGS",
+    "name": "MAGNESIO en sangre",
+    "suggested_price_from_lab": 387,
+    "price": "$503"
+  },
+  {
+    "code": "AMANDE",
+    "name": "MANDELICO ACIDO",
+    "suggested_price_from_lab": 4157,
+    "price": "$5.405"
+  },
+  {
+    "code": "PPD",
+    "name": "MANTOUX INTRADERMORREACCION",
+    "suggested_price_from_lab": 1268,
+    "price": "$1.648"
+  },
+  {
+    "code": "MET",
+    "name": "METANEFRINA en orina",
+    "suggested_price_from_lab": 7747,
+    "price": "$10.071"
+  },
+  {
+    "code": "AC METIL",
+    "name": "METIL HIPURICO ACIDO  en ORINA",
+    "suggested_price_from_lab": 7251,
+    "price": "$9.427"
+  },
+  {
+    "code": "MIC1",
+    "name": "MICOLOGICO",
+    "suggested_price_from_lab": 937,
+    "price": "$1.219"
+  },
+  {
+    "code": "ALB-U2",
+    "name": "MICROALBUMINURIA (Orina 2 hs)",
+    "suggested_price_from_lab": 757,
+    "price": "$984"
+  },
+  {
+    "code": "ALB-U",
+    "name": "MICROALBUMINURIA - ALBUMINA EN ORINA",
+    "suggested_price_from_lab": 1211,
+    "price": "$1.574"
+  },
+  {
+    "code": "ALB-UE",
+    "name": "MICROALBUMINURIA EN ORINA ESPONTANEA",
+    "suggested_price_from_lab": 754,
+    "price": "$980"
+  },
+  {
+    "code": "AMAM2",
+    "name": "MITOCONDRIAL TIPO 2",
+    "suggested_price_from_lab": 2969,
+    "price": "$3.859"
+  },
+  {
+    "code": "MONO",
+    "name": "MONO TEST",
+    "suggested_price_from_lab": 387,
+    "price": "$503"
+  },
+  {
+    "code": "MYC",
+    "name": "MYCOPLASMA CULTIVO",
+    "suggested_price_from_lab": 5120,
+    "price": "$6.656"
+  },
+  {
+    "code": "ORI",
+    "name": "ORINA COMPLETA",
+    "suggested_price_from_lab": 334,
+    "price": "$434"
+  },
+  {
+    "code": "PMF",
+    "name": "PARAS. MAT FECAL",
+    "suggested_price_from_lab": 624,
+    "price": "$811"
+  },
+  {
+    "code": "PTH",
+    "name": "PARATHORMONA",
+    "suggested_price_from_lab": 687,
+    "price": "$893"
+  },
+  {
+    "code": "PARO G",
+    "name": "PAROTIDITIS ANTIC.ANTI IgG",
+    "suggested_price_from_lab": 8206,
+    "price": "$10.668"
+  },
+  {
+    "code": "PARO M",
+    "name": "PAROTIDITIS ANTIC.ANTI IgM",
+    "suggested_price_from_lab": 6872,
+    "price": "$8.933"
+  },
+  {
+    "code": "BNP",
+    "name": "PRO BNP",
+    "suggested_price_from_lab": 12448,
+    "price": "$16.183"
+  },
+  {
+    "code": "PRO CAL",
+    "name": "PROCALCITONINA",
+    "suggested_price_from_lab": 7384,
+    "price": "$9.600"
+  },
+  {
+    "code": "PG",
+    "name": "PROGESTERONA PLASMATICA",
+    "suggested_price_from_lab": 624,
+    "price": "$811"
+  },
+  {
+    "code": "PL",
+    "name": "PROLACTINA",
+    "suggested_price_from_lab": 377,
+    "price": "$490"
+  },
+  {
+    "code": "PROT C",
+    "name": "PROTEINA C FUNCIONAL",
+    "suggested_price_from_lab": 6514,
+    "price": "$8.468"
+  },
+  {
+    "code": "PCR",
+    "name": "PROTEINA C REACTIVA",
+    "suggested_price_from_lab": 1184,
+    "price": "$1.540"
+  },
+  {
+    "code": "PROS L",
+    "name": "PROTEINA S LIBRE",
+    "suggested_price_from_lab": 7102,
+    "price": "$9.232"
+  },
+  {
+    "code": "PRO",
+    "name": "PROTEINAS TOTALES",
+    "suggested_price_from_lab": 1184,
+    "price": "$1.540"
+  },
+  {
+    "code": "PRU",
+    "name": "PROTEINAS URINARIAS 12/24 hs",
+    "suggested_price_from_lab": 609,
+    "price": "$792"
+  },
+  {
+    "code": "PTG",
+    "name": "PROTEINOGRAMA",
+    "suggested_price_from_lab": 1184,
+    "price": "$1.540"
+  },
+  {
+    "code": 20210,
+    "name": "PROTOMBINA 20210",
+    "suggested_price_from_lab": 5642,
+    "price": "$7.334"
+  },
+  {
+    "code": "PRR",
+    "name": "PRUEBA DE ROSSE RAGAN",
+    "suggested_price_from_lab": 6679,
+    "price": "$8.682"
+  },
+  {
+    "code": "RPCA",
+    "name": "RESIST. A LA PROTEINA C ACTIVA",
+    "suggested_price_from_lab": 6679,
+    "price": "$8.682"
+  },
+  {
+    "code": "RET",
+    "name": "RETICULOCITOS",
+    "suggested_price_from_lab": 300,
+    "price": "$390"
+  },
+  {
+    "code": "RUG",
+    "name": "RUBEOLA ANTIC.ANTI IgG ELISA",
+    "suggested_price_from_lab": 794,
+    "price": "$1.032"
+  },
+  {
+    "code": "RUM",
+    "name": "RUBEOLA ANTIC.ANTI IgM ELISA",
+    "suggested_price_from_lab": 894,
+    "price": "$1.162"
+  },
+  {
+    "code": "SOM",
+    "name": "SANGRE OCULTA - MATERIA FECAL",
+    "suggested_price_from_lab": 734,
+    "price": "$954"
+  },
+  {
+    "code": "SAT",
+    "name": "SATURACION DE TRANSFERRINA",
+    "suggested_price_from_lab": 708,
+    "price": "$921"
+  },
+  {
+    "code": "SEL",
+    "name": "SELENIO",
+    "suggested_price_from_lab": 9567,
+    "price": "$12.437"
+  },
+  {
+    "code": "SER",
+    "name": "SEROTONINA",
+    "suggested_price_from_lab": 8612,
+    "price": "$11.196"
+  },
+  {
+    "code": "SER-O",
+    "name": "SEROTONINA EN ORINA DE 24HS",
+    "suggested_price_from_lab": 10901,
+    "price": "$14.172"
+  },
+  {
+    "code": "HGH",
+    "name": "SOMATOTROFINA",
+    "suggested_price_from_lab": 964,
+    "price": "$1.253"
+  },
+  {
+    "code": "BHCG",
+    "name": "SUB UNIDAD BETA DE GONAD.CORION.",
+    "suggested_price_from_lab": 1501,
+    "price": "$1.951"
+  },
+  {
+    "code": "SBS",
+    "name": "SUB UNIDAD BETA LIBRE DE HCG",
+    "suggested_price_from_lab": 734,
+    "price": "$954"
+  },
+  {
+    "code": "DHEAS",
+    "name": "SULFATO DEHIDROEPIANDROSTERONA",
+    "suggested_price_from_lab": 846,
+    "price": "$1.100"
+  },
+  {
+    "code": "T3",
+    "name": "T3 - TRIIODOTIRONINA",
+    "suggested_price_from_lab": 801,
+    "price": "$1.041"
+  },
+  {
+    "code": "T3L",
+    "name": "T3 LIBRE",
+    "suggested_price_from_lab": 1211,
+    "price": "$1.574"
+  },
+  {
+    "code": "T4",
+    "name": "T4 - TIROXINA TOTAL",
+    "suggested_price_from_lab": 394,
+    "price": "$512"
+  },
+  {
+    "code": "T4L",
+    "name": "T4 LIBRE",
+    "suggested_price_from_lab": 801,
+    "price": "$1.041"
+  },
+  {
+    "code": "ACC",
+    "name": "TENIA  (taenia) SOLIUM ANTIC ANTI (CYSTECERCUS)",
+    "suggested_price_from_lab": 8878,
+    "price": "$11.542"
+  },
+  {
+    "code": "GHM",
+    "name": "TEST DE GRAHAM",
+    "suggested_price_from_lab": 550,
+    "price": "$715"
+  },
+  {
+    "code": "TEB",
+    "name": "TESTOSTERONA BIODISPONIBLE",
+    "suggested_price_from_lab": 1678,
+    "price": "$2.181"
+  },
+  {
+    "code": "TEL",
+    "name": "TESTOSTERONA LIBRE en suero",
+    "suggested_price_from_lab": 1047,
+    "price": "$1.362"
+  },
+  {
+    "code": "TES",
+    "name": "TESTOSTERONA PLASMATICA",
+    "suggested_price_from_lab": 717,
+    "price": "$932"
+  },
+  {
+    "code": "TG",
+    "name": "TIROGLOBULINA",
+    "suggested_price_from_lab": 1721,
+    "price": "$2.238"
+  },
+  {
+    "code": "TXG",
+    "name": "TOXOPLASMOSIS ANTIC. IgG",
+    "suggested_price_from_lab": 761,
+    "price": "$989"
+  },
+  {
+    "code": "TX-AVI",
+    "name": "TOXOPLASMOSIS ANTIC.ANTI IgG AVIDEZ",
+    "suggested_price_from_lab": 3904,
+    "price": "$5.075"
+  },
+  {
+    "code": "TXM",
+    "name": "TOXOPLASMOSIS IgM-IFI REMINGTON T.DE",
+    "suggested_price_from_lab": 1541,
+    "price": "$2.003"
+  },
+  {
+    "code": "TGO",
+    "name": "TRANSAMINASA GLUTAMICO OXALACETICA",
+    "suggested_price_from_lab": 277,
+    "price": "$360"
+  },
+  {
+    "code": "TGP",
+    "name": "TRANSAMINASA GLUTAMINASA PIRIVICA",
+    "suggested_price_from_lab": 277,
+    "price": "$360"
+  },
+  {
+    "code": "TRA",
+    "name": "TRANSFERRINA",
+    "suggested_price_from_lab": 570,
+    "price": "$742"
+  },
+  {
+    "code": "BCL2/IGH",
+    "name": "TRANSLOCACION BCL-2/IgH",
+    "suggested_price_from_lab": 97925,
+    "price": "$127.303"
+  },
+  {
+    "code": "BCR/ABL",
+    "name": "TRANSLOCACION BCR/ABL",
+    "suggested_price_from_lab": 21754,
+    "price": "$28.280"
+  },
+  {
+    "code": "ATA",
+    "name": "TRICLOROACETICO ACIDO",
+    "suggested_price_from_lab": 3560,
+    "price": "$4.629"
+  },
+  {
+    "code": "TGL",
+    "name": "TRIGLICERIDOS",
+    "suggested_price_from_lab": 414,
+    "price": "$538"
+  },
+  {
+    "code": "KPT",
+    "name": "TROMBOPLASTINA,TIEMPO DE",
+    "suggested_price_from_lab": 387,
+    "price": "$503"
+  },
+  {
+    "code": "TROPO",
+    "name": "TROPONINA T (Tn-T)",
+    "suggested_price_from_lab": 3469,
+    "price": "$4.509"
+  },
+  {
+    "code": "TSH",
+    "name": "TSH - TIROTROFINA PLASMATICA",
+    "suggested_price_from_lab": 761,
+    "price": "$989"
+  },
+  {
+    "code": "CDU",
+    "name": "UREA, CLEARENCE DE",
+    "suggested_price_from_lab": 421,
+    "price": "$547"
+  },
+  {
+    "code": "UUREAL",
+    "name": "UREAPLASMA UREALITICUM CULT.",
+    "suggested_price_from_lab": 3936,
+    "price": "$5.117"
+  },
+  {
+    "code": "URE",
+    "name": "UREMIA",
+    "suggested_price_from_lab": 210,
+    "price": "$273"
+  },
+  {
+    "code": "AUR",
+    "name": "URICO ACIDO",
+    "suggested_price_from_lab": 300,
+    "price": "$390"
+  },
+  {
+    "code": "AUUE",
+    "name": "URICO ACIDO  EN ORINA OCASIONAL",
+    "suggested_price_from_lab": 300,
+    "price": "$390"
+  },
+  {
+    "code": "AUU2",
+    "name": "URICO ACIDO  en orina de 2 hs.",
+    "suggested_price_from_lab": 300,
+    "price": "$390"
+  },
+  {
+    "code": "AUU",
+    "name": "URICO ACIDO orina",
+    "suggested_price_from_lab": 300,
+    "price": "$390"
+  },
+  {
+    "code": "UROC",
+    "name": "UROCULTIVO",
+    "suggested_price_from_lab": 991,
+    "price": "$1.288"
+  },
+  {
+    "code": "VDR",
+    "name": "V.D.R.L. CUALITATIVA",
+    "suggested_price_from_lab": 387,
+    "price": "$503"
+  },
+  {
+    "code": "VDC",
+    "name": "V.D.R.L. CUANTITATIVA",
+    "suggested_price_from_lab": 470,
+    "price": "$611"
+  },
+  {
+    "code": "FVTIP+",
+    "name": "VAGINAL FLUJO C/TIP + Y ANTIBIOG.",
+    "suggested_price_from_lab": 1101,
+    "price": "$1.431"
+  },
+  {
+    "code": "AVM",
+    "name": "VAINILLIN MANDELICO ACIDO",
+    "suggested_price_from_lab": 7529,
+    "price": "$9.788"
+  },
+  {
+    "code": "VAL",
+    "name": "VALPROICO ACIDO",
+    "suggested_price_from_lab": 1181,
+    "price": "$1.535"
+  },
+  {
+    "code": "VARI G",
+    "name": "VARICELA ANTIC.ANTI IgG IFI",
+    "suggested_price_from_lab": 4513,
+    "price": "$5.867"
+  },
+  {
+    "code": "VARI M",
+    "name": "VARICELA ANTIC.ANTI IgM IFI",
+    "suggested_price_from_lab": 3621,
+    "price": "$4.707"
+  },
+  {
+    "code": "BK DNA",
+    "name": "VIRUS BK DNA (PCR)",
+    "suggested_price_from_lab": 22479,
+    "price": "$29.223"
+  },
+  {
+    "code": "VB1",
+    "name": "VITAMINA B1 - TIAMINA",
+    "suggested_price_from_lab": 3147,
+    "price": "$4.091"
+  },
+  {
+    "code": "B12",
+    "name": "VITAMINA B12",
+    "suggested_price_from_lab": 974,
+    "price": "$1.266"
+  },
+  {
+    "code": "VB6",
+    "name": "VITAMINA B6 - PIRIDOXINA",
+    "suggested_price_from_lab": 10067,
+    "price": "$13.088"
+  },
+  {
+    "code": "VIC",
+    "name": "VITAMINA C - ACIDO ASCORBICO",
+    "suggested_price_from_lab": 9301,
+    "price": "$12.091"
+  },
+  {
+    "code": "V25",
+    "name": "VITAMINA D3, 25 HIDROXI",
+    "suggested_price_from_lab": 3439,
+    "price": "$4.471"
+  },
+  {
+    "code": "ZIN",
+    "name": "ZINC SERICO",
+    "suggested_price_from_lab": 5243,
+    "price": "$6.816"
+  }
+]
