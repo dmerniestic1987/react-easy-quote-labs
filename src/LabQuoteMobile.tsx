@@ -36,7 +36,7 @@ export default function LabQuoteMobile() {
   };
   return (
     <Container maxWidth="xl">
-      <LabHeader title={'Centro Médico Vida y Fortaleza'} subTitle={'Cotizaciones de Laboratorios'} />
+      <LabHeader title={'CEMEVYF - Vida y Fortaleza'} subTitle={'Cotizaciones de Laboratorios'} />
       <LabTableMobile
             rowSelectionModel={rowSelectionModel}
             setSelectedLabItems={setSelectedLabs}
