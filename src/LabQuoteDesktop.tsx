@@ -37,13 +37,13 @@ export default function LabQuoteDesktop() {
   };
   return (
     <Container maxWidth="xl">
-      <LabHeader title={'Centro Médico Vida y Fortaleza'} subTitle={'Cotizaciones de Laboratorios'} />
+      <LabHeader title={'CEMEVYF - Vida y Fortaleza'} subTitle={'Cotizaciones - Laboratorios Agosto 2024'} />
       <Grid container spacing={2} sx={{
           justifyContent: 'center',
           alignItems: 'center',
           my: 2,
       }}>
-          <Grid xs={7}>
+          <Grid xs={6}>
               <LabTableDesktop
                   rowSelectionModel={rowSelectionModel}
                   setSelectedLabItems={setSelectedLabs}
@@ -54,7 +54,7 @@ export default function LabQuoteDesktop() {
                                      deleteSelectedLabItem={deleteSelectedLabItem}
                                      deleteSelectedRowSelectionModel={deleteSelectedRowSelectionModel}/>
           </Grid>
-          <TotalQuote xs={11} description={'Total Sugerido'} totalQuote={suggestedTotal.toFormat(0)}/>
+          <TotalQuote xs={10} description={'Total Sugerido'} totalQuote={suggestedTotal.toFormat(0)}/>
       </Grid>
     </Container>
   );

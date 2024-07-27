@@ -1,8 +1,5 @@
 import * as React from 'react';
 import Container from '@mui/material/Container';
-import LabTableDesktop from "../src/LabTableDesktop";
-import Grid from "@mui/system/Unstable_Grid";
-import LabMiniSummaryDesktop from "../src/LabMiniSummaryDesktop";
 import LabCalculator, {LabItem} from "../src/services/lab-calculator";
 import {useState} from "react";
 import {GridRowSelectionModel} from "@mui/x-data-grid";
@@ -39,7 +36,7 @@ export default function LabQuoteMobile() {
   };
   return (
     <Container maxWidth="xl">
-      <LabHeader title={'Centro Médico Vida y Fortaleza'} subTitle={'Cotizaciones de Laboratorios'} />
+      <LabHeader title={'CEMEVYF: Agosto 2024'} subTitle={'Cotizaciones de Laboratorios'} />
       <LabTableMobile
             rowSelectionModel={rowSelectionModel}
             setSelectedLabItems={setSelectedLabs}

@@ -7,7 +7,7 @@ export default function TotalQuote(props: any) {
       <Alert sx={{
         display: 'flex', justifyContent: 'center', alignItems: 'center',
       }} severity="info" >
-          <Typography variant="h5" component="h1" gutterBottom align="center">
+          <Typography variant="h5" gutterBottom align="center">
               {props.description}: $ {props.totalQuote}
           </Typography>
       </Alert>
