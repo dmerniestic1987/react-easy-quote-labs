@@ -37,7 +37,7 @@ export default function LabQuoteDesktop() {
   };
   return (
     <Container maxWidth="xl">
-      <LabHeader title={'CEMEVYF - Centro Médico'} subTitle={'Cotizaciones de Laboratorios Julio 2024'} />
+      <LabHeader title={'CEMEVYF - Vida y Fortaleza'} subTitle={'Cotizaciones - Laboratorios Agosto 2024'} />
       <Grid container spacing={2} sx={{
           justifyContent: 'center',
           alignItems: 'center',
