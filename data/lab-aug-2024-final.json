@@ -630,12 +630,6 @@
     "price": "$10.531"
   },
   {
-    "code": "CLTR A",
-    "name": "CHLAMYDIA TRACHOMATIS  IgA",
-    "suggested_price_from_lab": "CONSULTAR",
-    "price": "#VALUE!"
-  },
-  {
     "code": "CLTR G",
     "name": "CHLAMYDIA TRACHOMATIS  IgG",
     "suggested_price_from_lab": 7021,
