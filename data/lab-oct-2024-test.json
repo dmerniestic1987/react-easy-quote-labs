@@ -372,6 +372,12 @@
     "price": "$17.372"
   },
   {
+    "code": "ACRA",
+    "name": "ANTICUERPOS ANTI RECEPTOR DE ACETILCOLINA",
+    "suggested_price_from_lab": 15060,
+    "price": "$24.096"
+  },
+  {
     "code": "ASO",
     "name": "ANTIESTREPTOLISINA \"O",
     "suggested_price_from_lab": 1848,
