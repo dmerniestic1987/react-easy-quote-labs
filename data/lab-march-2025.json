@@ -54,6 +54,12 @@
     "price": "$200.904"
   },
   {
+    "code": "ALB",
+    "name": "ALBUMINA",
+    "suggested_price_from_lab": 8000,
+    "price": "$12.800"
+  },
+  {
     "code": "ALC O",
     "name": "ALCOHOL EN ORINA",
     "suggested_price_from_lab": 7039,
