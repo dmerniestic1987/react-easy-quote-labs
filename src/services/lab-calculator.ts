@@ -1,5 +1,5 @@
 import BigNumber from 'bignumber.js';
-import labItemsData from '../../data/lab-april-2025.json';
+import labItemsData from '../../data/lab-april-2026.json';
 
 export const spanishAmountFmt = {
   prefix: '',
