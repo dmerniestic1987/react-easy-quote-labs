@@ -12,8 +12,8 @@
   },
   "dependencies": {
     "@emotion/cache": "latest",
-    "@emotion/react": "^11.11.1",
-    "@emotion/server": "latest",
+    "@emotion/react": "^11.14.0",
+    "@emotion/server": "^11.11.0",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.3",
     "@mui/material": "^5.14.3",
