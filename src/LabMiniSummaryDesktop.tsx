@@ -5,20 +5,63 @@ import React from 'react';
 import TableContainer from '@mui/material/TableContainer';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
-import { TableVirtuoso } from 'react-virtuoso';
+import { TableVirtuoso, TableComponents } from 'react-virtuoso';
 import { LabItem } from './services/lab-calculator';
 import DeleteLabIconButton from './DeleteLabIconButton';
 
 
-const TableComponents = {
-  // @ts-ignore
-  Scroller: React.forwardRef((props, ref) => <TableContainer component={Paper} {...props} ref={ref} />),
-  Table: (props: any) => <Table {...props} style={{ borderCollapse: 'separate' }} />,
-  TableHead,
-  TableRow,
-  // @ts-ignore
-  TableBody: React.forwardRef((props, ref) => <TableBody {...props} ref={ref} />),
+const VirtuosoTableComponents: TableComponents<LabItem> = {
+    Scroller: React.forwardRef<HTMLDivElement>((props, ref) => (
+        <TableContainer component={Paper} {...props} ref={ref} />
+    )),
+    Table: (props) => (
+        <Table {...props} sx={{ borderCollapse: 'separate', tableLayout: 'fixed' }} />
+    ),
+    TableHead,
+    TableRow: ({ item: _item, ...props }) => <TableRow {...props} />,
+    TableBody: React.forwardRef<HTMLTableSectionElement>((props, ref) => <TableBody {...props} ref={ref} />),
 };
+
+function fixedHeaderContent() {
+  return (
+    <TableRow>
+        <TableCell style={{ width: 90 }}>
+            Abreviatura
+        </TableCell>
+        <TableCell>
+            Estudio de Laboratorio
+        </TableCell>
+        <TableCell style={{ width: 90 }}>
+            Eliminar
+        </TableCell>
+    </TableRow>
+  );
+}
+
+function rowContent(
+    _index: number,
+    item: LabItem,
+    deleteSelectedLabItem: Function,
+    deleteSelectedRowSelectionModel: Function
+) {
+  return (
+    <React.Fragment>
+        <TableCell style={{ width: 90 }}>
+            {item.code}
+        </TableCell>
+        <TableCell>
+            {item.name}
+        </TableCell>
+        <TableCell style={{ width: 90 }}>
+            <DeleteLabIconButton
+                labItem={item}
+                deleteSelectedLabItem={() => deleteSelectedLabItem(item)}
+                deleteSelectedRowSelectionModel={() => deleteSelectedRowSelectionModel(item)}/>
+        </TableCell>
+    </React.Fragment>
+  );
+}
+
 
 interface LabMiniSummaryInputParams {
     selectedLabItems: LabItem[],
@@ -34,37 +77,9 @@ export default function LabMiniSummaryDesktop(
         <TableVirtuoso
             style={{ height: 400 }}
             data={selectedLabItems || []}
-            // @ts-ignore
-            components={TableComponents}
-            fixedHeaderContent={() => (
-                <TableRow>
-                    <TableCell style={{ width: 90 }}>
-                        Abreviatura
-                    </TableCell>
-                    <TableCell>
-                        Estudio de Laboratorio
-                    </TableCell>
-                    <TableCell style={{ width: 90 }}>
-                        Eliminar
-                    </TableCell>
-                </TableRow>
-            )}
-            itemContent={(index, selectedLabItem) => (
-              <>
-                    <TableCell style={{ width: 90 }}>
-                        {selectedLabItem.code}
-                    </TableCell>
-                    <TableCell>
-                        {selectedLabItem.name}
-                    </TableCell>
-                    <TableCell style={{ width: 90 }}>
-                        <DeleteLabIconButton
-                            labItem={selectedLabItem}
-                            deleteSelectedLabItem={deleteSelectedLabItem}
-                            deleteSelectedRowSelectionModel={deleteSelectedRowSelectionModel}/>
-                    </TableCell>
-              </>
-            )}
+            components={VirtuosoTableComponents}
+            fixedHeaderContent={fixedHeaderContent}
+            itemContent={(_index, item) => rowContent(_index, item, deleteSelectedLabItem, deleteSelectedRowSelectionModel)}
         />
 
     </>

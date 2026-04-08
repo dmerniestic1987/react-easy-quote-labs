@@ -42,7 +42,7 @@ export default function LabMiniSummaryMobile(
                         Abreviatura
                     </TableCell>
                     <TableCell>
-                        Estudio de Laboratorio
+                        Estudio
                     </TableCell>
                     <TableCell style={{ width: 70 }}>
                         Eliminar

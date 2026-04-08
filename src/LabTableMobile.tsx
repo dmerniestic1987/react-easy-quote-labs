@@ -4,7 +4,6 @@ import {
   DataGrid,
   GridColDef,
   GridRowSelectionModel,
-  GridToolbar,
 } from '@mui/x-data-grid';
 import LabCalculator, { LabItem } from './services/lab-calculator';
 
@@ -32,10 +31,9 @@ export default function LabTableMobile(
   { rowSelectionModel, setSelectedLabItems, setRowSelectionModel }: LabTableInputParams,
 ) {
   const pageSize = 5;
-  const debounceInMillis = 500;
   return (
         <div>
-            <Box sx={{ height: 400, width: '100%' }}>
+            <Box sx={{ height: 300, width: '100%' }}>
                 <DataGrid
                     density="compact"
                     autoHeight
@@ -57,13 +55,6 @@ export default function LabTableMobile(
                     }}
                     pageSizeOptions={[pageSize]}
                     checkboxSelection
-                    slots={{ toolbar: GridToolbar }}
-                    slotProps={{
-                      toolbar: {
-                        showQuickFilter: true,
-                        quickFilterProps: { debounceMs: debounceInMillis },
-                      },
-                    }}
                 />
             </Box>
         </div>
