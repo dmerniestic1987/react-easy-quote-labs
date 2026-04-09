@@ -5,6 +5,7 @@
   "author": "Diego Mernies",
   "scripts": {
     "dev": "next dev",
+    "dev:https": "next dev --experimental-https --hostname 0.0.0.0",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -21,14 +22,17 @@
     "@mui/x-data-grid": "^6.10.2",
     "bignumber.js": "^9.1.1",
     "next": "latest",
+    "nodemailer": "^8.0.5",
     "react": "latest",
     "react-dom": "latest",
     "react-scripts": "^5.0.1",
     "react-virtuoso": "^4.18.4",
+    "react-webcam": "^7.2.0",
     "styled-components": "^5.3.11"
   },
   "devDependencies": {
     "@types/node": "latest",
+    "@types/nodemailer": "^8.0.0",
     "@types/react": "latest",
     "eslint": "latest",
     "eslint-config-next": "latest",

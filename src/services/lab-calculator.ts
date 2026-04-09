@@ -52,10 +52,6 @@ export default class LabCalculator {
     return LabCalculator.labItems;
   }
 
-  static setSelectedLabItems(labItems: LabItem[]): void {
-    LabCalculator.selectedLabItems = labItems;
-  }
-
   static getSelectedItems(): LabItem[] {
     return LabCalculator.selectedLabItems || [];
   }

@@ -1,16 +1,20 @@
 import * as React from 'react';
 import Container from '@mui/material/Container';
-import LabCalculator, {LabItem} from "../src/services/lab-calculator";
-import {useState} from "react";
-import {GridRowSelectionModel} from "@mui/x-data-grid";
-import TotalQuote from "../src/TotalQuote";
-import BigNumber from "bignumber.js";
-import MathUtils from "../src/services/math-utils";
-import LabHeader from "../src/LabHeader";
-import LabTableMobile from "./LabTableMobile";
-import LabMiniSummaryMobile from "./LabMiniSummaryMobile";
+import LabCalculator, { LabItem } from '../src/services/lab-calculator';
+import { useEffect, useState } from 'react';
+import { GridRowSelectionModel } from '@mui/x-data-grid';
+import TotalQuote from '../src/TotalQuote';
+import BigNumber from 'bignumber.js';
+import MathUtils from '../src/services/math-utils';
+import LabHeader from '../src/LabHeader';
+import LabTableMobile from './LabTableMobile';
+import LabMiniSummaryMobile from './LabMiniSummaryMobile';
 
-export default function LabQuoteMobile() {
+export type LabQuoteMobileProps = {
+  onQuoteChange?: (selectedLabs: LabItem[], suggestedTotalFormatted: string) => void;
+};
+
+export default function LabQuoteMobile({ onQuoteChange }: LabQuoteMobileProps) {
   const [rowSelectionModel, setRowSelectionModel] = useState<GridRowSelectionModel>([]);
   const [selectedLabs, setSelectedLabs] = useState([] as LabItem[]);
   const total = LabCalculator.getTotalAmount(selectedLabs);
@@ -34,6 +38,13 @@ export default function LabQuoteMobile() {
     });
     setSelectedLabsState(selectedItemsAfterDelete);
   };
+
+  useEffect(() => {
+    const total = LabCalculator.getTotalAmount(selectedLabs);
+    const suggested = new BigNumber(MathUtils.roundToNearestHundred(total.toNumber()));
+    onQuoteChange?.(selectedLabs, suggested.toFormat(0));
+  }, [selectedLabs, onQuoteChange]);
+
   return (
     <Container maxWidth="xl">
       <LabHeader title={'CEMEVYF: Agosto 2026'} subTitle={'Cotización de Laboratorios'} />
