@@ -219,7 +219,7 @@ export default function RecipePhotoCapture({ onAccept }: RecipePhotoCaptureProps
               videoConstraints={videoConstraints}
               onUserMedia={() => setCameraError(null)}
               onUserMediaError={handleUserMediaError}
-              style={{ width: '100%', height: 'auto', display: 'block', verticalAlign: 'top' }}
+              style={{ width: '75%', height: 'auto', display: 'block', margin: '0 auto' }}
             />
           </Box>
           <Button variant="contained" size="large" fullWidth onClick={handleCapture}>
@@ -241,19 +241,20 @@ export default function RecipePhotoCapture({ onAccept }: RecipePhotoCaptureProps
             src={processedDataUrl}
             alt="Vista previa de la receta procesada"
             sx={{
-              width: '100%',
+              width: '80%',
               height: 'auto',
               display: 'block',
+              margin: '0 auto',
               borderRadius: 1,
               border: 1,
               borderColor: 'divider',
             }}
           />
           <Stack direction="row" spacing={1}>
-            <Button variant="outlined" size="large" fullWidth onClick={handleRetake}>
+            <Button variant="outlined" size="medium" fullWidth onClick={handleRetake}>
               Volver a tomar
             </Button>
-            <Button variant="contained" size="large" fullWidth onClick={handleAccept}>
+            <Button variant="contained" size="medium" fullWidth onClick={handleAccept}>
               Aceptar
             </Button>
           </Stack>
