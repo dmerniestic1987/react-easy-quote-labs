@@ -38,8 +38,8 @@ export default function LabMiniSummaryMobile(
             components={TableComponents}
             fixedHeaderContent={() => (
                 <TableRow>
-                    <TableCell style={{ width: 70 }}>
-                        Abreviatura
+                    <TableCell style={{ width: 60 }}>
+                        Código
                     </TableCell>
                     <TableCell>
                         Estudio
