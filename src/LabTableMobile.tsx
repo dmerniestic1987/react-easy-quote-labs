@@ -4,13 +4,15 @@ import {
   DataGrid,
   GridColDef,
   GridRowSelectionModel,
+  GridToolbarContainer,
+  GridToolbarQuickFilter,
 } from '@mui/x-data-grid';
 import LabCalculator, { LabItem } from './services/lab-calculator';
 
 const columns: GridColDef[] = [
   {
     field: 'code',
-    headerName: 'Abreviatura',
+    headerName: 'Código',
     width: 100,
     editable: false,
   },
@@ -27,10 +29,20 @@ interface LabTableInputParams {
     setSelectedLabItems: Function,
     setRowSelectionModel: Function
 }
+
+function CustomToolbar() {
+  return (
+    <GridToolbarContainer>
+      <GridToolbarQuickFilter />
+    </GridToolbarContainer>
+  );
+}
+
 export default function LabTableMobile(
   { rowSelectionModel, setSelectedLabItems, setRowSelectionModel }: LabTableInputParams,
 ) {
   const pageSize = 5;
+  const debounceInMillis = 500;
   return (
         <div>
             <Box sx={{ height: 300, width: '100%' }}>
@@ -55,6 +67,13 @@ export default function LabTableMobile(
                     }}
                     pageSizeOptions={[pageSize]}
                     checkboxSelection
+                    slots={{ toolbar: CustomToolbar }}
+                    slotProps={{
+                      toolbar: {
+                        showQuickFilter: true,
+                        quickFilterProps: { debounceMs: debounceInMillis },
+                      },
+                    }}
                 />
             </Box>
         </div>

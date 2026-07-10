@@ -47,7 +47,7 @@ export default function LabQuoteMobile({ onQuoteChange }: LabQuoteMobileProps) {
 
   return (
     <Container maxWidth="xl">
-      <LabHeader title={'CEMEVYF: Agosto 2026'} subTitle={'Cotización de Laboratorios'} />
+      <LabHeader title={'CEMEVYF: Julio 2026'} subTitle={'Cotización de Laboratorios'} />
       <LabTableMobile
             rowSelectionModel={rowSelectionModel}
             setSelectedLabItems={setSelectedLabs}
