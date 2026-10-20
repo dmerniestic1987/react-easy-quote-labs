@@ -1,5 +1,5 @@
 import BigNumber from 'bignumber.js';
-import labItemsData from '../../data/lab-julio-2026.json';
+import labItemsData from '../../data/lab-octubre-2026.json';
 
 export const spanishAmountFmt = {
   prefix: '',
@@ -50,10 +50,6 @@ export default class LabCalculator {
 
   static getCurrentLabItems(): LabItem[] {
     return LabCalculator.labItems;
-  }
-
-  static setSelectedLabItems(labItems: LabItem[]): void {
-    LabCalculator.selectedLabItems = labItems;
   }
 
   static getSelectedItems(): LabItem[] {
