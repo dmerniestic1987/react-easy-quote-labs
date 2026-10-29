@@ -9,7 +9,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "api:types": "openapi-typescript data/swagger.json -o src/api/schema.d.ts"
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",
@@ -36,9 +37,15 @@
     "@types/react-dom": "^19.2.0",
     "eslint": "^9.39.5",
     "eslint-config-next": "^16.4.3",
+    "openapi-typescript": "^7.13.0",
     "typescript": "^6.0.3"
   },
   "engines": {
     "node": ">=24.22.1"
+  },
+  "overrides": {
+    "openapi-typescript": {
+      "typescript": "$typescript"
+    }
   }
 }

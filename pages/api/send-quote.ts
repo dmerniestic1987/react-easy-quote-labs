@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';
 import type { LabItem } from '../../src/services/lab-calculator';
+import { rejectCrossOrigin, requireSession } from '../../src/server/session';
 
 const DEFAULT_INBOX = 'nico.recepcion.vida.y.fortaleza@gmail.com';
 const MAX_IMAGE_BYTES = 12 * 1024 * 1024;
@@ -64,6 +65,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     res.setHeader('Allow', 'POST');
     return res.status(405).json({ error: 'Method not allowed' });
   }
+
+  if (rejectCrossOrigin(req, res)) return;
+  if (!(await requireSession(req, res))) return;
 
   const body = req.body as Body;
   const items = Array.isArray(body.items) ? body.items : [];
