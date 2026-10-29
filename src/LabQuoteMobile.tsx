@@ -15,7 +15,7 @@ export type LabQuoteMobileProps = {
 };
 
 export default function LabQuoteMobile({ onQuoteChange }: LabQuoteMobileProps) {
-  const [rowSelectionModel, setRowSelectionModel] = useState<GridRowSelectionModel>([]);
+  const [rowSelectionModel, setRowSelectionModel] = useState<GridRowSelectionModel>({ type: 'include', ids: new Set() });
   const [selectedLabs, setSelectedLabs] = useState([] as LabItem[]);
   const total = LabCalculator.getTotalAmount(selectedLabs);
   const suggestedTotal = new BigNumber(MathUtils.roundToNearestHundred(total.toNumber()));
@@ -24,8 +24,9 @@ export default function LabQuoteMobile({ onQuoteChange }: LabQuoteMobileProps) {
       selectedRowItems: GridRowSelectionModel = rowSelectionModel,
       setRowSelectionModelState: Function = setRowSelectionModel
   ) => {
-      const filtered = selectedRowItems.filter(selectedRowItem => { return Number(selectedRowItem) !== itemToDelete.id });
-      setRowSelectionModelState(filtered);
+      const ids = new Set(selectedRowItems.ids);
+      ids.delete(itemToDelete.id);
+      setRowSelectionModelState({ ...selectedRowItems, ids });
   };
 
   const deleteSelectedLabItem = (

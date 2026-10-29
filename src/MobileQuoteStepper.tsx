@@ -102,7 +102,7 @@ export default function MobileQuoteStepper() {
         minHeight: '100%',
       }}
     >
-      <Typography variant="subtitle1" fontWeight={600} sx={{ mb: 2 }}>
+      <Typography variant="subtitle1" sx={{ mb: 2, fontWeight: 600 }}>
         {STEP_TITLES[activeStep]}
       </Typography>
 
@@ -124,7 +124,7 @@ export default function MobileQuoteStepper() {
                 }
                 fullWidth
                 size="medium"
-                inputProps={{ autoComplete: 'name' }}
+                slotProps={{ htmlInput: { autoComplete: 'name' } }}
               />
               <TextField
                 label="Email"
@@ -135,7 +135,7 @@ export default function MobileQuoteStepper() {
                   setContact((c) => ({ ...c, email: e.target.value }))
                 }
                 fullWidth
-                inputProps={{ autoComplete: 'email' }}
+                slotProps={{ htmlInput: { autoComplete: 'email' } }}
               />
               <TextField
                 label="Celular"
@@ -146,7 +146,7 @@ export default function MobileQuoteStepper() {
                   setContact((c) => ({ ...c, phone: e.target.value }))
                 }
                 fullWidth
-                inputProps={{ autoComplete: 'tel' }}
+                slotProps={{ htmlInput: { autoComplete: 'tel' } }}
               />
             </Stack>
           </Box>

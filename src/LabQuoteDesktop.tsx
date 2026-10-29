@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Container from '@mui/material/Container';
 import LabTableDesktop from "../src/LabTableDesktop";
-import Grid from "@mui/system/Unstable_Grid";
+import Grid from "@mui/material/Grid";
 import LabMiniSummaryDesktop from "../src/LabMiniSummaryDesktop";
 import LabCalculator, {LabItem} from "../src/services/lab-calculator";
 import {useState} from "react";
@@ -12,7 +12,7 @@ import MathUtils from "../src/services/math-utils";
 import LabHeader from "../src/LabHeader";
 
 export default function LabQuoteDesktop() {
-  const [rowSelectionModel, setRowSelectionModel] = useState<GridRowSelectionModel>([]);
+  const [rowSelectionModel, setRowSelectionModel] = useState<GridRowSelectionModel>({ type: 'include', ids: new Set() });
   const [selectedLabs, setSelectedLabs] = useState([] as LabItem[]);
   const total = LabCalculator.getTotalAmount(selectedLabs);
   const suggestedTotal = new BigNumber(MathUtils.roundToNearestHundred(total.toNumber()));
@@ -21,8 +21,9 @@ export default function LabQuoteDesktop() {
       selectedRowItems: GridRowSelectionModel = rowSelectionModel,
       setRowSelectionModelState: Function = setRowSelectionModel
   ) => {
-      const filtered = selectedRowItems.filter(selectedRowItem => { return Number(selectedRowItem) !== itemToDelete.id });
-      setRowSelectionModelState(filtered);
+      const ids = new Set(selectedRowItems.ids);
+      ids.delete(itemToDelete.id);
+      setRowSelectionModelState({ ...selectedRowItems, ids });
   };
 
   const deleteSelectedLabItem = (
@@ -43,13 +44,13 @@ export default function LabQuoteDesktop() {
           alignItems: 'center',
           my: 2,
       }}>
-          <Grid xs={6}>
+          <Grid size={6}>
               <LabTableDesktop
                   rowSelectionModel={rowSelectionModel}
                   setSelectedLabItems={setSelectedLabs}
                   setRowSelectionModel={setRowSelectionModel}/>
           </Grid>
-          <Grid xs={4}>
+          <Grid size={4}>
               <LabMiniSummaryDesktop selectedLabItems = {selectedLabs}
                                      deleteSelectedLabItem={deleteSelectedLabItem}
                                      deleteSelectedRowSelectionModel={deleteSelectedRowSelectionModel}/>

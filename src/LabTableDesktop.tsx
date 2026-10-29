@@ -2,9 +2,10 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import {
   DataGrid,
-  GridColDef, GridRowSelectionModel, GridToolbar,
+  GridColDef, GridRowSelectionModel,
 } from '@mui/x-data-grid';
 import LabCalculator, { LabItem } from './services/lab-calculator';
+import LabTableToolbar from './LabTableToolbar';
 
 const columns: GridColDef[] = [
   {
@@ -37,14 +38,13 @@ export default function LabTableDesktop(
   { rowSelectionModel, setSelectedLabItems, setRowSelectionModel }: LabTableInputParams,
 ) {
   const pageSize = 5;
-  const debounceInMillis = 500;
   return (
         <div>
             <Box sx={{ height: 400, width: '100%' }}>
                 <DataGrid
                     rows={LabCalculator.getCurrentLabItems()}
                     onRowSelectionModelChange={(ids) => {
-                      const selectedIDs = new Set(ids);
+                      const selectedIDs = ids.ids;
                       const selectedRowData: LabItem[] = LabCalculator.getCurrentLabItems().filter(labItem => selectedIDs.has(labItem.id));
                       setSelectedLabItems(selectedRowData);
                       setRowSelectionModel(ids);
@@ -60,13 +60,8 @@ export default function LabTableDesktop(
                     }}
                     pageSizeOptions={[pageSize]}
                     checkboxSelection
-                    slots={{ toolbar: GridToolbar }}
-                    slotProps={{
-                      toolbar: {
-                        showQuickFilter: true,
-                        quickFilterProps: { debounceMs: debounceInMillis },
-                      },
-                    }}
+                    showToolbar
+                    slots={{ toolbar: LabTableToolbar }}
                 />
             </Box>
         </div>

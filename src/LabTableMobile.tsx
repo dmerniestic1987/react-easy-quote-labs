@@ -4,10 +4,9 @@ import {
   DataGrid,
   GridColDef,
   GridRowSelectionModel,
-  GridToolbarContainer,
-  GridToolbarQuickFilter,
 } from '@mui/x-data-grid';
 import LabCalculator, { LabItem } from './services/lab-calculator';
+import LabTableToolbar from './LabTableToolbar';
 
 const columns: GridColDef[] = [
   {
@@ -30,19 +29,10 @@ interface LabTableInputParams {
     setRowSelectionModel: Function
 }
 
-function CustomToolbar() {
-  return (
-    <GridToolbarContainer>
-      <GridToolbarQuickFilter />
-    </GridToolbarContainer>
-  );
-}
-
 export default function LabTableMobile(
   { rowSelectionModel, setSelectedLabItems, setRowSelectionModel }: LabTableInputParams,
 ) {
   const pageSize = 5;
-  const debounceInMillis = 500;
   return (
         <div>
             <Box sx={{ height: 300, width: '100%' }}>
@@ -51,7 +41,7 @@ export default function LabTableMobile(
                     autoHeight
                     rows={LabCalculator.getCurrentLabItems()}
                     onRowSelectionModelChange={(ids) => {
-                      const selectedIDs = new Set(ids);
+                      const selectedIDs = ids.ids;
                       const selectedRowData: LabItem[] = LabCalculator.getCurrentLabItems().filter(labItem => selectedIDs.has(labItem.id));
                       setSelectedLabItems(selectedRowData);
                       setRowSelectionModel(ids);
@@ -67,13 +57,8 @@ export default function LabTableMobile(
                     }}
                     pageSizeOptions={[pageSize]}
                     checkboxSelection
-                    slots={{ toolbar: CustomToolbar }}
-                    slotProps={{
-                      toolbar: {
-                        showQuickFilter: true,
-                        quickFilterProps: { debounceMs: debounceInMillis },
-                      },
-                    }}
+                    showToolbar
+                    slots={{ toolbar: LabTableToolbar }}
                 />
             </Box>
         </div>
