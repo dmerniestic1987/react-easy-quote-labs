@@ -2,6 +2,7 @@ import * as React from 'react';
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { apiFetch, onUnauthorized } from '../api/client';
 import type { ChangePasswordRequest, LoginRequest, LoginUser, SessionInfo } from '../api/types';
+import { clearAllDrafts } from '../services/quote-draft';
 
 type AuthState =
   | { status: 'loading' }
@@ -68,11 +69,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const logout = useCallback(async () => {
     await apiFetch('/api/auth/logout', { method: 'POST', notifyUnauthorized: false }).catch(() => undefined);
+    clearAllDrafts();
     setState({ status: 'unauthenticated' });
   }, []);
 
   const changePassword = useCallback(async (request: ChangePasswordRequest) => {
     await apiFetch('/api/auth/password', { method: 'PUT', json: request });
+    clearAllDrafts();
     // The backend closed every session, including this one.
     setState({ status: 'unauthenticated', notice: 'Contraseña actualizada. Ingresá nuevamente.' });
   }, []);

@@ -6,6 +6,7 @@ import {
 } from '@mui/x-data-grid';
 import LabCalculator, { LabItem } from './services/lab-calculator';
 import LabTableToolbar from './LabTableToolbar';
+import { gridLocaleText } from './gridLocale';
 
 const columns: GridColDef[] = [
   {
@@ -59,6 +60,7 @@ export default function LabTableDesktop(
                       },
                     }}
                     pageSizeOptions={[pageSize]}
+                    localeText={gridLocaleText}
                     checkboxSelection
                     showToolbar
                     slots={{ toolbar: LabTableToolbar }}

@@ -1,63 +1,39 @@
 import * as React from 'react';
 import Container from '@mui/material/Container';
-import LabCalculator, { LabItem } from '../src/services/lab-calculator';
-import { useEffect, useState } from 'react';
-import { GridRowSelectionModel } from '@mui/x-data-grid';
+import Stack from '@mui/material/Stack';
+import type { GridRowSelectionModel } from '@mui/x-data-grid';
+import type { LabItem } from './services/lab-calculator';
 import TotalQuote from '../src/TotalQuote';
-import BigNumber from 'bignumber.js';
-import MathUtils from '../src/services/math-utils';
 import LabHeader from '../src/LabHeader';
 import LabTableMobile from './LabTableMobile';
 import LabMiniSummaryMobile from './LabMiniSummaryMobile';
 
 export type LabQuoteMobileProps = {
-  onQuoteChange?: (selectedLabs: LabItem[], suggestedTotalFormatted: string) => void;
+  /** The selection lives in the parent, so it survives navigating between steps and reloads. */
+  rowSelectionModel: GridRowSelectionModel;
+  onRowSelectionModelChange: (model: GridRowSelectionModel) => void;
+  selectedLabs: LabItem[];
+  suggestedTotalFormatted: string;
+  onRemove: (item: LabItem) => void;
 };
 
-export default function LabQuoteMobile({ onQuoteChange }: LabQuoteMobileProps) {
-  const [rowSelectionModel, setRowSelectionModel] = useState<GridRowSelectionModel>({ type: 'include', ids: new Set() });
-  const [selectedLabs, setSelectedLabs] = useState([] as LabItem[]);
-  const total = LabCalculator.getTotalAmount(selectedLabs);
-  const suggestedTotal = new BigNumber(MathUtils.roundToNearestHundred(total.toNumber()));
-  const deleteSelectedRowSelectionModel = (
-      itemToDelete: LabItem,
-      selectedRowItems: GridRowSelectionModel = rowSelectionModel,
-      setRowSelectionModelState: Function = setRowSelectionModel
-  ) => {
-      const ids = new Set(selectedRowItems.ids);
-      ids.delete(itemToDelete.id);
-      setRowSelectionModelState({ ...selectedRowItems, ids });
-  };
-
-  const deleteSelectedLabItem = (
-      itemToDelete: LabItem,
-      labItems: LabItem[] = selectedLabs,
-      setSelectedLabsState: Function = setSelectedLabs,
-  ) => {
-    const selectedItemsAfterDelete: LabItem[] = labItems.filter(labItems => {
-        return labItems.id !== itemToDelete.id;
-    });
-    setSelectedLabsState(selectedItemsAfterDelete);
-  };
-
-  useEffect(() => {
-    const total = LabCalculator.getTotalAmount(selectedLabs);
-    const suggested = new BigNumber(MathUtils.roundToNearestHundred(total.toNumber()));
-    onQuoteChange?.(selectedLabs, suggested.toFormat(0));
-  }, [selectedLabs, onQuoteChange]);
-
+export default function LabQuoteMobile({
+  rowSelectionModel,
+  onRowSelectionModelChange,
+  selectedLabs,
+  suggestedTotalFormatted,
+  onRemove,
+}: LabQuoteMobileProps) {
   return (
-    <Container maxWidth="xl">
-      <LabHeader title={'CEMEVYF: Octubre 2026'} subTitle={'Cotización de Laboratorios 1.35'} />
-      <LabTableMobile
-            rowSelectionModel={rowSelectionModel}
-            setSelectedLabItems={setSelectedLabs}
-            setRowSelectionModel={setRowSelectionModel}/>
-      <LabMiniSummaryMobile selectedLabItems = {selectedLabs}
-                              deleteSelectedLabItem={deleteSelectedLabItem}
-                              deleteSelectedRowSelectionModel={deleteSelectedRowSelectionModel}/>
-      <TotalQuote description={'Total Sugerido'} totalQuote={suggestedTotal.toFormat(0)}/>
-
+    <Container maxWidth="xl" disableGutters>
+      <Stack spacing={2}>
+        <LabHeader title={'CEMEVYF: Octubre 2026'} subTitle={'Cotización de Laboratorios 1.35'} />
+        <LabTableMobile
+              rowSelectionModel={rowSelectionModel}
+              setRowSelectionModel={onRowSelectionModelChange}/>
+        <LabMiniSummaryMobile selectedLabItems={selectedLabs} onRemove={onRemove}/>
+        <TotalQuote description={'Total sugerido'} totalQuote={suggestedTotalFormatted}/>
+      </Stack>
     </Container>
   );
 }

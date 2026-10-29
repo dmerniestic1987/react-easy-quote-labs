@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Alert from '@mui/material/Alert';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -8,7 +8,11 @@ import Snackbar from '@mui/material/Snackbar';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
+import type { GridRowSelectionModel } from '@mui/x-data-grid';
 import type { LabItem } from './services/lab-calculator';
+import { useAuth } from './auth/AuthProvider';
+import { EMPTY_SELECTION, formatSuggestedTotal, getSelectedLabs, removeFromSelection } from './services/quote-selection';
+import { clearDraft, deserializeSelection, loadDraft, saveDraft, serializeSelection } from './services/quote-draft';
 import LabQuoteMobile from './LabQuoteMobile';
 import PrescriptionPicker, { type PrescriptionAttachment } from './prescriptions/PrescriptionPicker';
 
@@ -30,25 +34,37 @@ function blobToDataUrl(blob: Blob): Promise<string> {
 }
 
 export default function MobileQuoteStepper() {
-  const [activeStep, setActiveStep] = useState(0);
-  const [quoteItems, setQuoteItems] = useState<LabItem[]>([]);
-  const [suggestedTotalFormatted, setSuggestedTotalFormatted] = useState('');
+  const { state: auth } = useAuth();
+  const userId = auth.status === 'authenticated' ? auth.user.id : null;
+  // This component only mounts in the browser after the session check, so reading storage here is safe.
+  const [draft] = useState(() => (userId ? loadDraft(userId) : null));
+
+  const [activeStep, setActiveStep] = useState(() => (draft ? Math.min(Math.max(draft.step, 0), STEP_COUNT - 1) : 0));
+  // The grid selection is the single source of truth: the studies and the total are derived from it.
+  const [selection, setSelection] = useState<GridRowSelectionModel>(() =>
+    draft ? deserializeSelection(draft.selection) : EMPTY_SELECTION,
+  );
   const [attachments, setAttachments] = useState<PrescriptionAttachment[]>([]);
-  const [contact, setContact] = useState({
-    fullName: '',
-    email: '',
-    phone: '',
-  });
+  const [contact, setContact] = useState(() => draft?.contact ?? { fullName: '', email: '', phone: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [snackbar, setSnackbar] = useState<{ message: string; severity: 'success' | 'error' } | null>(
-    null,
+  const [snackbar, setSnackbar] = useState<{ message: string; severity: 'success' | 'error' } | null>(() =>
+    draft && draft.selection.ids.length > 0
+      ? { message: 'Recuperamos tu cotización en curso.', severity: 'success' }
+      : null,
   );
   const formRef = useRef<HTMLFormElement>(null);
 
-  const handleQuoteChange = useCallback((labs: LabItem[], totalFmt: string) => {
-    setQuoteItems(labs);
-    setSuggestedTotalFormatted(totalFmt);
+  const quoteItems = useMemo(() => getSelectedLabs(selection), [selection]);
+  const suggestedTotalFormatted = useMemo(() => formatSuggestedTotal(quoteItems), [quoteItems]);
+
+  const handleRemoveItem = useCallback((item: LabItem) => {
+    setSelection((current) => removeFromSelection(current, item.id));
   }, []);
+
+  // Keep the quote in progress so a reload (e.g. Android discarding the tab while the camera is open) loses nothing.
+  useEffect(() => {
+    if (userId) saveDraft(userId, { step: activeStep, selection: serializeSelection(selection), contact });
+  }, [userId, activeStep, selection, contact]);
 
   const handleNext = () => {
     setActiveStep((prev) => Math.min(prev + 1, STEP_COUNT - 1));
@@ -88,6 +104,7 @@ export default function MobileQuoteStepper() {
         });
         return;
       }
+      if (userId) clearDraft(userId);
       setSnackbar({ message: 'Cotización enviada. Te contactaremos pronto.', severity: 'success' });
     } catch {
       setSnackbar({ message: 'Error de red. Probá de nuevo.', severity: 'error' });
@@ -119,7 +136,17 @@ export default function MobileQuoteStepper() {
       </Typography>
 
       <Box sx={{ flex: '1 1 auto', pb: 2 }}>
-        {activeStep === 0 && <LabQuoteMobile onQuoteChange={handleQuoteChange} />}
+        {/* Always mounted: unmounting it on Back/Next would reset its page and search. It is hidden with a zero
+            height instead of display:none because the Data Grid needs its parent to keep a width. */}
+        <Box sx={activeStep === 0 ? undefined : { height: 0, overflow: 'hidden', visibility: 'hidden' }}>
+          <LabQuoteMobile
+            rowSelectionModel={selection}
+            onRowSelectionModelChange={setSelection}
+            selectedLabs={quoteItems}
+            suggestedTotalFormatted={suggestedTotalFormatted}
+            onRemove={handleRemoveItem}
+          />
+        </Box>
         {/* Always mounted: unmounting it on Back/Next would lose the photos still in review. */}
         <Box sx={{ display: activeStep === 1 ? 'block' : 'none' }}>
           <PrescriptionPicker variant="mobile" onChange={setAttachments} />

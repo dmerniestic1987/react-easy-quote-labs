@@ -1,14 +1,20 @@
 import { enhanceDocument } from './document-enhance';
 import { decodeImageFile, type RgbaImage } from './load-image';
+import { downscaleLevels } from './levels-thumbnail';
 import { encodeGray4Png } from './png-gray4';
 import type { EnhanceResponse } from '../workers/document-enhance.worker';
 
 /** Longest side of the stored copy. About 260 dpi on an A5 order: readable handwriting, small file. */
 export const PRESCRIPTION_MAX_SIDE = 2200;
 
+/** Longest side of the list thumbnail. */
+const THUMBNAIL_MAX_SIDE = 240;
+
 export type EnhancedImage = {
   /** 4-bit grayscale PNG. */
   blob: Blob;
+  /** Tiny 4-bit PNG for lists, so the full-size image is only decoded when the user opens it. */
+  thumbnail: Blob;
   width: number;
   height: number;
 };
@@ -47,5 +53,7 @@ export async function enhancePrescriptionImage(file: Blob): Promise<EnhancedImag
   const image = await decodeImageFile(file, PRESCRIPTION_MAX_SIDE);
   const levels = await enhance(image);
   const blob = await encodeGray4Png(levels, image.width, image.height);
-  return { blob, width: image.width, height: image.height };
+  const small = downscaleLevels(levels, image.width, image.height, THUMBNAIL_MAX_SIDE);
+  const thumbnail = await encodeGray4Png(small.levels, small.width, small.height);
+  return { blob, thumbnail, width: image.width, height: image.height };
 }

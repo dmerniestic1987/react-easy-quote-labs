@@ -3,6 +3,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Alert from '@mui/material/Alert';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import ButtonBase from '@mui/material/ButtonBase';
 import CircularProgress from '@mui/material/CircularProgress';
 import IconButton from '@mui/material/IconButton';
 import Paper from '@mui/material/Paper';
@@ -14,6 +15,7 @@ import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import UploadFileIcon from '@mui/icons-material/UploadFile';
 import { enhancePrescriptionImage } from '../services/prescription-image';
+import ImageViewerDialog from './ImageViewerDialog';
 
 export type PrescriptionAttachment = {
   id: number;
@@ -39,7 +41,7 @@ type Item = {
   originalUrl?: string;
   processed?: Blob;
   processedUrl?: string;
-  showOriginal: boolean;
+  thumbUrl?: string;
 };
 
 const ACCEPT_FILES = 'image/jpeg,image/png,application/pdf';
@@ -65,11 +67,13 @@ function pngName(name: string): string {
 function revoke(item: Item): void {
   if (item.originalUrl) URL.revokeObjectURL(item.originalUrl);
   if (item.processedUrl) URL.revokeObjectURL(item.processedUrl);
+  if (item.thumbUrl) URL.revokeObjectURL(item.thumbUrl);
 }
 
 export default function PrescriptionPicker({ variant, onChange }: Props) {
   const [items, setItems] = useState<Item[]>([]);
   const [dragging, setDragging] = useState(false);
+  const [viewerId, setViewerId] = useState<number | null>(null);
   const cameraInput = useRef<HTMLInputElement>(null);
   const fileInput = useRef<HTMLInputElement>(null);
   const nextId = useRef(1);
@@ -89,11 +93,12 @@ export default function PrescriptionPicker({ variant, onChange }: Props) {
   const processImage = useCallback(
     async (id: number, file: File) => {
       try {
-        const { blob } = await enhancePrescriptionImage(file);
+        const { blob, thumbnail } = await enhancePrescriptionImage(file);
         update(id, {
           status: 'review',
           processed: blob,
           processedUrl: URL.createObjectURL(blob),
+          thumbUrl: URL.createObjectURL(thumbnail),
           originalUrl: URL.createObjectURL(file),
         });
       } catch (e) {
@@ -111,7 +116,7 @@ export default function PrescriptionPicker({ variant, onChange }: Props) {
       files.forEach((file) => {
         const id = nextId.current++;
         const kind = detectKind(file);
-        const base = { id, name: file.name || 'receta', originalSize: file.size, showOriginal: false };
+        const base = { id, name: file.name || 'receta', originalSize: file.size };
         if (!kind) {
           setItems((c) => [...c, { ...base, kind: 'image', status: 'error', error: 'Formato no soportado. Usá JPG, PNG o PDF.' }]);
         } else if (file.size > (kind === 'pdf' ? MAX_PDF_BYTES : MAX_FILE_BYTES)) {
@@ -171,6 +176,7 @@ export default function PrescriptionPicker({ variant, onChange }: Props) {
   }, [accepted, onChange]);
 
   const busy = items.some((item) => item.status === 'processing');
+  const viewer = items.find((item) => item.id === viewerId);
 
   return (
     <Stack spacing={2}>
@@ -254,43 +260,33 @@ export default function PrescriptionPicker({ variant, onChange }: Props) {
           );
         }
         if (item.status === 'review') {
-          const shown = item.showOriginal ? item.originalUrl : item.processedUrl;
           return (
-            <Stack key={item.id} spacing={1.5}>
-              <Typography variant="subtitle2" color="text.secondary">
-                {item.name} · {item.showOriginal ? 'Original' : 'Vista previa (escala de grises)'}
-              </Typography>
-              <Box
-                component="img"
-                src={shown}
-                alt={item.showOriginal ? 'Foto original de la orden' : 'Vista previa de la orden procesada'}
-                sx={{
-                  width: '100%',
-                  maxWidth: 720,
-                  alignSelf: 'center',
-                  height: 'auto',
-                  display: 'block',
-                  borderRadius: 1,
-                  border: 1,
-                  borderColor: 'divider',
-                  bgcolor: '#fff',
-                }}
-              />
-              <Typography variant="caption" color="text.secondary">
-                Original {formatBytes(item.originalSize)} → procesada {formatBytes(item.processed?.size ?? 0)}
-              </Typography>
-              <Button size="small" onClick={() => update(item.id, { showOriginal: !item.showOriginal })}>
-                {item.showOriginal ? 'Ver procesada' : 'Ver original'}
-              </Button>
-              <Stack direction="row" spacing={1}>
-                <Button variant="outlined" size="large" fullWidth onClick={() => remove(item.id)}>
-                  Descartar
-                </Button>
-                <Button variant="contained" size="large" fullWidth onClick={() => update(item.id, { status: 'accepted' })}>
+            <Paper key={item.id} variant="outlined" sx={{ p: 1.5, display: 'flex', gap: 2, alignItems: 'flex-start' }}>
+              <ButtonBase
+                aria-label={`Ampliar vista previa de ${item.name}`}
+                onClick={() => setViewerId(item.id)}
+                sx={{ flexShrink: 0, width: 120, height: 168, bgcolor: '#fff', borderRadius: 1, border: 1, borderColor: 'divider', overflow: 'hidden' }}
+              >
+                <Box component="img" src={item.thumbUrl} alt="" sx={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
+              </ButtonBase>
+              <Stack spacing={1} sx={{ flex: 1, minWidth: 0 }}>
+                <Typography variant="body2" noWrap sx={{ fontWeight: 600 }}>
+                  {item.name}
+                </Typography>
+                <Typography variant="caption" color="text.secondary">
+                  {formatBytes(item.originalSize)} → {formatBytes(item.processed?.size ?? 0)} (escala de grises)
+                </Typography>
+                <Typography variant="caption" color="text.secondary">
+                  Tocá la miniatura para verla más grande.
+                </Typography>
+                <Button variant="contained" fullWidth onClick={() => update(item.id, { status: 'accepted' })}>
                   Aceptar
                 </Button>
+                <Button variant="outlined" fullWidth onClick={() => remove(item.id)}>
+                  Descartar
+                </Button>
               </Stack>
-            </Stack>
+            </Paper>
           );
         }
         return (
@@ -298,12 +294,13 @@ export default function PrescriptionPicker({ variant, onChange }: Props) {
             {item.kind === 'pdf' ? (
               <PictureAsPdfIcon color="error" sx={{ fontSize: 40 }} />
             ) : (
-              <Box
-                component="img"
-                src={item.processedUrl}
-                alt=""
-                sx={{ width: 40, height: 56, objectFit: 'cover', borderRadius: 0.5, bgcolor: '#fff' }}
-              />
+              <ButtonBase
+                aria-label={`Ampliar ${item.name}`}
+                onClick={() => setViewerId(item.id)}
+                sx={{ width: 40, height: 56, flexShrink: 0, bgcolor: '#fff', borderRadius: 0.5, overflow: 'hidden' }}
+              >
+                <Box component="img" src={item.thumbUrl} alt="" sx={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }} />
+              </ButtonBase>
             )}
             <Box sx={{ flex: 1, minWidth: 0 }}>
               <Typography variant="body2" noWrap>
@@ -319,6 +316,15 @@ export default function PrescriptionPicker({ variant, onChange }: Props) {
           </Paper>
         );
       })}
+      {viewer && viewer.processedUrl && (
+        <ImageViewerDialog
+          open
+          onClose={() => setViewerId(null)}
+          title={viewer.name}
+          processedUrl={viewer.processedUrl}
+          originalUrl={viewer.originalUrl}
+        />
+      )}
     </Stack>
   );
 }

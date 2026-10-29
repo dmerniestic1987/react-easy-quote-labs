@@ -56,7 +56,9 @@ export default function LabQuoteDesktop() {
                                      deleteSelectedLabItem={deleteSelectedLabItem}
                                      deleteSelectedRowSelectionModel={deleteSelectedRowSelectionModel}/>
           </Grid>
-          <TotalQuote xs={10} description={'Total Sugerido'} totalQuote={suggestedTotal.toFormat(0)}/>
+          <Grid size={10} sx={{ display: 'flex', justifyContent: 'center' }}>
+              <TotalQuote description={'Total sugerido'} totalQuote={suggestedTotal.toFormat(0)}/>
+          </Grid>
           <Grid size={10}>
               <PrescriptionPicker variant="desktop" />
           </Grid>

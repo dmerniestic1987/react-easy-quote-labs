@@ -1,72 +1,56 @@
-import {
-  Paper, TableCell, TableHead, TableRow,
-} from '@mui/material';
-import React from 'react';
-import TableContainer from '@mui/material/TableContainer';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import { TableVirtuoso } from 'react-virtuoso';
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Chip from '@mui/material/Chip';
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
 import { LabItem } from './services/lab-calculator';
-import DeleteLabIconButton from './DeleteLabIconButton';
-
-
-const TableComponents = {
-  // @ts-ignore
-  Scroller: React.forwardRef((props, ref) => <TableContainer component={Paper} {...props} ref={ref} />),
-  Table: (props: any) => <Table {...props} style={{ borderCollapse: 'separate' }} />,
-  TableHead,
-  TableRow,
-  // @ts-ignore
-  TableBody: React.forwardRef((props, ref) => <TableBody {...props} ref={ref} />),
-};
 
 interface LabMiniSummaryInputParams {
     selectedLabItems: LabItem[],
-    deleteSelectedLabItem: Function,
-    deleteSelectedRowSelectionModel: Function,
+    onRemove: (item: LabItem) => void,
 }
 
 export default function LabMiniSummaryMobile(
-  { selectedLabItems, deleteSelectedLabItem, deleteSelectedRowSelectionModel }: LabMiniSummaryInputParams,
+  { selectedLabItems, onRemove }: LabMiniSummaryInputParams,
 ) {
+  const items = selectedLabItems || [];
   return (
-    <>
-        <TableVirtuoso
-            style={{ height: 200, width: '100%' }}
-            data={selectedLabItems || []}
-            // @ts-ignore
-            components={TableComponents}
-            fixedHeaderContent={() => (
-                <TableRow>
-                    <TableCell style={{ width: 60 }}>
-                        Código
-                    </TableCell>
-                    <TableCell>
-                        Estudio
-                    </TableCell>
-                    <TableCell style={{ width: 70 }}>
-                        Eliminar
-                    </TableCell>
-                </TableRow>
-            )}
-            itemContent={(index, selectedLabItem) => (
-              <>
-                    <TableCell style={{ width: 70 }}>
-                        {selectedLabItem.code}
-                    </TableCell>
-                    <TableCell>
-                        {selectedLabItem.name}
-                    </TableCell>
-                    <TableCell style={{ width: 70 }}>
-                        <DeleteLabIconButton
-                            labItem={selectedLabItem}
-                            deleteSelectedLabItem={deleteSelectedLabItem}
-                            deleteSelectedRowSelectionModel={deleteSelectedRowSelectionModel}/>
-                    </TableCell>
-              </>
-            )}
-        />
-
-    </>
+    <Paper variant="outlined" component="section" aria-label="Estudios seleccionados">
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, px: 2, py: 1.25, borderBottom: 1, borderColor: 'divider' }}>
+        <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
+          Estudios seleccionados
+        </Typography>
+        <Chip size="small" label={items.length} color={items.length ? 'primary' : 'default'} />
+      </Box>
+      {items.length === 0 ? (
+        <Typography variant="body2" color="text.secondary" sx={{ px: 2, py: 2 }}>
+          Todavía no elegiste estudios.
+        </Typography>
+      ) : (
+        <Box component="ul" sx={{ m: 0, p: 0, listStyle: 'none', maxHeight: 240, overflowY: 'auto' }}>
+          {items.map((item) => (
+            <Box
+              component="li"
+              key={item.id}
+              sx={{ display: 'flex', alignItems: 'center', gap: 1, pl: 2, pr: 0.5, py: 0.5, borderTop: 1, borderColor: 'divider', '&:first-of-type': { borderTop: 0 } }}
+            >
+              <Box sx={{ flex: 1, minWidth: 0, lineHeight: 1.3 }}>
+                <Typography variant="body2" component="span" sx={{ display: 'block', fontWeight: 700 }}>
+                  {item.code}
+                </Typography>
+                <Typography variant="body2" component="span" color="text.secondary" sx={{ display: 'block' }}>
+                  {item.name}
+                </Typography>
+              </Box>
+              <IconButton aria-label={`Quitar ${item.code}`} onClick={() => onRemove(item)}>
+                <DeleteIcon />
+              </IconButton>
+            </Box>
+          ))}
+        </Box>
+      )}
+    </Paper>
   );
 }
