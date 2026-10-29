@@ -10,6 +10,7 @@ import TotalQuote from "../src/TotalQuote";
 import BigNumber from "bignumber.js";
 import MathUtils from "../src/services/math-utils";
 import LabHeader from "../src/LabHeader";
+import PrescriptionPicker from "../src/prescriptions/PrescriptionPicker";
 
 export default function LabQuoteDesktop() {
   const [rowSelectionModel, setRowSelectionModel] = useState<GridRowSelectionModel>({ type: 'include', ids: new Set() });
@@ -56,6 +57,9 @@ export default function LabQuoteDesktop() {
                                      deleteSelectedRowSelectionModel={deleteSelectedRowSelectionModel}/>
           </Grid>
           <TotalQuote xs={10} description={'Total Sugerido'} totalQuote={suggestedTotal.toFormat(0)}/>
+          <Grid size={10}>
+              <PrescriptionPicker variant="desktop" />
+          </Grid>
       </Grid>
     </Container>
   );

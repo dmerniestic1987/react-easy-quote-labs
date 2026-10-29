@@ -10,7 +10,7 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import type { LabItem } from './services/lab-calculator';
 import LabQuoteMobile from './LabQuoteMobile';
-import RecipePhotoCapture from './RecipePhotoCapture';
+import PrescriptionPicker, { type PrescriptionAttachment } from './prescriptions/PrescriptionPicker';
 
 const STEP_TITLES = [
   'Selección de estudios',
@@ -20,11 +20,20 @@ const STEP_TITLES = [
 
 const STEP_COUNT = STEP_TITLES.length;
 
+function blobToDataUrl(blob: Blob): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result as string);
+    reader.onerror = () => reject(reader.error);
+    reader.readAsDataURL(blob);
+  });
+}
+
 export default function MobileQuoteStepper() {
   const [activeStep, setActiveStep] = useState(0);
   const [quoteItems, setQuoteItems] = useState<LabItem[]>([]);
   const [suggestedTotalFormatted, setSuggestedTotalFormatted] = useState('');
-  const [recipePhotoDataUrl, setRecipePhotoDataUrl] = useState<string | null>(null);
+  const [attachments, setAttachments] = useState<PrescriptionAttachment[]>([]);
   const [contact, setContact] = useState({
     fullName: '',
     email: '',
@@ -54,6 +63,9 @@ export default function MobileQuoteStepper() {
     setIsSubmitting(true);
     setSnackbar(null);
     try {
+      const encodedAttachments = await Promise.all(
+        attachments.map(async ({ blob, filename }) => ({ filename, dataUrl: await blobToDataUrl(blob) })),
+      );
       const response = await fetch('/api/send-quote', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -65,7 +77,7 @@ export default function MobileQuoteStepper() {
             email: contact.email.trim() || undefined,
             phone: contact.phone.trim() || undefined,
           },
-          imageDataUrl: recipePhotoDataUrl || undefined,
+          attachments: encodedAttachments,
         }),
       });
       const data = await response.json().catch(() => ({}));
@@ -108,9 +120,10 @@ export default function MobileQuoteStepper() {
 
       <Box sx={{ flex: '1 1 auto', pb: 2 }}>
         {activeStep === 0 && <LabQuoteMobile onQuoteChange={handleQuoteChange} />}
-        {activeStep === 1 && (
-          <RecipePhotoCapture onAccept={(processed) => setRecipePhotoDataUrl(processed)} />
-        )}
+        {/* Always mounted: unmounting it on Back/Next would lose the photos still in review. */}
+        <Box sx={{ display: activeStep === 1 ? 'block' : 'none' }}>
+          <PrescriptionPicker variant="mobile" onChange={setAttachments} />
+        </Box>
         {activeStep === 2 && (
           <Box component="form" ref={formRef} onSubmit={handleSubmitQuote}>
             <Stack spacing={2}>
