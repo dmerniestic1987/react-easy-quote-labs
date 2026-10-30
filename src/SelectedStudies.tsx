@@ -6,14 +6,19 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import { LabItem } from './services/lab-calculator';
+import { formatMoney } from './services/quote-image';
 
-interface LabMiniSummaryInputParams {
+interface SelectedStudiesProps {
     selectedLabItems: LabItem[],
     onRemove: (item: LabItem) => void,
+    /** Height of the list before it scrolls. */
+    maxHeight?: number,
+    /** The secretary sees the price of each study; the patient never does. */
+    showPrices?: boolean,
 }
 
-export default function LabMiniSummaryMobile(
-  { selectedLabItems, onRemove }: LabMiniSummaryInputParams,
+export default function SelectedStudies(
+  { selectedLabItems, onRemove, maxHeight = 240, showPrices = false }: SelectedStudiesProps,
 ) {
   const items = selectedLabItems || [];
   return (
@@ -29,7 +34,7 @@ export default function LabMiniSummaryMobile(
           Todavía no elegiste estudios.
         </Typography>
       ) : (
-        <Box component="ul" sx={{ m: 0, p: 0, listStyle: 'none', maxHeight: 240, overflowY: 'auto' }}>
+        <Box component="ul" sx={{ m: 0, p: 0, listStyle: 'none', maxHeight, overflowY: 'auto' }}>
           {items.map((item) => (
             <Box
               component="li"
@@ -44,6 +49,11 @@ export default function LabMiniSummaryMobile(
                   {item.name}
                 </Typography>
               </Box>
+              {showPrices && (
+                <Typography variant="body2" sx={{ whiteSpace: 'nowrap', fontWeight: 600 }}>
+                  {formatMoney(item.price)}
+                </Typography>
+              )}
               <IconButton aria-label={`Quitar ${item.code}`} onClick={() => onRemove(item)}>
                 <DeleteIcon />
               </IconButton>

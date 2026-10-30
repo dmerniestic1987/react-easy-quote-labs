@@ -819,6 +819,65 @@
         ]
       }
     },
+    "/health-orders/{id}/client": {
+      "patch": {
+        "description": "Only allowed while the health order is in 'quoted' status. No e-mail is sent to the new client.",
+        "operationId": "updateHealthOrderClient",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateHealthOrderClientRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthOrderResponseDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid client ID or the health order is not in 'quoted' status"
+          },
+          "401": {
+            "description": "Missing, invalid or expired token"
+          },
+          "403": {
+            "description": "The role of the user cannot call this endpoint"
+          },
+          "404": {
+            "description": "The health order or the client does not exist"
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Assigns the health order to another client",
+        "tags": [
+          "health-orders"
+        ]
+      }
+    },
     "/health-orders/status/bulk": {
       "patch": {
         "description": "Moves every health order in ids to the given status with the same transition rules as the single update. The operation is transactional: if any order does not exist (404) or cannot move to the status (400), no order is updated and the response details tell which ones are the problem.",
@@ -1710,6 +1769,19 @@
         },
         "required": [
           "status"
+        ]
+      },
+      "UpdateHealthOrderClientRequestDto": {
+        "type": "object",
+        "properties": {
+          "clientId": {
+            "type": "string",
+            "description": "The ID of the client the health order belongs to",
+            "example": "14e7b437-3c5c-44a6-8d99-a0fab3ef6c40"
+          }
+        },
+        "required": [
+          "clientId"
         ]
       },
       "BulkUpdateHealthOrderStatusRequestDto": {

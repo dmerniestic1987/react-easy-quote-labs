@@ -6,7 +6,7 @@ import type { LabItem } from './services/lab-calculator';
 import TotalQuote from '../src/TotalQuote';
 import LabHeader from '../src/LabHeader';
 import LabTableMobile from './LabTableMobile';
-import LabMiniSummaryMobile from './LabMiniSummaryMobile';
+import SelectedStudies from './SelectedStudies';
 
 export type LabQuoteMobileProps = {
   /** The selection lives in the parent, so it survives navigating between steps and reloads. */
@@ -31,7 +31,7 @@ export default function LabQuoteMobile({
         <LabTableMobile
               rowSelectionModel={rowSelectionModel}
               setRowSelectionModel={onRowSelectionModelChange}/>
-        <LabMiniSummaryMobile selectedLabItems={selectedLabs} onRemove={onRemove}/>
+        <SelectedStudies selectedLabItems={selectedLabs} onRemove={onRemove}/>
         <TotalQuote description={'Total sugerido'} totalQuote={suggestedTotalFormatted}/>
       </Stack>
     </Container>

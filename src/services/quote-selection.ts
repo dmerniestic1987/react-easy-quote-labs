@@ -23,8 +23,20 @@ export function removeFromSelection(model: GridRowSelectionModel, id: GridRowId)
   return { ...model, ids };
 }
 
-/** Total of the selected studies, rounded up to the next hundred and formatted without cents. */
-export function formatSuggestedTotal(labs: LabItem[]): string {
+/** Total of the selected studies, rounded up to the next hundred. This is the price quoted to the patient. */
+export function suggestedTotalAmount(labs: LabItem[]): number {
   const total = LabCalculator.getTotalAmount(labs);
-  return new BigNumber(MathUtils.roundToNearestHundred(total.toNumber())).toFormat(0);
+  return new BigNumber(MathUtils.roundToNearestHundred(total.toNumber())).toNumber();
+}
+
+export function formatSuggestedTotal(labs: LabItem[]): string {
+  return new BigNumber(suggestedTotalAmount(labs)).toFormat(0);
+}
+
+/** Identifies a set of studies, to know whether the quote created in the API still matches the selection. */
+export function selectionSignature(labs: LabItem[]): string {
+  return labs
+    .map((lab) => lab.id)
+    .sort((a, b) => a - b)
+    .join(',');
 }

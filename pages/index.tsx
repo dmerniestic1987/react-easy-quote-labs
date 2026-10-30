@@ -1,6 +1,6 @@
 import * as React from 'react';
 import MobileQuoteStepper from '../src/MobileQuoteStepper';
-import LabQuoteDesktop from '../src/LabQuoteDesktop';
+import DesktopQuoteStepper from '../src/DesktopQuoteStepper';
 import UserMenu from '../src/auth/UserMenu';
 import { useLayoutMode } from '../src/useLayoutMode';
 
@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <UserMenu />
-      {layout === 'mobile' ? <MobileQuoteStepper /> : <LabQuoteDesktop />}
+      {layout === 'mobile' ? <MobileQuoteStepper /> : <DesktopQuoteStepper />}
     </>
   );
 }

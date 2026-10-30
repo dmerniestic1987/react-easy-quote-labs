@@ -190,6 +190,26 @@ export interface paths {
         patch: operations["updateHealthOrderStatus"];
         trace?: never;
     };
+    "/health-orders/{id}/client": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        /**
+         * Assigns the health order to another client
+         * @description Only allowed while the health order is in 'quoted' status. No e-mail is sent to the new client.
+         */
+        patch: operations["updateHealthOrderClient"];
+        trace?: never;
+    };
     "/health-orders/status/bulk": {
         parameters: {
             query?: never;
@@ -566,6 +586,13 @@ export interface components {
              * @enum {string}
              */
             status: "quoted" | "executed" | "pending_results" | "results_done";
+        };
+        UpdateHealthOrderClientRequestDto: {
+            /**
+             * @description The ID of the client the health order belongs to
+             * @example 14e7b437-3c5c-44a6-8d99-a0fab3ef6c40
+             */
+            clientId: string;
         };
         BulkUpdateHealthOrderStatusRequestDto: {
             /**
@@ -1232,6 +1259,59 @@ export interface operations {
             };
             /** @description The role of the user cannot call this endpoint */
             403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    updateHealthOrderClient: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: number;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["UpdateHealthOrderClientRequestDto"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HealthOrderResponseDto"];
+                };
+            };
+            /** @description Invalid client ID or the health order is not in 'quoted' status */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Missing, invalid or expired token */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description The role of the user cannot call this endpoint */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description The health order or the client does not exist */
+            404: {
                 headers: {
                     [name: string]: unknown;
                 };
