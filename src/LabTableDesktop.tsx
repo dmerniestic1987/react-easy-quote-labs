@@ -2,11 +2,15 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import {
   DataGrid,
-  GridColDef, GridRowSelectionModel, GridToolbar,
+  GridColDef, GridRowSelectionModel,
 } from '@mui/x-data-grid';
 import LabCalculator, { LabItem } from './services/lab-calculator';
+import LabTableToolbar from './LabTableToolbar';
+import { gridLocaleText } from './gridLocale';
 
-const columns: GridColDef[] = [
+const priceFormat = new Intl.NumberFormat('es-AR');
+
+const columns: GridColDef<LabItem>[] = [
   {
     field: 'code',
     headerName: 'Abreviatura',
@@ -16,59 +20,49 @@ const columns: GridColDef[] = [
   {
     field: 'name',
     headerName: 'Estudio de Laboratorio',
-    width: 390,
+    flex: 1,
+    minWidth: 220,
     editable: false,
   },
   {
     field: 'price',
     headerName: 'Precio',
     type: 'number',
-    width: 90,
+    width: 110,
     editable: false,
+    valueFormatter: (value: number) => `$ ${priceFormat.format(value)}`,
   },
 ];
 
 interface LabTableInputParams {
     rowSelectionModel: GridRowSelectionModel,
-    setSelectedLabItems: Function,
-    setRowSelectionModel: Function
+    setRowSelectionModel: (model: GridRowSelectionModel) => void
 }
+
 export default function LabTableDesktop(
-  { rowSelectionModel, setSelectedLabItems, setRowSelectionModel }: LabTableInputParams,
+  { rowSelectionModel, setRowSelectionModel }: LabTableInputParams,
 ) {
-  const pageSize = 5;
-  const debounceInMillis = 500;
   return (
-        <div>
-            <Box sx={{ height: 400, width: '100%' }}>
-                <DataGrid
-                    rows={LabCalculator.getCurrentLabItems()}
-                    onRowSelectionModelChange={(ids) => {
-                      const selectedIDs = new Set(ids);
-                      const selectedRowData: LabItem[] = LabCalculator.getCurrentLabItems().filter(labItem => selectedIDs.has(labItem.id));
-                      setSelectedLabItems(selectedRowData);
-                      setRowSelectionModel(ids);
-                    }}
-                    columns={columns}
-                    rowSelectionModel={rowSelectionModel}
-                    initialState={{
-                      pagination: {
-                        paginationModel: {
-                          pageSize,
-                        },
-                      },
-                    }}
-                    pageSizeOptions={[pageSize]}
-                    checkboxSelection
-                    slots={{ toolbar: GridToolbar }}
-                    slotProps={{
-                      toolbar: {
-                        showQuickFilter: true,
-                        quickFilterProps: { debounceMs: debounceInMillis },
-                      },
-                    }}
-                />
-            </Box>
-        </div>
+        <Box sx={{ width: '100%' }}>
+            <DataGrid
+                autoHeight
+                rows={LabCalculator.getCurrentLabItems()}
+                onRowSelectionModelChange={setRowSelectionModel}
+                columns={columns}
+                rowSelectionModel={rowSelectionModel}
+                initialState={{
+                  pagination: {
+                    paginationModel: {
+                      pageSize: 10,
+                    },
+                  },
+                }}
+                pageSizeOptions={[10, 25, 50]}
+                localeText={gridLocaleText}
+                checkboxSelection
+                showToolbar
+                slots={{ toolbar: LabTableToolbar }}
+            />
+        </Box>
   );
 }

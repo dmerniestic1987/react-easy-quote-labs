@@ -1,9 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';
 import type { LabItem } from '../../src/services/lab-calculator';
+import { rejectCrossOrigin, requireSession } from '../../src/server/session';
 
 const DEFAULT_INBOX = 'nico.recepcion.vida.y.fortaleza@gmail.com';
-const MAX_IMAGE_BYTES = 12 * 1024 * 1024;
+const MAX_ATTACHMENT_BYTES = 12 * 1024 * 1024;
+const MAX_ATTACHMENTS = 5;
+const ALLOWED_MIME = new Set(['image/png', 'image/jpeg', 'application/pdf']);
 
 type PatientPayload = {
   fullName: string;
@@ -15,7 +18,9 @@ type Body = {
   items?: LabItem[];
   suggestedTotal?: string;
   patient?: PatientPayload;
+  /** Legacy single image. */
   imageDataUrl?: string | null;
+  attachments?: { filename?: string; dataUrl: string }[];
 };
 
 function parseDataUrl(dataUrl: string): { buffer: Buffer; mime: string } | null {
@@ -35,7 +40,7 @@ function parseDataUrl(dataUrl: string): { buffer: Buffer; mime: string } | null 
   }
 }
 
-function buildTextBody(items: LabItem[], suggestedTotal: string, patient: PatientPayload, hasImage: boolean): string {
+function buildTextBody(items: LabItem[], suggestedTotal: string, patient: PatientPayload, attachmentCount: number): string {
   const lines = items.map(
     (it) => `- [${it.code}] ${it.name} — $${new Intl.NumberFormat('es-AR').format(it.price)}`,
   );
@@ -52,7 +57,7 @@ function buildTextBody(items: LabItem[], suggestedTotal: string, patient: Patien
     patient.email ? `Email: ${patient.email}` : '',
     patient.phone ? `Celular: ${patient.phone}` : '',
     '',
-    hasImage ? 'Adjunto: imagen de receta (alto contraste).' : 'No se adjuntó imagen de receta.',
+    attachmentCount ? `Adjuntos: ${attachmentCount} archivo(s) de receta.` : 'No se adjuntó receta.',
     '',
   ]
     .filter(Boolean)
@@ -64,6 +69,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     res.setHeader('Allow', 'POST');
     return res.status(405).json({ error: 'Method not allowed' });
   }
+
+  if (rejectCrossOrigin(req, res)) return;
+  if (!(await requireSession(req, res))) return;
 
   const body = req.body as Body;
   const items = Array.isArray(body.items) ? body.items : [];
@@ -86,26 +94,33 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(500).json({ error: 'Servidor de correo no configurado' });
   }
 
-  let attachment: { filename: string; content: Buffer; contentType: string } | undefined;
-  let hasImage = false;
-  if (body.imageDataUrl && typeof body.imageDataUrl === 'string' && body.imageDataUrl.length > 0) {
-    const parsed = parseDataUrl(body.imageDataUrl);
-    if (!parsed) {
-      return res.status(400).json({ error: 'Imagen inválida' });
+  const requested = Array.isArray(body.attachments)
+    ? body.attachments
+    : body.imageDataUrl
+      ? [{ dataUrl: body.imageDataUrl }]
+      : [];
+  if (requested.length > MAX_ATTACHMENTS) {
+    return res.status(400).json({ error: `Máximo ${MAX_ATTACHMENTS} adjuntos` });
+  }
+  const attachments: { filename: string; content: Buffer; contentType: string }[] = [];
+  for (const [index, requestedFile] of requested.entries()) {
+    const parsed = typeof requestedFile?.dataUrl === 'string' ? parseDataUrl(requestedFile.dataUrl) : null;
+    if (!parsed || !ALLOWED_MIME.has(parsed.mime)) {
+      return res.status(400).json({ error: 'Archivo inválido' });
     }
-    if (parsed.buffer.length > MAX_IMAGE_BYTES) {
-      return res.status(400).json({ error: 'La imagen es demasiado grande' });
+    if (parsed.buffer.length > MAX_ATTACHMENT_BYTES) {
+      return res.status(400).json({ error: 'El archivo es demasiado grande' });
     }
-    const ext = parsed.mime.includes('png') ? 'png' : parsed.mime.includes('jpeg') || parsed.mime.includes('jpg') ? 'jpg' : 'png';
-    attachment = {
-      filename: `receta.${ext}`,
+    const ext = parsed.mime === 'application/pdf' ? 'pdf' : parsed.mime === 'image/jpeg' ? 'jpg' : 'png';
+    const safeName = (requestedFile.filename ?? '').replace(/[^\w. -]/g, '_').slice(0, 80);
+    attachments.push({
+      filename: safeName || `receta-${index + 1}.${ext}`,
       content: parsed.buffer,
       contentType: parsed.mime,
-    };
-    hasImage = true;
+    });
   }
 
-  const text = buildTextBody(items, suggestedTotal, patient, hasImage);
+  const text = buildTextBody(items, suggestedTotal, patient, attachments.length);
 
   try {
     const transporter = nodemailer.createTransport({
@@ -120,7 +135,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       to,
       subject: `Cotización laboratorio — ${patient.fullName.trim()}`,
       text,
-      attachments: attachment ? [attachment] : undefined,
+      attachments: attachments.length ? attachments : undefined,
     });
 
     return res.status(200).json({ ok: true });
