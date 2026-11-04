@@ -1,11 +1,13 @@
 import * as React from 'react';
-import { useMediaQuery } from '@mui/material';
-import { useTheme } from '@mui/system';
 import MobileQuoteStepper from '../src/MobileQuoteStepper';
-import LabQuoteDesktop from '../src/LabQuoteDesktop';
+import DesktopQuoteStepper from '../src/DesktopQuoteStepper';
+import { useLayoutMode } from '../src/useLayoutMode';
 
 export default function Home() {
-  const theme = useTheme();
-  const isSmScreen = useMediaQuery(theme.breakpoints.down('sm'));
-  return isSmScreen ? <MobileQuoteStepper /> : < LabQuoteDesktop/>;
+  const layout = useLayoutMode();
+  return (
+    <>
+      {layout === 'mobile' ? <MobileQuoteStepper /> : <DesktopQuoteStepper />}
+    </>
+  );
 }

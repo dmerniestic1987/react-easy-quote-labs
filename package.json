@@ -8,37 +8,41 @@
     "dev:https": "next dev --experimental-https --hostname 0.0.0.0",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "api:types": "openapi-typescript data/swagger.json -o src/api/schema.d.ts"
   },
   "dependencies": {
-    "@emotion/cache": "latest",
+    "@emotion/cache": "^11.14.0",
     "@emotion/react": "^11.14.0",
     "@emotion/server": "^11.11.0",
-    "@emotion/styled": "^11.11.0",
-    "@mui/icons-material": "^5.14.3",
-    "@mui/material": "^5.14.3",
-    "@mui/styled-engine-sc": "^5.12.0",
-    "@mui/x-data-grid": "^6.10.2",
-    "bignumber.js": "^9.1.1",
-    "next": "latest",
-    "nodemailer": "^8.0.5",
-    "react": "latest",
-    "react-dom": "latest",
-    "react-scripts": "^5.0.1",
-    "react-virtuoso": "^4.18.4",
-    "react-webcam": "^7.2.0",
-    "styled-components": "^5.3.11"
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^9.5.0",
+    "@mui/material": "^9.5.0",
+    "@mui/system": "^9.5.0",
+    "@mui/x-data-grid": "^9.16.0",
+    "bignumber.js": "^11.1.5",
+    "next": "^16.4.3",
+    "nodemailer": "^10.2.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
   },
   "devDependencies": {
-    "@types/node": "latest",
-    "@types/nodemailer": "^8.0.0",
-    "@types/react": "latest",
-    "eslint": "latest",
-    "eslint-config-next": "latest",
-    "typescript": "^6.0.2"
+    "@types/node": "^24.0.0",
+    "@types/nodemailer": "^8.0.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.2.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.3",
+    "openapi-typescript": "^7.13.0",
+    "typescript": "^6.0.3"
   },
   "engines": {
-    "node": ">=24.0.0"
+    "node": ">=24.22.1"
+  },
+  "overrides": {
+    "openapi-typescript": {
+      "typescript": "$typescript"
+    }
   }
 }

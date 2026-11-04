@@ -1,7 +1,6 @@
 import Box from '@mui/material/Box';
 import * as React from 'react';
 import Typography from '@mui/material/Typography';
-import ProTip from './ProTip';
 
 interface LabInterfaceInputParam {
     title: string,
@@ -19,13 +18,12 @@ export default function LabHeader({ title, subTitle } : LabInterfaceInputParam) 
               alignItems: 'center',
             }}
         >
-            <Typography variant="h5" gutterBottom>
+            <Typography variant="h5" gutterBottom sx={{ typography: { xs: 'h6', md: 'h5' }, textAlign: 'center' }}>
                 {title}
             </Typography>
-            <Typography variant="h5" gutterBottom>
+            <Typography variant="h5" gutterBottom sx={{ typography: { xs: 'h6', md: 'h5' }, textAlign: 'center' }}>
                 {subTitle}
             </Typography>
-            <ProTip />
         </Box>
   );
 }
