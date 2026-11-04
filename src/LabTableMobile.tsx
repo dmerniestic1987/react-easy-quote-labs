@@ -59,6 +59,8 @@ export default function LabTableMobile(
                 }}
                 pageSizeOptions={[pageSize]}
                 checkboxSelection
+                // The search only hides rows: what was already selected must stay selected (and summed).
+                keepNonExistentRowsSelected
                 showToolbar
                 slots={{ toolbar: LabTableToolbar }}
             />

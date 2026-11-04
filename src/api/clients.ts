@@ -84,3 +84,18 @@ export async function createClient(client: NewClient): Promise<string> {
   };
   return (await apiFetch<{ id: string }>('/api/backend/clients', { method: 'POST', json: body })).id;
 }
+
+export async function getClient(id: string): Promise<Client> {
+  const raw = await apiFetch<Partial<Client> & { id: string; firstName: string; lastName: string }>(
+    `/api/backend/clients/${id}`,
+  );
+  return {
+    id: raw.id,
+    firstName: raw.firstName,
+    lastName: raw.lastName,
+    personIdType: raw.personIdType ?? null,
+    personId: raw.personId ?? null,
+    email: raw.email ?? null,
+    phoneNumber: raw.phoneNumber ?? null,
+  };
+}

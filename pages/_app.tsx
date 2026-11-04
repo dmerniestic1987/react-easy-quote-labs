@@ -8,6 +8,7 @@ import theme from '../src/theme';
 import createEmotionCache from '../src/createEmotionCache';
 import { AuthProvider } from '../src/auth/AuthProvider';
 import AuthGate from '../src/auth/AuthGate';
+import AppShell from '../src/layout/AppShell';
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -28,7 +29,9 @@ export default function MyApp(props: MyAppProps) {
         <CssBaseline />
         <AuthProvider>
           <AuthGate>
-            <Component {...pageProps} />
+            <AppShell>
+              <Component {...pageProps} />
+            </AppShell>
           </AuthGate>
         </AuthProvider>
       </ThemeProvider>

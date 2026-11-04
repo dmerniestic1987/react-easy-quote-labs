@@ -35,3 +35,9 @@ export function describeError(error: unknown, action: string): UserFacingError {
   if (error.status === 404) return { title, message: `No se encontró lo solicitado. ${error.message}` };
   return { title, message: error.message };
 }
+
+/** One sentence for an inline notice: what failed and why, for example "No se pudo cargar X. El servidor…". */
+export function describeErrorInline(error: unknown, action: string): string {
+  const { title, message } = describeError(error, action);
+  return `${title}. ${message}`;
+}

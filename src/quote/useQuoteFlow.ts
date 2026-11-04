@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { GridRowSelectionModel } from '@mui/x-data-grid';
 import type { Client } from '../api/clients';
 import { describeError, logError } from '../api/errors';
@@ -13,6 +13,7 @@ import {
 import { useAuth } from '../auth/AuthProvider';
 import type { ErrorDialogState } from '../ErrorDialog';
 import type { UploadSummary } from '../prescriptions/PrescriptionPicker';
+import { setLeaveGuard } from './leave-guard';
 import type { LabItem } from '../services/lab-calculator';
 import { clearDraft, deserializeSelection, loadDraft, saveDraft, serializeSelection } from '../services/quote-draft';
 import {
@@ -88,6 +89,20 @@ export function useQuoteFlow() {
     }
   }, [userId, activeStep, selection, order, client, assignedClientId]);
 
+  // The summary is the end of a quote: it is not an "in progress" quote any more. Leaving the screen (through the
+  // menu, with the back button...) forgets it, so the next visit to "Crear cotización" starts an empty one. A page
+  // reload does not run this, so the summary is still there if the browser reloads the tab while it is being shared.
+  const atSummary = useRef(false);
+  useEffect(() => {
+    atSummary.current = activeStep === STEP.SUMMARY;
+  }, [activeStep]);
+  useEffect(
+    () => () => {
+      if (atSummary.current && userId) clearDraft(userId);
+    },
+    [userId],
+  );
+
   // After a reload, recover which files the server already has for the quote.
   const restoredOrderId = draft?.order?.id;
   useEffect(() => {
@@ -96,6 +111,19 @@ export function useQuoteFlow() {
       .then(setExistingFiles)
       .catch((e) => logError('No se pudieron recuperar los archivos de la cotización', e));
   }, [restoredOrderId]);
+
+  // Photos waiting for approval are the only thing the draft does not keep: warn before leaving the screen.
+  const pendingPhotos = uploads.pending;
+  useEffect(() => {
+    if (pendingPhotos === 0) return undefined;
+    setLeaveGuard(() => `Hay ${pendingPhotos} foto(s) sin aceptar. Si salís, se pierden.`);
+    const warnOnUnload = (event: BeforeUnloadEvent) => event.preventDefault();
+    window.addEventListener('beforeunload', warnOnUnload);
+    return () => {
+      setLeaveGuard(null);
+      window.removeEventListener('beforeunload', warnOnUnload);
+    };
+  }, [pendingPhotos]);
 
   const fail = (e: unknown, action: string, retry?: () => void) => {
     setError({ ...describeError(e, action), onRetry: retry });

@@ -36,13 +36,15 @@ type ApiFetchOptions = Omit<RequestInit, 'body'> & {
   json?: unknown;
   /** Multipart body (file uploads). The browser sets the Content-Type with its boundary. */
   formData?: FormData;
+  /** `blob` for files (images, PDFs); `json` (default) for everything else. */
+  responseType?: 'json' | 'blob';
   /** Set to false for calls where a 401 is an expected answer (login, initial session check). */
   notifyUnauthorized?: boolean;
 };
 
 export async function apiFetch<T = void>(
   path: string,
-  { json, formData, notifyUnauthorized = true, headers, ...init }: ApiFetchOptions = {},
+  { json, formData, responseType = 'json', notifyUnauthorized = true, headers, ...init }: ApiFetchOptions = {},
 ): Promise<T> {
   const requestHeaders = new Headers(headers);
   if (json !== undefined) requestHeaders.set('Content-Type', 'application/json');
@@ -72,5 +74,6 @@ export async function apiFetch<T = void>(
   }
 
   if (response.status === 204) return undefined as T;
+  if (responseType === 'blob') return (await response.blob()) as T;
   return (await response.json()) as T;
 }
